@@ -1,0 +1,51 @@
+.oc-receipt {
+  -webkit-filter: brightness(99%) drop-shadow(0 0 2px #BBB);
+  -moz-filter: brightness(99%) drop-shadow(0 0 2px #BBB);
+  -ms-filter: brightness(99%) drop-shadow(0 0 2px #BBB);
+  -o-filter: brightness(99%) drop-shadow(0 0 2px #BBB);
+  filter: brightness(99%) drop-shadow(0 0 2px #BBB);
+  min-height: 310px;
+  width: 260px;
+  background-image: url(../imgs/receipt.png);
+  display: inline-block;
+  background-size: cover;
+  font-family: "Courier New", Courier, monospace;
+  padding: 10px;
+  margin: 10px 0 0; }
+  @media (min-width: 400px) {
+    .oc-receipt {
+      width: 293px; } }
+  .oc-receipt .oc-logo-receipt {
+    margin: 10px 0 15px; }
+    .oc-receipt .oc-logo-receipt img {
+      max-height: 30px; }
+    .oc-receipt .oc-logo-receipt div {
+      margin: 10px 0 0; }
+  .oc-receipt .oc-goods-wrapper {
+    min-height: 160px;
+    padding: 10px 0;
+    border-top: 1px dashed #000;
+    border-bottom: 1px dashed #000; }
+    .oc-receipt .oc-goods-wrapper .oc-goods-list {
+      line-height: 1; }
+      .oc-receipt .oc-goods-wrapper .oc-goods-list:not(:last-of-type) {
+        margin: 0 0 20px; }
+      .oc-receipt .oc-goods-wrapper .oc-goods-list > div {
+        margin: 0 -8px 0 -1px;
+        display: inline-block; }
+        .oc-receipt .oc-goods-wrapper .oc-goods-list > div:nth-of-type(1) {
+          width: 10%;
+          vertical-align: top; }
+        .oc-receipt .oc-goods-wrapper .oc-goods-list > div:nth-of-type(2) {
+          width: 58%;
+          vertical-align: top; }
+        .oc-receipt .oc-goods-wrapper .oc-goods-list > div:nth-of-type(3) {
+          width: 32%;
+          vertical-align: bottom; }
+  .oc-receipt .oc-total {
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase; }
+
+/*# sourceMappingURL=receipt.css.map */

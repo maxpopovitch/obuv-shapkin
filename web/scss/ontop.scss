@@ -1,0 +1,75 @@
+$value: 14px;
+$border-radius: 50%;
+$text-color: #FFF;
+$button-color: #BA3E3E;
+
+@mixin prefix($scope, $vendors: webkit moz ms o) {
+    @each $prop, $value in $scope {
+        @if $vendors {
+            @each $vendor in $vendors {
+                #{"-" + $vendor + "-" + $prop}: #{$value};
+            }
+        }
+        // Dump regular property anyway
+        #{$prop}: #{$value};
+    }
+}
+
+#oc-ontop {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    bottom: 50%;
+    right: -1%;
+    @include prefix((transform-origin: 100% 0));
+    @include prefix((transform: translateX(-50%) translateY(-50%) rotate(-90deg)));
+    
+    @media (min-width: 1600px) {
+        right: -0.25%;
+    }
+}
+
+.oc-triangle {
+    position: absolute;
+    right: -11px;
+    top: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: $button-color;
+    width:  $value;
+    height: $value;
+    border-top-right-radius: $border-radius;
+    @include prefix((transform: rotate(30deg) skewX(-30deg) scale(1,.866)));
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        background-color: inherit;
+        width:  $value;
+        height: $value;
+        border-top-right-radius: $border-radius;
+    }
+
+    &:before {
+        @include prefix((transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%)));
+    }
+
+    &:after {
+        @include prefix((transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%)));
+    }
+}
+
+.oc-square {
+    display: inline-block;
+    float: left;
+    position: relative;
+    right: 2px;
+    top: -1px;
+    width: 88px;
+    height: 24px;
+    font-size: 15px;
+    font-weight: 700;
+    color: $text-color;
+    background-color: $button-color;
+    border-radius: 5px 4px 4px 5px;
+}

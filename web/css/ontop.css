@@ -1,0 +1,70 @@
+#oc-ontop {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  bottom: 50%;
+  right: -1%;
+  -webkit-transform-origin: 100% 0;
+  -moz-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  -o-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -o-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  transform: translateX(-50%) translateY(-50%) rotate(-90deg); }
+  @media (min-width: 1600px) {
+    #oc-ontop {
+      right: -0.25%; } }
+
+.oc-triangle {
+  position: absolute;
+  right: -11px;
+  top: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #BA3E3E;
+  width: 14px;
+  height: 14px;
+  border-top-right-radius: 50%;
+  -webkit-transform: rotate(30deg) skewX(-30deg) scale(1, 0.866);
+  -moz-transform: rotate(30deg) skewX(-30deg) scale(1, 0.866);
+  -ms-transform: rotate(30deg) skewX(-30deg) scale(1, 0.866);
+  -o-transform: rotate(30deg) skewX(-30deg) scale(1, 0.866);
+  transform: rotate(30deg) skewX(-30deg) scale(1, 0.866); }
+  .oc-triangle:before, .oc-triangle:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    width: 14px;
+    height: 14px;
+    border-top-right-radius: 50%; }
+  .oc-triangle:before {
+    -webkit-transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%);
+    -moz-transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%);
+    -ms-transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%);
+    -o-transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%);
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%); }
+  .oc-triangle:after {
+    -webkit-transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+    -moz-transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+    -ms-transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+    -o-transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+    transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%); }
+
+.oc-square {
+  display: inline-block;
+  float: left;
+  position: relative;
+  right: 2px;
+  top: -1px;
+  width: 88px;
+  height: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFF;
+  background-color: #BA3E3E;
+  border-radius: 5px 4px 4px 5px; }
+
+/*# sourceMappingURL=ontop.css.map */

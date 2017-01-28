@@ -1,0 +1,96 @@
+$button-color: #1CA913;
+@mixin box-shadow($shadows...) {
+    -webkit-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+@function inverse-side($side) {
+    @if      $side == top    { @return bottom; }
+    @else if $side == bottom { @return top; }
+    @else if $side == left   { @return right; }
+    @else if $side == right  { @return left; }
+}
+
+@mixin linear-gradient($gradientLine, $colorStops...) {
+    background-image: -webkit-linear-gradient($gradientLine, $colorStops);
+    background-image:    -moz-linear-gradient($gradientLine, $colorStops);
+    background-image:      -o-linear-gradient($gradientLine, $colorStops);
+    @if length($gradientLine) == 2 {
+        background-image:         linear-gradient(to #{inverse-side(nth($gradientLine, 1))} #{inverse-side(nth($gradientLine, 2))}, $colorStops);
+    } @else {
+        background-image:         linear-gradient(to #{inverse-side($gradientLine)}, $colorStops);
+    }
+}
+
+form[name="oc-buy-form"] {
+    padding: 10px;
+    background-color: #555;
+    margin: 10px 0;
+    border-radius: 5px;
+
+    span {
+        display: inline-block;
+        color: #FFF;
+
+        &:nth-of-type(1) {
+            margin: 0 0 10px;
+        }
+
+        &:nth-of-type(2) {
+            margin: 10px 0 0;
+        }
+    }
+
+    select {
+        padding: 6px;
+        border-radius: 4px;
+    }
+    
+    [type="submit"] {
+        position: relative;
+        border-radius: 4px;
+        color: #FFF;
+        background-color: $button-color;
+        text-shadow: 0 1px darken($button-color, 20);
+        border: 1px solid;
+        border-color: darken($button-color, 10) darken($button-color, 15) darken($button-color, 15);
+        background-image: linear-gradient(to bottom, rgba(white, 3/10), rgba(white, 0) 50%, rgba(black, 12/100) 51%, rgba(black, 4/100));
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 4px;
+            background: transparent;
+            @include box-shadow(inset 0 0 7px rgba(white, 5/10));
+        }
+
+        &:hover, &:active, &:focus {
+            outline: 0;
+            color: #FFF;
+
+            &:before {
+                content: "";
+                outline: 0;
+            }
+        }
+
+        &:hover {
+            background-color: darken(saturate($button-color, 5), 4);
+        }
+
+        &:active {
+            text-shadow: 0 -1px darken($button-color, 20%);
+            border-color: darken($button-color, 25) darken($button-color, 20) darken($button-color, 10);
+            @include box-shadow(inset 0 1px 3px rgba(black, 2/10), 0 1px rgba(white, 4/10));
+
+            &:before {
+                content: "";
+                @include box-shadow(inset 0 0 3px rgba(black, 2/10), 0 1px rgba(white, 4/10));
+            }
+        }
+    }
+}

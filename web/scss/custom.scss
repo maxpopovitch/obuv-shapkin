@@ -1,0 +1,1259 @@
+$color-01: #7C4734; /*base color, menu background color*/
+$color-02: #A6C550; /*menu hover color*/
+$color-03: #D2D6AA; /*body background color*/
+$color-04: #FFF; /*menu and breadcrumbs links color*/
+$color-05: #1D1D1D; /*top contact info background color*/
+$color-06: #687415; /*footer main color*/
+$color-07: #E3EAC0; /*footer background color*/
+$color-08: #777; /*footer robotext color*/
+$color-09: #FFF; /*content background color*/
+$color-10: #D2D6AA; /*ware-border-color*/
+$color-11: #255B5B; /*price value color*/
+$color-12: #777; /*price currency color*/
+$color-13: #1D1D1D; /*hint background color*/
+$color-14: #1D1D1D; /*details span color*/
+$color-15: #8FA136; /*details icons color, order preview table background*/
+$color-16: #333; /*details icons color for color icons*/
+$color-17: #494949; /*highlights color for content and details*/
+$height-01: 76px;
+$height-02: 300px;
+$padding-01: 10px;
+$base-font: Tahoma, "Trebuchet MS", Verdana, "MS Sans Serif", Geneva, Arial, Helvetica, sans-serif;
+$footer-font-size: 12px;
+$rotate-tag: 45deg;
+
+@mixin prefix($scope, $vendors: webkit moz ms o) {
+    @each $prop, $value in $scope {
+        @if $vendors {
+            @each $vendor in $vendors {
+                #{"-" + $vendor + "-" + $prop}: #{$value};
+            }
+        }
+        // Dump regular property anyway
+        #{$prop}: #{$value};
+    }
+}
+
+@mixin oc-tag {
+    .oc-tag {
+        position: absolute;
+        width: 67px;
+        height: 67px;
+        top: -5px;
+        left: 117px;
+        overflow: hidden;
+        z-index: 1;
+
+        span {
+            display: inline-block;
+            position: absolute;
+            top: 16px;
+            width: 80px;
+            color: #FFF;
+            font-size: 13px;
+            font-weight: 400;
+            @include prefix((transform: rotate($rotate-tag) translate3d(0, 0, 0)));
+        }
+
+        &.oc-new {
+            background-image: url("../imgs/tag_new.png");
+        }
+
+        &.oc-hit {
+            background-image: url("../imgs/tag_hit.png");
+
+            span {
+                left: 1px;
+                top: 18px;
+                font-size: 11px;
+            }
+        }
+
+        &.oc-sale {
+            background-image: url("../imgs/tag_sale.png");
+
+            span {
+                left: 1px;
+                top: 18px;
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body, .modal-open {
+    width: 100%;
+    height: 100%;
+    background-image: url(../imgs/bg_shoes.gif);
+    background-color: $color-03;
+    font-family: $base-font;
+    padding: 0 !important; /*prevent padding-right when modal window is opened*/
+
+    @media (min-width: 1200px) {
+        padding: 0 2% !important;
+    }
+}
+
+body {
+    display: table;
+}
+
+a, a:link, a:visited, a:hover, a:focus,
+.nav > li > a, .nav > li > a:visited, .nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: underline;
+}
+
+.container-fluid,
+.container,
+.row,
+.row > div:not([class*="offset"]),
+.navbar-nav,
+.container>.navbar-header,
+.container-fluid>.navbar-header,
+.container>.navbar-collapse,
+.container-fluid>.navbar-collapse,
+.navbar>.container .navbar-brand,
+.navbar>.container-fluid .navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+    max-height: 300px;
+}
+
+.oc-navbar {
+    height: $height-01;
+    margin: 0;
+    padding: 0;
+    background: $color-01;
+    border: 0;
+    border-radius: 0;
+
+    li {
+        background: $color-01;
+
+        &:hover, &:focus {
+            outline: 0;
+            background: $color-02;
+        }
+
+        &:last-of-type {
+            &:hover, &:focus {
+                outline: 0;
+                background: $color-01;
+            }
+        }
+    }
+
+    .navbar-brand {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 3;
+
+        &:hover, &:focus {
+            background: $color-02;
+        }
+    }
+}
+
+.oc-logo {
+    width: 100%;
+    padding: 19px 5px;
+
+    @media (min-width: 850px) {
+        padding: 19px 10px;
+    }
+
+    &:hover, &:focus {
+        outline: 0;
+        background: $color-02;
+    } 
+}
+
+.oc-a {
+    height: $height-01;
+
+    &:hover, &:focus {
+        outline: 0;
+        background: $color-02;
+    }
+}
+
+#oc-main-nav {
+    border: 0;
+    position: relative;
+    z-index: 2;
+
+    a {
+        color: $color-04;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 10px;
+        text-align: center;
+
+        &:hover, &:focus {
+            outline: 0;
+            background: $color-02;
+        }
+
+        @media (min-width: 768px) {
+            padding: 18px 10px;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        @media (min-width: 992px) {
+            padding: 18px 15px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+
+    br {
+        display: none;
+
+        @media (min-width: 768px) {
+            display: inline;
+        }
+    }
+
+    li {
+        border-top: 1px dashed $color-04;
+        border-left: 0;
+
+        @media (min-width: 768px) {
+            border-top: 0;
+            border-left: 1px dashed $color-04;
+        }
+
+        &:last-of-type {
+            border-bottom: 1px dashed $color-04;
+            border-right: 0;
+
+            @media (min-width: 768px) {
+                border-bottom: 0;
+                border-right: 1px dashed $color-04;
+            }
+        }
+    }
+
+    .oc-lang {
+        padding: 10px;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            padding: 0 10px;
+        }
+
+        @media (min-width: 992px) {
+            padding: 0 15px;
+        }
+
+        > span {
+            display: inline-block;
+            color: $color-04;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 0;
+
+            @media (min-width: 768px) {
+                padding: 18px 0 0;
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+            @media (min-width: 992px) {
+                padding: 18px 15px 0;
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+
+        select {
+            height: 25px;
+            border-radius: 3px;
+            margin: 0;
+
+            @media (min-width: 768px) {
+                margin: 2px 0 13px;
+            }
+
+            @media (min-width: 992px) {
+                margin: 2px 0 11px;
+            }
+        }
+    }
+}
+
+.navbar-default .navbar-toggle.oc-collapsed-button {
+    border: 0;
+    color: $color-04;
+    top: 9px;
+    padding: 15px;
+
+    &:hover, &:focus {
+        background-color: $color-02;
+    }
+
+    span {
+        background: $color-04;
+        width: 28px;
+        height: 4px;
+        border-radius: 0;
+    }
+}
+
+.oc-contact {
+    background: $color-05;
+    padding: 2px 10px;
+
+    .clearfix {
+        display: block;
+
+        @media (min-width: 992px) {
+            display: none;
+        }
+    }
+
+    .oc-div-i {
+        float: left;
+        font-size: 26px;
+        color: $color-04;
+        position: relative;
+        text-align: center;
+        width: 10%;
+
+        @media (min-width: 992px) {
+            width: 0;
+            text-align: left;
+        }
+    }
+
+    .oc-info {
+        color: $color-04;
+        display: inline-block;
+        padding: 0 10px;
+        width: 90%;
+
+        @media (min-width: 992px) {
+            width: 100%;
+        }
+    }
+
+    .oc-phone {
+        @media (min-width: 992px) {
+            float: left;
+            margin: 0 3% 0 0;
+        }
+
+        .oc-div-i {
+            @media (min-width: 992px) {
+                top: 2px;
+            }
+        }
+
+        .oc-info {
+            @media (min-width: 992px) {
+                padding: 0 0 0 35px;
+            }
+
+            a {
+                color: $color-04;
+            }
+        }
+    }
+
+    .oc-location {
+        padding: 0 0 15px 0;
+
+        @media (min-width: 992px) {
+            float: left;
+            padding: 0;
+            margin: 0 1% 0 0;
+        }
+
+        @media (min-width: 1200px) {
+            float: left;
+            margin: 0 4% 0 0;
+        }
+
+        .oc-div-i {
+            @media (min-width: 992px) {
+                top: 2px;
+                right: 6px;
+            }
+        }
+
+        .oc-info {
+            position: relative;
+            top: 9px;
+
+            @media (min-width: 992px) {
+                padding: 0 0 0 24px;
+            }
+
+            a {
+                color: $color-04;
+            }
+        }
+    }
+
+    .oc-cart {
+        @media (min-width: 992px) {
+            float: left;
+        }
+
+        .oc-div-i {
+            @media (min-width: 992px) {
+                top: 2px;
+            }
+        }
+
+        .oc-info {
+            position: relative;
+            top: 9px;
+
+            @media (min-width: 992px) {
+                padding: 0 0 0 35px;
+            }
+
+            a {
+                color: $color-04;
+            }
+        }
+    }
+}
+
+.oc-breadcrumbs {
+    margin: 0;
+    padding: 10px;
+    background: $color-01;
+
+    h1 {
+        padding: 0;
+        margin: 0;
+        color: $color-04;
+        font-weight: 700;
+        font-size: 14px;
+
+        @media (min-width: 768px) {
+            font-size: 16px;
+        }
+
+        @media (min-width: 992px) {
+            font-size: 18px;
+        }
+
+        a {
+            color: $color-04;
+        }
+    }
+}
+
+.oc-content {
+    display: table-row;
+    height: 100%;
+    background: $color-09;
+
+    .oc-margin {
+        margin: 10px 0 0 0;
+    }
+
+    p {
+        text-indent: 20px;
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .pull-right {
+        position: relative;
+
+        .oc-details {
+            font-size: 25px;
+            padding: 3px 7px 0px;
+        }
+
+        .oc-hint {
+            position: absolute;
+            right: 100%;
+            top: 8px;
+            margin: 0 5px 0 0;
+            white-space: nowrap;
+            color: #FFF;
+            display: none;
+
+            div {
+                &:nth-of-type(1) {
+                    display: inline;
+                    position: relative;
+                    left: 1px;
+                    padding: 1px 5px 2px;
+                    border-radius: 8px;
+                    background: $color-13;
+                    float: left;
+                }
+
+                &:nth-of-type(2) {
+                    display: inline-block;
+                    position: relative;
+                    top: 2px;
+                    width: 0;
+                    height: 0;
+                    border-top: 5px solid transparent;
+                    border-left: 5px solid $color-13;
+                    border-bottom: 5px solid transparent;
+                }
+            }
+        }
+
+        &:hover {
+            .oc-hint {
+                display: inline;
+            }
+        }
+    }
+
+    ol {
+        padding: 0 0 0 40px;
+
+        li {
+            margin: 0 0 10px 0;
+        }
+    }
+}
+
+.oc-ware-div {
+    margin: 5px 10px 25px;
+
+    h3 {
+        color: $color-17;
+        margin: 0 0 20px 0;
+    }
+
+    /*this class is added manually in cart.htm and handles in confirmation.js*/
+    .oc-empty {
+        display: none;
+    }
+    
+    .oc-order-status {
+        padding: 5px;
+    }
+    
+    .oc-order-status-icon {
+        padding: 5px;
+        margin: 10px 0;
+    }
+}
+
+.oc-ware {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+
+    &:hover {
+        box-shadow: inset 0 1px 1px rgba(0,0,0, 75/1000),
+            0 0 8px rgba(darken($color-10, 30), 6/10);
+
+        a {
+            border: 1px solid darken($color-10, 20);
+        }
+        .oc-separator {
+            background: darken($color-10, 20);
+        }
+    }
+
+
+    a {
+        display: block;
+        background: $color-09;
+        width: 180px;
+        height: 208px;
+        border: 1px solid $color-10;
+        position: relative;
+        text-decoration: none;
+
+        &.oc-brand {
+            height: 155px;
+        }
+
+        @include oc-tag;
+
+        .oc-ware-photo {
+            display: table-cell;
+            width: 178px;
+            height: 150px;
+            text-align: center;
+            vertical-align: middle;
+
+            img {
+                max-width: 165px;
+                max-height: 145px;
+            }
+        }
+
+        .oc-separator {
+            height: 1px;
+            background: $color-10;
+        }
+
+        .oc-brand-logo {
+            display: table-cell;
+            width: 90px;
+            height: 55px;
+            text-align: center;
+            vertical-align: middle;
+
+            img {
+                max-width: 85px;
+                max-height: 50px;
+            }
+        }
+
+        .oc-price {
+            display: table-cell;
+            width: 85px;
+            text-align: right;
+            vertical-align: middle;
+            font-weight: 700;
+
+            span:nth-of-type(1) {
+                color: $color-11;
+                font-size: 20px;
+            }
+
+            span:nth-of-type(2) {
+                color: $color-12;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.oc-ware-product {
+    > a {
+        position: relative;
+        display: block;
+        border: 1px solid $color-10;
+        height: $height-02;
+
+        &:hover {
+            border: 1px solid darken($color-10, 20);
+            box-shadow: inset 0 1px 1px rgba(0,0,0, 75/1000),
+                0 0 8px rgba(darken($color-10, 30), 6/10);
+        }
+
+        @include oc-tag;
+
+        .oc-tag {
+            left: auto;
+            right: -6px;
+        }
+    }
+
+    .oc-ware-photo {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        img {
+            max-width: 100%;
+            padding: $padding-01;
+            max-height: $height-02 - $padding-01 - $padding-01;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 10px 0;
+
+        li {
+            display: inline-block;
+            width: 19%;
+            height: 60px;
+            position: relative;
+            border: 1px solid $color-10;
+            margin: 0 -1px 0 0;
+
+            &:hover {
+                cursor: pointer;
+                border: 1px solid darken($color-10, 20);
+                box-shadow: inset 0 1px 1px rgba(0,0,0, 75/1000),
+                    0 0 8px rgba(darken($color-10, 30), 6/10);
+            }
+
+            &.oc-selected {
+                opacity: 0.5;
+                border: 1px solid $color-10;
+
+                &:hover {
+                    cursor: default;
+                    border: 1px solid $color-10;
+                    box-shadow: none;
+                }
+            }
+
+            > img {
+                max-height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+.oc-description {
+    @media (min-width: 768px) {
+        padding: 0 0 0 20px !important;
+    }
+
+    > img:nth-of-type(1) {
+        display: inline-block;
+        width: 23%;
+        vertical-align: top;
+
+        @media (min-width: 500px) {
+            width: 15%;
+        }
+
+        @media (min-width: 768px) {
+            width: 23%;
+        }
+    }
+
+    > h4:nth-of-type(1) {
+        display: inline-block;
+        margin: 0 0 0 10px;
+        width: 70%;
+
+        @media (min-width: 500px) {
+            width: 80%;
+        }
+
+        @media (min-width: 768px) {
+            width: 70%;
+        }
+    }
+
+    .oc-price {
+        font-weight: 700;
+
+        > h3 {
+            margin: 10px 0;
+        }
+
+        span {
+            color: #F00E0E;
+
+            &.oc-old {
+                color: #777;
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    p {
+        text-indent: initial;
+        text-align: initial;
+        margin: 0 0 5px;
+        font-size: 14px;
+    }
+
+    a {
+        font-weight: 700;
+        font-size: 16px;
+    }
+}
+
+#sidebar {
+
+    .row > div {
+        padding: 0 5px 0 0;
+    }
+
+    .oc-details {
+        color: $color-17;
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+
+        @media (min-width: 768px) {
+            font-size: 13px;
+        }
+
+        @media (min-width: 900px) {
+            font-size: 15px;
+        }
+
+        @media (min-width: 1000px) {
+            font-size: 18px;
+        }
+
+        @media (min-width: 1290px) {
+            font-size: 22px;
+        }
+    }
+
+    .oc-details-grid {
+        width: 100%;
+        float: left;
+
+        @media (min-width: 480px) {
+            width: 50%;
+        }
+
+        @media (min-width: 768px) {
+            width: 100%;
+        }
+
+        @media (min-width: 1200px) {
+            width: 50%;
+        }
+    }
+
+    .oc-cat-div {
+        margin: 0 0 20px 0;
+
+
+        input, label, span {
+            margin: 0;
+            padding: 0;
+        }
+
+        b {
+
+            span {
+                font-weight: 700;
+            }
+        }
+
+        span, label {
+            color: $color-14;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+
+            +label {
+                font-family: "Glyphicons Halflings";
+                font-size: 18px;
+                color: $color-15;
+                display:inline-block;
+                padding: 0;
+                cursor: pointer;
+
+                &:before {
+                    content: "\e157";
+                }
+            }
+
+            &:checked + label {
+                &:before {
+                    content: "\e067";
+                }
+            }
+
+            &[disabled] ~ label {
+                opacity: 0.5;
+                cursor: default;
+            }
+        }
+
+        .oc-color {
+            display: inline-block;
+            margin: 0 0 4px 0;
+
+            input[type="checkbox"] {
+                display: none;
+
+                + label {
+                    font-family: "Glyphicons Halflings";
+                    font-size: 14px;
+                    text-align: center;
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 5px;
+                    display:inline-block;
+                    padding: 0;
+
+                    &:before {
+                        content: "\e013";
+                        color: transparent;
+                        text-shadow: none;
+                    }
+                }
+
+                &:checked + label {
+                    &:before {
+                        content: "\e013";
+                        color: $color-16;
+                        text-shadow:
+                            0px  0px 0px rgba(255,255,255, 1),
+                            -1px -1px 2px rgba(255,255,255, 75/100),
+                            1px -1px 2px rgba(255,255,255, 75/100),
+                            -1px  1px 2px rgba(255,255,255, 75/100),
+                            1px  1px 2px rgba(255,255,255, 75/100);
+                    }
+                }
+            }
+        }
+
+        .oc-size {
+            display: inline-block;
+            margin: 0 0 4px 0;
+
+            input[type="checkbox"] {
+                display: none;
+
+                + label {
+                    color: #FFF;
+                    font-size: 11px;
+                    word-spacing: -7px;
+                    text-align: center;
+                    min-width: 58px;
+                    background: $color-15;
+                    border-radius: 2px;
+                    display:inline-block;
+                    padding: 4px 0 8px 0;
+
+                    &:before {
+                        content: "";
+                    }
+                }
+
+                &:checked + label {
+                    background: adjust-hue(darken($color-15, 20), 15);
+
+                    &:before {
+                        content: "";
+                    }
+                }
+            }
+        }
+
+        .oc-details-label {
+            position: relative;
+            top: -4px;
+            left: -3px;
+            padding: 0 0 0 2px;
+            cursor: pointer;
+
+            &.oc-flag {
+
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    position: relative;
+                    top: 3px;
+                    left: 3px;
+                    width: 16px;
+                    height: 16px;
+                }
+
+                &.oc-at:after {
+                    background: url('../imgs/flags/at.png');
+                }
+                &.oc-ch:after {
+                    background: url('../imgs/flags/ch.png');
+                }
+                &.oc-de:after {
+                    background: url('../imgs/flags/de.png');
+                }
+                &.oc-fi:after {
+                    background: url('../imgs/flags/fi.png');
+                }
+                &.oc-fr:after {
+                    background: url('../imgs/flags/fr.png');
+                }
+                &.oc-il:after {
+                    background: url('../imgs/flags/il.png');
+                }
+                &.oc-uk:after {
+                    background: url('../imgs/flags/uk.png');
+                }
+            }
+        }
+    }
+
+    .oc-title {
+        color: #636363;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+    }
+}
+
+div[data-style="accordion"] {
+
+    .panel-heading {
+        padding: 0;
+
+        .panel-title > a {
+            padding: 10px 15px 10px 35px;
+            display: block;
+            position: relative;
+
+            &:before {
+                font-family: "Glyphicons Halflings";
+                position: absolute;
+                left: 10px;
+            }
+
+            &:not(.collapsed):before {
+                content: "\e259";
+                top: 12px;
+            }
+            &.collapsed:before {
+                content: "\e258";
+                top: 10px;
+            }
+        }
+    }
+}
+
+.oc-required {
+    margin: 0 0 0 5px;
+    color: #F00;
+}
+
+#oc-map-canvas {
+    width: 100%;
+    height: 300px;
+    margin: 15px 0;
+    box-shadow: 0 0 5px rgba(45, 45, 45, 5/10);
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        height: 400px;
+    }
+
+    @media (min-width: 1600px) {
+        height: 500px;
+    }
+
+    > iframe {
+        width: 100%;
+        height: 100%;
+
+        /*this class is adding automatically in gmaps-scroll.js*/
+        &.oc-scrolloff {
+            pointer-events: none;
+        }
+    }
+}
+
+.oc-order-preview {
+    margin: 0 0 30px;
+
+    > .row {
+        > div {
+            display: inline-block;
+            padding: 5px;
+            float: left;
+
+            &:nth-of-type(1) {
+                width: 25%;
+
+                @media (min-width: 480px) {
+                    width: 40%;
+                }
+            }
+
+            &:nth-of-type(2) {
+                width: 40%;
+                text-align: right;
+
+                @media (min-width: 480px) {
+                    width: 25%;
+                }
+            }
+
+            &:nth-of-type(3) {
+                width: 25%;
+                text-align: right;
+            }
+
+            &:nth-of-type(4) {
+                width: 10%;
+                text-align: center;
+            }
+
+            &.oc-total {
+                width: 100%;
+                text-align: right;
+            }
+
+            .oc-thumbnail {
+                @media (min-width: 480px) {
+                    width: 40%;
+                    float: left;
+                    display: inline-block;
+                }
+
+                img {
+                    max-height: 100px;
+                }
+
+            }
+            .oc-explanation {
+                padding: 10px 0 0;
+
+                @media (min-width: 480px) {
+                    width: 60%;
+                    padding: 0 0 0 10px;
+                    display: inline-block;
+                }
+            }
+        }
+
+        &.oc-preview {
+            padding: 10px 0;
+            font-size: 12px;
+            border-bottom: 1px dashed #CCC;
+
+            @media (min-width: 480px) {
+                font-size: 14px;
+            }
+
+            &:nth-last-of-type(2) {
+                border: 0;
+            }
+        }
+    }
+
+    .oc-titlebar {
+        background: $color-15;
+        color: #FFF;
+        font-weight: 700;
+        border-radius: 4px;
+    }
+
+    select {
+        display: inline-block;
+        width: auto;
+        padding: 0;
+        font-size: 12px;
+
+        @media (min-width: 480px) {
+            font-size: 14px;
+        }
+    }
+
+    button {
+        outline: 0;
+        border: 0;
+        background: transparent;
+        color: #A94442;
+        font: bold 30px Arial, Helvetica, sans-serif;
+    }
+}
+
+footer {
+    display: table-row;
+
+    a,
+    .oc-copyright {
+        color: $color-06;
+        font-weight: 700;
+        font-size: 14px;
+
+        @media (min-width: 768px) {
+            font-size: 16px;
+        }
+
+        @media (min-width: 992px) {
+            font-size: 18px;
+        }
+    }
+
+    a:hover, a:focus {
+        color: lighten($color-06, 10);
+    }
+}
+
+.oc-footer-one {
+    border-top: 2px solid $color-06;
+    border-bottom: 2px solid $color-06;
+    background: $color-07;
+    padding: 20px;
+    line-height: 40px;
+
+    form[name="subscribe-form"] {
+        label {
+            font-weight: 400;
+            line-height: 0;
+        }
+
+        input {
+            padding: 6px 55px 6px 12px;
+        }
+
+        button[type="submit"] {
+            position: absolute;
+            right: 16px;
+            bottom: 1px;
+            border: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            @media (min-width: 768px) {
+                right: 15px;
+                bottom: 16px;
+            }
+        }
+    }
+}
+
+.oc-footer-two {
+    background-image: url(../imgs/footerbg.gif);
+    background-color: #D2D7C3;
+    padding: 20px;
+
+    .oc-counter {
+        margin: 20px 0;
+    }
+
+    .oc-robo {
+        color: $color-08;
+        font-size: $footer-font-size;
+        line-height: 1.1;
+        text-align: justify;
+        margin: 0 -20px;
+
+        h1 {
+            font-size: $footer-font-size * 1.25;
+        }
+    }
+}
+
+#oc-confirmation {
+    padding: 0! important; /*prevent padding-right when modal window is opened*/
+    .modal-header {
+        background-color: #C9302C;
+        color: #FFF;
+        border-radius: 4px 4px 0 0;
+    }    
+}
