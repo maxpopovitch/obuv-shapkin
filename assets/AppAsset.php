@@ -27,14 +27,15 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/jquery-2.1.3.min.js',
         'js/bootstrap.min.js',
-        'js/cart.js',
-        'js/gmaps-scroll.js',
-        'js/offcanvas.js',
-        'js/ontop.js',
-        'js/range-value.js',
+        'js/menu-highlight.js',
         'js/sidebar-height.js',
-        'js/thumbs.js',
+        'js/offcanvas.js',
+        'js/range-value.js',
+        'js/ontop.js',
+        'js/gmaps-scroll.js',
         'js/validator.min.js',
+        'js/cart.js',
+        'js/thumbs.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

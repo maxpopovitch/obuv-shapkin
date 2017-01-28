@@ -17,13 +17,14 @@ $(document).ready(function () {
         articleCheck();
     });
     function articleCheck() {
+        var form = $('form[name="order-form"]');
         if (!$('.oc-preview').length) {
-            $('form[name="order-form"]').hide();
-            $('.oc-ware-div > h3:nth-of-type(1)').addClass('oc-empty');
-            $('.oc-ware-div > h3:nth-of-type(2)').removeClass('oc-empty');
+            form.hide();
+            form.closest('.oc-ware-div > h3:nth-of-type(1)').addClass('oc-empty');
+            form.closest('.oc-ware-div > h3:nth-of-type(2)').removeClass('oc-empty');
         } else {
-            $('.oc-ware-div > h3:nth-of-type(1)').removeClass('oc-empty');
-            $('.oc-ware-div > h3:nth-of-type(2)').addClass('oc-empty');
+            form.closest('.oc-ware-div > h3:nth-of-type(1)').removeClass('oc-empty');
+            form.closest('.oc-ware-div > h3:nth-of-type(2)').addClass('oc-empty');
         }
     }
     articleCheck();

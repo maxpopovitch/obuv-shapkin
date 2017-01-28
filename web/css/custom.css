@@ -73,6 +73,8 @@ textarea {
     .oc-navbar li:last-of-type:hover, .oc-navbar li:last-of-type:focus {
       outline: 0;
       background: #7C4734; }
+    .oc-navbar li.active a {
+      background-color: #A6C550 !important; }
   .oc-navbar .navbar-brand {
     margin: 0;
     padding: 0;
@@ -826,7 +828,7 @@ footer {
       footer a,
       footer .oc-copyright {
         font-size: 18px; } }
-  footer a:hover, footer a:focus {
+  footer a:hover, footer a:focus, footer .active {
     color: #8f9f1d; }
 
 .oc-footer-one {

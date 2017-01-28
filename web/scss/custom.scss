@@ -152,6 +152,12 @@ textarea {
                 background: $color-01;
             }
         }
+
+        &.active {
+            a {
+                background-color: $color-02 !important;
+            }
+        }
     }
 
     .navbar-brand {
@@ -544,11 +550,11 @@ textarea {
     .oc-empty {
         display: none;
     }
-    
+
     .oc-order-status {
         padding: 5px;
     }
-    
+
     .oc-order-status-icon {
         padding: 5px;
         margin: 10px 0;
@@ -1189,7 +1195,7 @@ footer {
         }
     }
 
-    a:hover, a:focus {
+    a:hover, a:focus, .active {
         color: lighten($color-06, 10);
     }
 }

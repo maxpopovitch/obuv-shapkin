@@ -7,6 +7,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -43,18 +44,18 @@ AppAsset::register($this);
                         <ul class="nav navbar-nav">
                             <li><a href="womenshoes.htm">Женская<br/> обувь</a></li>
                             <li><a href="menshoes.htm">Мужская<br/> обувь</a></li>
-                            <li><a href="trademarks.htm">Торговые<br/> марки</a></li>
-                            <li><a href="tips.htm">Советы<br/> покупателю</a></li>
+                            <li><a href="<?= Url::to(['site/brands']) ?>">Торговые<br/> марки</a></li>
+                            <li><a href="<?= Url::to(['site/tips']) ?>">Советы<br/> покупателю</a></li>
                             <li><a href="payment-and-delivery.htm">Оплата<br/> и доставка</a></li>
                             <li><a href="feedback.htm">Обратная<br/> связь</a></li>
                             <li>
                                 <div class="oc-lang">
                                     <span>Язык:&nbsp;</span><br/>
-                                    <select onchange="location = this.options[this.selectedIndex].value;">
+                                    <select disabled onchange="location = this.options[this.selectedIndex].value;">
                                         <option value="http://www.obuv.co/">Русский</option>
-                                        <option value="http://www.obuv.co/ua">Українська</option>
-                                        <option value="http://www.obuv.co/en">English</option>
-                                        <option value="http://www.obuv.co/de">Deutsch</option>
+                                        <!--<option value="http://www.obuv.co/ua">Українська</option>-->
+                                        <!--<option value="http://www.obuv.co/en">English</option>-->
+                                        <!--<option value="http://www.obuv.co/de">Deutsch</option>-->
                                     </select>​
                                 </div>
                             </li>
@@ -79,7 +80,7 @@ AppAsset::register($this);
                         <i class="glyphicon glyphicon-map-marker"></i>
                     </div>
                     <div class="oc-info">
-                        <a href="contacts.htm">г. Донецк, ул. Университетская, 63, салон обуви <q>Бумеранг</q> (наш партнер)</a>
+                        <a href="<?= Url::to(['site/contacts']) ?>">г. Донецк, ул. Университетская, 63, салон обуви <q>Бумеранг</q> (наш партнер)</a>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -88,13 +89,21 @@ AppAsset::register($this);
                         <i class="glyphicon glyphicon-shopping-cart"></i>
                     </div>
                     <div class="oc-info">
-                        <a href="cart.htm">100 товаров на сумму 99999 грн.</a>
+                        <a href="<?= Url::to(['site/cart']) ?>">100 товаров на сумму 99999 грн.</a>
                     </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
             <section class="oc-breadcrumbs">
-                <h1>Интернет-магазин обуви Obuv.CO. Новые поступления (на 26 мая 2014).</h1>
+                <h1>
+                    <?php
+                    if (isset($this->params['header'])) {
+                        echo $this->params['header'];
+                    } else {
+                        echo '<a href="/">obuv.co</a>';
+                    }
+                    ?>
+                </h1>
             </section>
         </header>
 
@@ -114,8 +123,13 @@ AppAsset::register($this);
                             </div>
                         </div>
 
-                        <?= $content ?>
-
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="oc-ware-div">
+                                    <?= $content ?>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <form name="oc-details-form" action="index.php" method="post">
@@ -193,7 +207,7 @@ AppAsset::register($this);
                                     </div>
 
                                     <div class="oc-cat-div">
-                                        <div class="oc-title">Размер (<a href="sizes.htm">таблица</a>)</div>
+                                        <div class="oc-title">Размер (<a href="<?= Url::to(['site/sizes']) ?>">таблица</a>)</div>
 
                                         <div class="oc-size">
                                             <input type="checkbox" name="oc-size-4" id="oc-size-4" value="4"/>
@@ -637,11 +651,11 @@ AppAsset::register($this);
             <div class="oc-footer-one">
                 <div class="container-fluid">
                     <div class="col-sm-4">
-                        <a href="how-to-order.htm">Как сделать заказ</a>
+                        <a href="<?= Url::to(['site/how-to-order']) ?>">Как сделать заказ</a>
                         <br/>
-                        <a href="sizes.htm">Таблица размеров</a>
+                        <a href="<?= Url::to(['site/sizes']) ?>">Таблица размеров</a>
                         <br/>
-                        <a href="contacts.htm">Контакты</a>
+                        <a href="<?= Url::to(['site/contacts']) ?>">Контакты</a>
                     </div>
                     <div class="col-sm-5">
                         <a href="payment-and-delivery.htm">Оплата и доставка</a>
@@ -664,7 +678,7 @@ AppAsset::register($this);
             <div class="oc-footer-two">
                 <div class="container-fluid">
                     <div class="col-xs-12">
-                        <span class="oc-copyright">Copyright &copy; obuv.co, 2013 &mdash; 2015</span>
+                        <span class="oc-copyright">Copyright &copy; obuv.co, 2013 &mdash; <?= date('Y') ?></span>
                     </div>
                     <div class="col-xs-12">
                         <div class="oc-counter">
