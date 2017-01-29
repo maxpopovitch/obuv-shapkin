@@ -120,7 +120,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionContacts() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Контакты';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Контакты';
         return $this->render('contacts');
     }
 
@@ -130,7 +130,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionBrands() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Торговые марки';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Торговые марки';
         return $this->render('brands');
     }
 
@@ -140,8 +140,18 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionTips() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Советы покупателю';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Советы покупателю';
         return $this->render('tips');
+    }
+
+    /**
+     * Displays payment-and-delivery page.
+     *
+     * @return string
+     */
+    public function actionPaymentAndDelivery() {
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Оплата и доставка';
+        return $this->render('payment-and-delivery');
     }
 
     /**
@@ -150,6 +160,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionFeedback() {
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Обратная связь';
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -168,7 +179,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionSizes() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Таблица размеров';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Таблица размеров';
         return $this->render('sizes');
     }
 
@@ -178,8 +189,28 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionHowToOrder() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Как сделать заказ';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Как сделать заказ';
         return $this->render('how-to-order');
+    }
+
+    /**
+     * Displays moneyback page.
+     *
+     * @return string
+     */
+    public function actionMoneyback() {
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Условия обмена и возврата';
+        return $this->render('moneyback');
+    }
+
+    /**
+     * Displays guarantee page.
+     *
+     * @return string
+     */
+    public function actionGuarantee() {
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Гарантийные обязательства';
+        return $this->render('guarantee');
     }
 
     /**
@@ -188,7 +219,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionCart() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Корзина';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Корзина';
         return $this->render('cart');
     }
 
@@ -198,7 +229,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionConfirmation() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Спасибо!';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Спасибо!';
         return $this->render('confirmation');
     }
 

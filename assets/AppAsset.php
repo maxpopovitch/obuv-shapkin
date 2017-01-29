@@ -27,7 +27,6 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/jquery-2.1.3.min.js',
         'js/bootstrap.min.js',
-        'js/menu-highlight.js',
         'js/sidebar-height.js',
         'js/offcanvas.js',
         'js/range-value.js',

@@ -44,10 +44,10 @@ AppAsset::register($this);
                         <ul class="nav navbar-nav">
                             <li><a href="womenshoes.htm">Женская<br/> обувь</a></li>
                             <li><a href="menshoes.htm">Мужская<br/> обувь</a></li>
-                            <li><a href="<?= Url::to(['site/brands']) ?>">Торговые<br/> марки</a></li>
-                            <li><a href="<?= Url::to(['site/tips']) ?>">Советы<br/> покупателю</a></li>
-                            <li><a href="payment-and-delivery.htm">Оплата<br/> и доставка</a></li>
-                            <li><a href="<?= Url::to(['site/feedback']) ?>">Обратная<br/> связь</a></li>
+                            <li class="<?= (Url::current() === '/index.php?r=site%2Fbrands') ? 'active' : '' ?>"><a href="<?= Url::to(['site/brands']) ?>">Торговые<br/> марки</a></li>
+                            <li class="<?= (Url::current() === '/index.php?r=site%2Ftips') ? 'active' : '' ?>"><a href="<?= Url::to(['site/tips']) ?>">Советы<br/> покупателю</a></li>
+                            <li class="<?= (Url::current() === '/index.php?r=site%2Fpayment-and-delivery') ? 'active' : '' ?>"><a href="<?= Url::to(['site/payment-and-delivery']) ?>">Оплата<br/> и доставка</a></li>
+                            <li class="<?= (Url::current() === '/index.php?r=site%2Ffeedback') ? 'active' : '' ?>"><a href="<?= Url::to(['site/feedback']) ?>">Обратная<br/> связь</a></li>
                             <li>
                                 <div class="oc-lang">
                                     <span>Язык:&nbsp;</span><br/>
@@ -651,18 +651,18 @@ AppAsset::register($this);
             <div class="oc-footer-one">
                 <div class="container-fluid">
                     <div class="col-sm-4">
-                        <a href="<?= Url::to(['site/how-to-order']) ?>">Как сделать заказ</a>
+                        <a class="<?= (Url::current() === '/index.php?r=site%2Fhow-to-order') ? 'active' : '' ?>" href="<?= Url::to(['site/how-to-order']) ?>">Как сделать заказ</a>
                         <br/>
-                        <a href="<?= Url::to(['site/sizes']) ?>">Таблица размеров</a>
+                        <a class="<?= (Url::current() === '/index.php?r=site%2Fsizes') ? 'active' : '' ?>" href="<?= Url::to(['site/sizes']) ?>">Таблица размеров</a>
                         <br/>
-                        <a href="<?= Url::to(['site/contacts']) ?>">Контакты</a>
+                        <a class="<?= (Url::current() === '/index.php?r=site%2Fcontacts') ? 'active' : '' ?>" href="<?= Url::to(['site/contacts']) ?>">Контакты</a>
                     </div>
                     <div class="col-sm-5">
-                        <a href="payment-and-delivery.htm">Оплата и доставка</a>
+                        <a class="<?= (Url::current() === '/index.php?r=site%2Fpayment-and-delivery') ? 'active' : '' ?>" href="<?= Url::to(['site/payment-and-delivery']) ?>">Оплата и доставка</a>
                         <br/>
-                        <a href="exchange-and-moneyback.htm">Условия обмена и возврата</a>
+                        <a class="<?= (Url::current() === '/index.php?r=site%2Fmoneyback') ? 'active' : '' ?>" href="<?= Url::to(['site/moneyback']) ?>">Условия обмена и возврата</a>
                         <br/>
-                        <a href="guarantee.htm">Гарантийные обязательства</a>
+                        <a class="<?= (Url::current() === '/index.php?r=site%2Fguarantee') ? 'active' : '' ?>" href="<?= Url::to(['site/guarantee']) ?>">Гарантийные обязательства</a>
                     </div>
                     <div class="col-sm-3">
                         <form name="subscribe-form" action="index.php" method="post">
