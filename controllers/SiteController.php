@@ -10,7 +10,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 
 class SiteController extends Controller {
-    
+
     public function init() {
         parent::init();
         Yii::$app->language = 'ru';
@@ -120,7 +120,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionContacts() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name .'</a>' . '\ Контакты';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Контакты';
         return $this->render('contacts');
     }
 
@@ -130,7 +130,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionBrands() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name .'</a>' . '\ Торговые марки';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Торговые марки';
         return $this->render('brands');
     }
 
@@ -140,8 +140,26 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionTips() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name .'</a>' . '\ Советы покупателю';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Советы покупателю';
         return $this->render('tips');
+    }
+
+    /**
+     * Displays feedback page.
+     *
+     * @return string
+     */
+    public function actionFeedback() {
+        $model = new ContactForm();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        }
+        return $this->render('feedback', [
+                    'model' => $model,
+                    'rules' => ['name', 'required', 'message' => 'Please choose a username.'],
+        ]);
     }
 
     /**
@@ -150,7 +168,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionSizes() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name .'</a>' . '\ Таблица размеров';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Таблица размеров';
         return $this->render('sizes');
     }
 
@@ -160,7 +178,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionHowToOrder() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name .'</a>' . '\ Как сделать заказ';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Как сделать заказ';
         return $this->render('how-to-order');
     }
 
@@ -170,7 +188,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionCart() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name .'</a>' . '\ Корзина';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Корзина';
         return $this->render('cart');
     }
 
@@ -180,7 +198,7 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionConfirmation() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name .'</a>' . '\ Спасибо!';
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . '\ Спасибо!';
         return $this->render('confirmation');
     }
 

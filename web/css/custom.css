@@ -292,7 +292,7 @@ textarea {
   background: #FFF; }
   .oc-content .oc-margin {
     margin: 10px 0 0 0; }
-  .oc-content p {
+  .oc-content p:not(.help-block) {
     text-indent: 20px;
     font-size: 15px;
     text-align: justify; }

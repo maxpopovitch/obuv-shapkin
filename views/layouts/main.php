@@ -47,7 +47,7 @@ AppAsset::register($this);
                             <li><a href="<?= Url::to(['site/brands']) ?>">Торговые<br/> марки</a></li>
                             <li><a href="<?= Url::to(['site/tips']) ?>">Советы<br/> покупателю</a></li>
                             <li><a href="payment-and-delivery.htm">Оплата<br/> и доставка</a></li>
-                            <li><a href="feedback.htm">Обратная<br/> связь</a></li>
+                            <li><a href="<?= Url::to(['site/feedback']) ?>">Обратная<br/> связь</a></li>
                             <li>
                                 <div class="oc-lang">
                                     <span>Язык:&nbsp;</span><br/>

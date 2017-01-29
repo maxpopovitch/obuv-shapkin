@@ -23,10 +23,12 @@ class ContactForm extends Model
     public function rules()
     {
         return [
-            // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            // name, email and body are required
+            ['name', 'required', 'message' => 'Как вас зовут?'],
+            ['email', 'required', 'message' => 'Укажите адрес e-mail'],
+            ['body', 'required', 'message' => 'Напишите сообщение.'],
             // email has to be a valid email address
-            ['email', 'email'],
+            ['email', 'email', 'message' => 'Пример правильного адреса email: john@mail.com'],
             // verifyCode needs to be entered correctly
             ['verifyCode', 'captcha'],
         ];
@@ -53,7 +55,6 @@ class ContactForm extends Model
             Yii::$app->mailer->compose()
                 ->setTo($email)
                 ->setFrom([$this->email => $this->name])
-                ->setSubject($this->subject)
                 ->setTextBody($this->body)
                 ->send();
 

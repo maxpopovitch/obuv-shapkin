@@ -4,4 +4,5 @@ $(document).ready(function () {
     $('#oc-how-to-order').closest('body').find('footer a[href*="how-to-order"]').addClass('active');
     $('#oc-sizes').closest('body').find('footer a[href*="sizes"]').addClass('active');
     $('#oc-contacts').closest('body').find('footer a[href*="contacts"]').addClass('active');
+    $('#oc-feedback').closest('body').find('footer a[href*="feedback"]').addClass('active');
 });
