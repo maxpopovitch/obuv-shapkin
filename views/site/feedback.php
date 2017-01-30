@@ -10,14 +10,12 @@ use yii\captcha\Captcha;
 $this->title = 'obuv.co | Обратная связь | Интернет-магазин обуви. Доставка по Украине.';
 ?>
 
-<div id="oc-feedback"></div>
-
 <h3>Форма обратной связи</h3>
 
 <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
     <div class="alert alert-success">
-        Thank you for contacting us. We will respond to you as soon as possible.
+        Спасибо за ваше сообщение. Мы свяжемся с вами в ближайшее время.
     </div>
 
     <p>

@@ -4,8 +4,6 @@
 $this->title = 'obuv.co | Торговые марки | Интернет-магазин обуви. Доставка по Украине.';
 ?>
 
-<div id="oc-brands"></div>
-
 <div class="oc-ware">
     <a class="oc-brand" href="ara.htm" title="Ara (Германия)">
         <div class="oc-ware-photo">
