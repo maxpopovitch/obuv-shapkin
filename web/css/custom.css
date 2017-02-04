@@ -837,22 +837,21 @@ footer {
   background: #E3EAC0;
   padding: 20px;
   line-height: 40px; }
-  .oc-footer-one form[name="subscribe-form"] label {
+  .oc-footer-one #subscribe-form label {
     font-weight: 400;
     line-height: 0; }
-  .oc-footer-one form[name="subscribe-form"] input {
+  .oc-footer-one #subscribe-form input {
     padding: 6px 55px 6px 12px; }
-  .oc-footer-one form[name="subscribe-form"] button[type="submit"] {
+  .oc-footer-one #subscribe-form button[type="submit"] {
     position: absolute;
     right: 16px;
-    bottom: 1px;
+    top: 41px;
     border: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
     @media (min-width: 768px) {
-      .oc-footer-one form[name="subscribe-form"] button[type="submit"] {
-        right: 15px;
-        bottom: 16px; } }
+      .oc-footer-one #subscribe-form button[type="submit"] {
+        right: 15px; } }
 
 .oc-footer-two {
   background-image: url(../imgs/footerbg.gif);

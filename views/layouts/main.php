@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use app\widgets\SubscribeWidget;
 use app\assets\AppAsset;
 use yii\helpers\Url;
 
@@ -665,14 +666,9 @@ AppAsset::register($this);
                         <a class="<?= (Url::current() === '/index.php?r=site%2Fguarantee') ? 'active' : '' ?>" href="<?= Url::to(['site/guarantee']) ?>">Гарантийные обязательства</a>
                     </div>
                     <div class="col-sm-3">
-                        <form name="subscribe-form" action="index.php" method="post">
-                            <div class="form-group">
-                                <label for="subscribemail">Подписка на новости:</label>
-                                <input type="email" class="form-control" id="subscribemail" required placeholder="Ваш e-mail" oninvalid="this.setCustomValidity('Проверьте адрес e-mail')"/>
-                            </div>
-                            <button type="submit" class="btn btn-primary">OK</button>
-                        </form>
+                        <?= SubscribeWidget::widget() ?>
                     </div>
+                    
                 </div>
             </div>
             <div class="oc-footer-two">

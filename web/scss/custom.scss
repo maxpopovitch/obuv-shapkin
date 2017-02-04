@@ -1207,7 +1207,7 @@ footer {
     padding: 20px;
     line-height: 40px;
 
-    form[name="subscribe-form"] {
+    #subscribe-form {
         label {
             font-weight: 400;
             line-height: 0;
@@ -1220,14 +1220,13 @@ footer {
         button[type="submit"] {
             position: absolute;
             right: 16px;
-            bottom: 1px;
+            top: 41px;
             border: 0;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
 
             @media (min-width: 768px) {
                 right: 15px;
-                bottom: 16px;
             }
         }
     }

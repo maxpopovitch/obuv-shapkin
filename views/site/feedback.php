@@ -59,7 +59,7 @@ $this->title = 'obuv.co | Обратная связь | Интернет-маг�
     ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary btn-lg', 'name' => 'contact-button']) ?>
+        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary btn-lg']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
