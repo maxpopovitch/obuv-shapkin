@@ -43,11 +43,11 @@ class Brand extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Brand name',
-            'logo' => 'Logo',
-            'country_name' => 'Country name',
-            'country_code' => 'Country code',
-            'description' => 'Description',
+            'name' => 'Торговая марка',
+            'logo' => 'Путь к логотипу',
+            'country_name' => 'Страна',
+            'country_code' => 'Код страны',
+            'description' => 'Описание',
         ];
     }
 

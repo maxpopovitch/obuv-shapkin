@@ -37,6 +37,8 @@ class BrandController extends Controller
     {
         $searchModel = new BrandSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Торговые марки';
 
         return $this->render('index', [
             'searchModel' => $searchModel,

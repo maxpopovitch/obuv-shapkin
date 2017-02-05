@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\search\BrandSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Brands';
+$this->title = 'Торговые марки';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="brand-index">
@@ -16,14 +16,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Brand', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-plus"></span> Добавить торговую марку', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'tableOptions' => [
-            'class' => 'table table-striped table-condensed table-bordered table-hover'
+            'class' => 'table table-striped table-condensed table-hover'
         ],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
