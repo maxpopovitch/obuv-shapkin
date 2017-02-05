@@ -105,9 +105,12 @@ body {
     display: table;
 }
 
-a, a:link, a:visited, a:hover, a:focus,
-.nav > li > a, .nav > li > a:visited, .nav > li > a:hover, .nav > li > a:focus {
+a:not(.btn), .nav > li > a:not(.btn) {
     text-decoration: underline;
+
+    &:link, &:visited, &:hover, &:focus {
+        text-decoration: underline;
+    }
 }
 
 .container-fluid,
@@ -475,7 +478,7 @@ textarea {
         margin: 10px 0 0 0;
     }
 
-    p:not(.help-block) {
+    .default-p {
         text-indent: 20px;
         font-size: 15px;
         text-align: justify;
