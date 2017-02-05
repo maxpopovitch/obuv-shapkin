@@ -18,20 +18,27 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Brand', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'tableOptions' => [
+            'class' => 'table table-striped table-condensed table-bordered table-hover'
+        ],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
+            [
+                'attribute' => 'id',
+                'headerOptions' => ['width' => '60px']
+            ],
             'name',
             'logo',
             'country_name',
             'country_code',
             'description:ntext',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+                'headerOptions' => ['width' => '65px']],
         ],
-    ]); ?>
+    ]);
+    ?>
 </div>

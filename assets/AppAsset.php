@@ -23,6 +23,7 @@ class AppAsset extends AssetBundle
         'css/offcanvas.css',
         'css/ontop.css',
         'css/receipt.css',
+        'css/grid-view.css',
     ];
     public $js = [
         'js/bootstrap.min.js',
