@@ -28,7 +28,7 @@ class ContactForm extends Model
             ['email', 'required', 'message' => 'Укажите адрес e-mail'],
             ['body', 'required', 'message' => 'Напишите сообщение.'],
             // email has to be a valid email address
-            ['email', 'email', 'message' => 'Пример правильного адреса email: john@mail.com'],
+            ['email', 'email', 'message' => 'Например, john@mail.com'],
             // verifyCode needs to be entered correctly
             ['verifyCode', 'captcha'],
         ];

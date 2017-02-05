@@ -25,7 +25,6 @@ class AppAsset extends AssetBundle
         'css/receipt.css',
     ];
     public $js = [
-        'js/jquery-2.1.3.min.js',
         'js/bootstrap.min.js',
         'js/sidebar-height.js',
         'js/offcanvas.js',

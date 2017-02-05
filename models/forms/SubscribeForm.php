@@ -21,7 +21,7 @@ class SubscribeForm extends Model
             // email is required
             ['email', 'required', 'message' => 'Укажите email'],
             // email has to be a valid email address
-            ['email', 'email', 'message' => 'Например: john@mail.com'],
+            ['email', 'email', 'message' => 'Например, john@mail.com'],
         ];
     }
 
