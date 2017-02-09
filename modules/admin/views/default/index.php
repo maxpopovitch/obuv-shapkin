@@ -20,19 +20,19 @@ use yii\bootstrap\ActiveForm;
         ]);
         ?>
 
-        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'username')->textInput(['autofocus' => true]); ?>
 
-        <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'password')->passwordInput(); ?>
 
         <?=
         $form->field($model, 'rememberMe')->checkbox([
             'template' => "<div class=\"col-lg-offset-2 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-7\">{error}</div>",
-        ])
+        ]);
         ?>
 
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                <?= Html::submitButton('Login', ['class' => 'btn btn-primary']) ?>
             </div>
         </div>
 
@@ -43,8 +43,7 @@ use yii\bootstrap\ActiveForm;
             To modify the username/password, please check out the code <code>app\models\User::$users</code>.
         </div>
     </div>
-<?php } ?>
-<?php if (!Yii::$app->user->isGuest) { ?>
+<?php } else { ?>
     <div class="admin-default-index">
         <!--<h1><?= $this->context->action->uniqueId ?></h1>-->
         <a class="btn btn-primary" href="index.php?r=admin/brand">Торговые марки</a>
