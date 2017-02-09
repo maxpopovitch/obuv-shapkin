@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\forms\LoginForm;
 use app\models\forms\ContactForm;
+use app\models\Brand;
 
 class SiteController extends Controller {
 
@@ -132,6 +133,19 @@ class SiteController extends Controller {
     public function actionBrands() {
         $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Торговые марки';
         return $this->render('brands');
+    }
+
+    /**
+     * Displays brand page.
+     *
+     * @return string
+     */
+    public function actionBrand($id) {
+        $brand = Brand::findOne($id);
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="index.php?r=site%2Fbrands">Торговые марки</a>' . ' \ ' . $brand->name;
+        return $this->render('brand', [
+                    'brand' => $brand
+        ]);
     }
 
     /**

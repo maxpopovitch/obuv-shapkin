@@ -293,7 +293,7 @@ textarea {
   background: #FFF; }
   .oc-content .oc-margin {
     margin: 10px 0 0 0; }
-  .oc-content .default-p {
+  .oc-content .default-p, .oc-content .oc-brand-view-description p {
     text-indent: 20px;
     font-size: 15px;
     text-align: justify; }
@@ -876,5 +876,18 @@ footer {
     background-color: #C9302C;
     color: #FFF;
     border-radius: 4px 4px 0 0; }
+
+.oc-brand-view-logo {
+  margin: 0 10px 10px 20px; }
+  @media (min-width: 768px) {
+    .oc-brand-view-logo {
+      display: inline-block; } }
+
+.oc-brand-view-title {
+  margin-left: 20px !important; }
+  @media (min-width: 768px) {
+    .oc-brand-view-title {
+      margin-left: 0;
+      display: inline-block; } }
 
 /*# sourceMappingURL=custom.css.map */
