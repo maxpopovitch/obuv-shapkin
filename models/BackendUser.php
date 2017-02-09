@@ -14,7 +14,7 @@ use yii\web\IdentityInterface;
  * @property string $auth_key
  */
 class BackendUser extends \yii\db\ActiveRecord implements IdentityInterface {
-    
+
     /**
      * @inheritdoc
      */
@@ -29,7 +29,8 @@ class BackendUser extends \yii\db\ActiveRecord implements IdentityInterface {
         return [
             [['username', 'password_hash', 'auth_key'], 'required'],
             [['username'], 'string', 'max' => 10],
-            [['password_hash'], 'string', 'max' => 30],
+            [['username'], 'unique'],
+            [['password_hash'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 255],
         ];
     }
@@ -71,7 +72,17 @@ class BackendUser extends \yii\db\ActiveRecord implements IdentityInterface {
     }
 
     public function validatePassword($password) {
-        return $this->password_hash === $password;
+         {
+            return Yii::$app->security->validatePassword($password, $this->password_hash);
+        }
+    }
+
+    public function setPassword($password) {
+        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+    }
+
+    public function generateAuthKey() {
+        $this->auth_key = Yii::$app->security->generateRandomString();
     }
 
 }
