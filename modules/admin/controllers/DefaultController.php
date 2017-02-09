@@ -41,19 +41,11 @@ class DefaultController extends Controller {
      * @return string
      */
     public function actionIndex() {
-        if (!Yii::$app->user->isGuest) {
-            $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Администрирование';
-        } else {
-            $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Администрирование';
-        }
-
         $model = new LoginForm();
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Администрирование';
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->render('index', [
-                        'model' => $model,
-            ]);
+            return $this->render('index');
         }
-
 
         return $this->render('index', [
                     'model' => $model,
