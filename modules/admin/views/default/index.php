@@ -49,6 +49,7 @@ use yii\bootstrap\ActiveForm;
         <a class="btn btn-primary" href="index.php?r=admin/brand">Торговые марки</a>
         <a class="btn btn-primary" href="index.php?r=admin/category">Категории</a>
         <a class="btn btn-primary" href="index.php?r=admin/color">Цвета</a>
+        <a class="btn btn-primary" href="index.php?r=admin/heel-height">Высоты каблуков</a>
         <p>
             This is the view content for action "<?= $this->context->action->id ?>".
             The action belongs to the controller "<?= get_class($this->context) ?>"
