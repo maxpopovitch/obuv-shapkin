@@ -19,7 +19,7 @@ class BrandSearch extends Brand
     {
         return [
             [['id'], 'integer'],
-            [['name', 'logo', 'country_name', 'country_code', 'description'], 'safe'],
+            [['name', 'logo', 'country_name', 'country_code', 'position', 'description'], 'safe'],
         ];
     }
 
@@ -60,6 +60,7 @@ class BrandSearch extends Brand
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'position' => $this->position,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

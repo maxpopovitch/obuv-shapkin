@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'country_name',
             'country_code',
+            'position',
             'description:ntext',
         ],
     ]) ?>

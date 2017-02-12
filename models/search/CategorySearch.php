@@ -19,7 +19,7 @@ class CategorySearch extends Category
     {
         return [
             [['id'], 'integer'],
-            [['name'], 'safe'],
+            [['name', 'position'], 'safe'],
         ];
     }
 
@@ -60,6 +60,7 @@ class CategorySearch extends Category
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'position' => $this->position,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name]);

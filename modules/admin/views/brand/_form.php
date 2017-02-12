@@ -20,6 +20,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'country_code')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'position')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">

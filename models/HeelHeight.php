@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
+ * @property integer $position
  */
 class HeelHeight extends \yii\db\ActiveRecord
 {
@@ -26,7 +27,9 @@ class HeelHeight extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
+            [['name', 'position'], 'required'],
+            [['position'], 'integer'],
+            [['position'], 'unique'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -39,6 +42,7 @@ class HeelHeight extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Высота каблука',
+            'position' => 'Позиция',
         ];
     }
 }

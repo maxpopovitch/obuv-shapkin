@@ -10,6 +10,7 @@ use Yii;
  * @property integer $id
  * @property string $name
  * @property string $hex_value
+ * @property integer $position
  */
 class Color extends \yii\db\ActiveRecord
 {
@@ -27,7 +28,9 @@ class Color extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'hex_value'], 'required'],
+            [['name', 'hex_value', 'position'], 'required'],
+            [['position'], 'integer'],
+            [['position'], 'unique'],
             [['name', 'hex_value'], 'string', 'max' => 255],
         ];
     }
@@ -41,6 +44,7 @@ class Color extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Наименование цвета',
             'hex_value' => 'HEX значение',
+            'position' => 'Позиция',
         ];
     }
 }

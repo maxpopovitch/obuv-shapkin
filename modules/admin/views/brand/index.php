@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'logo',
             'country_name',
             'country_code',
+            'position',
             'description:ntext',
             ['class' => 'yii\grid\ActionColumn',
                 'headerOptions' => ['width' => '65px']],

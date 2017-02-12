@@ -12,6 +12,7 @@ use Yii;
  * @property string $logo
  * @property string $country_name
  * @property string $country_code
+ * @property integer $position
  * @property string $description
  */
 class Brand extends \yii\db\ActiveRecord
@@ -30,8 +31,10 @@ class Brand extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'logo', 'country_name', 'country_code', 'description'], 'required'],
+            [['name', 'logo', 'country_name', 'country_code', 'description', 'position'], 'required'],
             [['description'], 'string'],
+            [['position'], 'integer'],
+            [['position'], 'unique'],
             [['name', 'logo', 'country_name', 'country_code'], 'string', 'max' => 255],
         ];
     }
@@ -47,6 +50,7 @@ class Brand extends \yii\db\ActiveRecord
             'logo' => 'Путь к логотипу',
             'country_name' => 'Страна',
             'country_code' => 'Код страны',
+            'position' => 'Позиция',
             'description' => 'Описание',
         ];
     }

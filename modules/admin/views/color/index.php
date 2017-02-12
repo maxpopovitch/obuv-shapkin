@@ -18,17 +18,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('<span class="glyphicon glyphicon-plus"></span> Добавить цвет', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'tableOptions' => [
+            'class' => 'table table-striped table-condensed table-hover'
+        ],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'name',
             'hex_value',
-
+            'position',
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);
+    ?>
 </div>

@@ -19,7 +19,7 @@ class ColorSearch extends Color
     {
         return [
             [['id'], 'integer'],
-            [['name', 'hex_value'], 'safe'],
+            [['name', 'hex_value', 'position'], 'safe'],
         ];
     }
 
@@ -60,6 +60,7 @@ class ColorSearch extends Color
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'position' => $this->position,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
