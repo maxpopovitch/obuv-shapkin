@@ -4,7 +4,7 @@
 use app\models\Brand;
 use yii\helpers\Url;
 
-$brands = Brand::find()->orderBy(['name' => SORT_ASC])->all();
+$brands = Brand::find()->orderBy(['position' => SORT_ASC])->all();
 
 $this->title = 'obuv.co | Торговые марки | Интернет-магазин обуви. Доставка по Украине.';
 ?>
