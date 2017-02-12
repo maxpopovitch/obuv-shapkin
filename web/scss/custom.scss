@@ -105,7 +105,7 @@ body {
     display: table;
 }
 
-a:not(.btn), .nav > li > a:not(.btn) {
+a:not(.btn):not(.list-group-item), .nav > li > a:not(.btn) {
     text-decoration: underline;
 
     &:link, &:visited, &:hover, &:focus {

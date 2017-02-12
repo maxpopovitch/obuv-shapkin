@@ -46,11 +46,21 @@ use yii\bootstrap\ActiveForm;
 <?php } else { ?>
     <div class="admin-default-index">
         <!--<h1><?= $this->context->action->uniqueId ?></h1>-->
-        <a class="btn btn-primary" href="index.php?r=admin/brand">Торговые марки</a>
-        <a class="btn btn-primary" href="index.php?r=admin/category">Категории</a>
-        <a class="btn btn-primary" href="index.php?r=admin/color">Цвета</a>
-        <a class="btn btn-primary" href="index.php?r=admin/heel-height">Высоты каблуков</a>
-        <p>
+        <div class="list-group">
+            <a href="index.php?r=admin/brand" class="list-group-item">
+                <strong>Торговые марки</strong><br /><small class="text-muted">Управление торговыми марками: Barker, Gabor, Janita</small>
+            </a>
+            <a href="index.php?r=admin/category" class="list-group-item">
+                <strong>Категории</strong><br /><small class="text-muted">Управление категориями: новинка, распродажа, хит продаж</small>
+            </a>
+            <a href="index.php?r=admin/color" class="list-group-item">
+                <strong>Цвета</strong><br /><small class="text-muted">Управление цветами: черный (#000000), красный (#FF0000)</small>
+            </a>
+            <a href="index.php?r=admin/heel-height" class="list-group-item">
+                <strong>Высоты каблуков</strong><br /><small class="text-muted">Управление высотами каблуков: низкая, средняя, высокая</small>
+            </a>
+        </div>
+    <!--        <p>
             This is the view content for action "<?= $this->context->action->id ?>".
             The action belongs to the controller "<?= get_class($this->context) ?>"
             in the "<?= $this->context->module->id ?>" module.
@@ -58,6 +68,6 @@ use yii\bootstrap\ActiveForm;
         <p>
             You may customize this page by editing the following file:<br>
             <code><?= __FILE__ ?></code>
-        </p>
+        </p>-->
     </div>
 <?php } ?>

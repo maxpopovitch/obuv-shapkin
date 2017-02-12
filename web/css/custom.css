@@ -36,9 +36,9 @@ html, body, .modal-open {
 body {
   display: table; }
 
-a:not(.btn), .nav > li > a:not(.btn) {
+a:not(.btn):not(.list-group-item), .nav > li > a:not(.btn) {
   text-decoration: underline; }
-  a:not(.btn):link, a:not(.btn):visited, a:not(.btn):hover, a:not(.btn):focus, .nav > li > a:not(.btn):link, .nav > li > a:not(.btn):visited, .nav > li > a:not(.btn):hover, .nav > li > a:not(.btn):focus {
+  a:not(.btn):not(.list-group-item):link, a:not(.btn):not(.list-group-item):visited, a:not(.btn):not(.list-group-item):hover, a:not(.btn):not(.list-group-item):focus, .nav > li > a:not(.btn):link, .nav > li > a:not(.btn):visited, .nav > li > a:not(.btn):hover, .nav > li > a:not(.btn):focus {
     text-decoration: underline; }
 
 .container-fluid,
