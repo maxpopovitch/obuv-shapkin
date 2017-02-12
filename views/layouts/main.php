@@ -100,6 +100,8 @@ AppAsset::register($this);
                     <?php
                     if (isset($this->params['header']) && !Yii::$app->user->isGuest) {
                         echo $this->params['header'] . Html::a('Выход', ['/site/logout'], ['data' => ['method' => 'post'], 'class' => 'btn btn-danger btn-xs', 'style' => 'margin-left: 10px']);
+                    } else if (!isset($this->params['header']) && !Yii::$app->user->isGuest) {
+                        echo Html::a('Выход', ['/site/logout'], ['data' => ['method' => 'post'], 'class' => 'btn btn-danger btn-xs']);
                     } else if (isset($this->params['header'])) {
                         echo $this->params['header'];
                     } else {
