@@ -106,8 +106,8 @@ class Ware extends \yii\db\ActiveRecord
     public static function getSex()
     {
         return [
-            self::SEX_MALE => 'male',
-            self::SEX_FEMALE => 'female'
+            self::SEX_MALE => 'мужской',
+            self::SEX_FEMALE => 'женский'
         ];
     }
 
@@ -118,8 +118,8 @@ class Ware extends \yii\db\ActiveRecord
     public static function getWaterproofness()
     {
         return [
-            self::WATERPROOFNESS_FALSE => 'unknown',
-            self::WATERPROOFNESS_TRUE => 'waterproof'
+            self::WATERPROOFNESS_FALSE => 'нет данных',
+            self::WATERPROOFNESS_TRUE => 'водонепроницаемые'
         ];
     }
 

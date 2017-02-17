@@ -25,27 +25,27 @@ use app\models\Category;
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'brand')->dropDownList(ArrayHelper::map(Brand::find()->all(), 'position', 'name')) ?>
+    <?= $form->field($model, 'brand')->dropDownList(ArrayHelper::map(Brand::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
     <?= $form->field($model, 'sex')->dropDownList(Ware::getSex()) ?>
 
     <?= $form->field($model, 'saison')->dropDownList(Ware::getSaison()) ?>
 
-    <?= $form->field($model, 'type')->dropDownList(ArrayHelper::map(ShoesType::find()->all(), 'position', 'name')) ?>
+    <?= $form->field($model, 'type')->dropDownList(ArrayHelper::map(ShoesType::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
-    <?= $form->field($model, 'wideness')->dropDownList(ArrayHelper::map(Wideness::find()->all(), 'position', 'name')) ?>
+    <?= $form->field($model, 'wideness')->dropDownList(ArrayHelper::map(Wideness::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
-    <?= $form->field($model, 'upper')->dropDownList(ArrayHelper::map(UpperMaterial::find()->all(), 'position', 'name')) ?>
+    <?= $form->field($model, 'upper')->dropDownList(ArrayHelper::map(UpperMaterial::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
-    <?= $form->field($model, 'lining')->dropDownList(ArrayHelper::map(LiningMaterial::find()->all(), 'position', 'name')) ?>
+    <?= $form->field($model, 'lining')->dropDownList(ArrayHelper::map(LiningMaterial::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
-    <?= $form->field($model, 'sole')->dropDownList(ArrayHelper::map(SoleMaterial::find()->all(), 'position', 'name')) ?>
+    <?= $form->field($model, 'sole')->dropDownList(ArrayHelper::map(SoleMaterial::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
-    <?= $form->field($model, 'heel_height')->dropDownList(ArrayHelper::map(HeelHeight::find()->all(), 'position', 'name')) ?>
+    <?= $form->field($model, 'heel_height')->dropDownList(ArrayHelper::map(HeelHeight::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
-    <?= $form->field($model, 'color')->dropDownList(ArrayHelper::map(Color::find()->all(), 'position', 'name')) ?>
+    <?= $form->field($model, 'color')->dropDownList(ArrayHelper::map(Color::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
-    <?= $form->field($model, 'category')->dropDownList(ArrayHelper::map(Category::find()->all(), 'position', 'name')) ?>
+    <?= $form->field($model, 'category')->dropDownList(ArrayHelper::map(Category::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
     <?= $form->field($model, 'init_price')->textInput() ?>
 
