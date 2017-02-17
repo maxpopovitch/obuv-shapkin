@@ -37,6 +37,10 @@ class UpperMaterialController extends Controller {
             return $this->goHome();
         }
 
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
         $searchModel = new UpperMaterialSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -54,6 +58,10 @@ class UpperMaterialController extends Controller {
      * @return mixed
      */
     public function actionView($id) {
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -65,6 +73,10 @@ class UpperMaterialController extends Controller {
      * @return mixed
      */
     public function actionCreate() {
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
         $model = new UpperMaterial();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -83,6 +95,10 @@ class UpperMaterialController extends Controller {
      * @return mixed
      */
     public function actionUpdate($id) {
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -101,6 +117,10 @@ class UpperMaterialController extends Controller {
      * @return mixed
      */
     public function actionDelete($id) {
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

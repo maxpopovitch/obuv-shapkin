@@ -54,6 +54,10 @@ class LiningMaterialController extends Controller {
      * @return mixed
      */
     public function actionView($id) {
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -65,6 +69,10 @@ class LiningMaterialController extends Controller {
      * @return mixed
      */
     public function actionCreate() {
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
         $model = new LiningMaterial();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -83,6 +91,10 @@ class LiningMaterialController extends Controller {
      * @return mixed
      */
     public function actionUpdate($id) {
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -101,6 +113,10 @@ class LiningMaterialController extends Controller {
      * @return mixed
      */
     public function actionDelete($id) {
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

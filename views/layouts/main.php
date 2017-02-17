@@ -632,8 +632,7 @@ AppAsset::register($this);
                                             <div>
                                                 <input type="checkbox" name="oc-manufacturer-waldlaufer" id="oc-manufacturer-waldlaufer" value="waldlaufer"/>
                                                 <label for="oc-manufacturer-waldlaufer"></label>
-                                                <label for="oc-manufacturer-waldlaufer" class="oc-details-label oc-flag oc-de" title="Waldl&auml;ufer (Германия)" > Waldl & auml;
-                                                    ufer</label>
+                                                <label for="oc-manufacturer-waldlaufer" class="oc-details-label oc-flag oc-de" title="Waldl&auml;ufer (Германия)">Waldl&auml;ufer</label>
                                             </div>
                                             <div>
                                                 <input type="checkbox" name="oc-manufacturer-wortmann" id="oc-manufacturer-wortmann" value="wortmann"/>

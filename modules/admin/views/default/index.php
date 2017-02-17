@@ -47,6 +47,9 @@ use yii\bootstrap\ActiveForm;
     <div class="admin-default-index">
         <!--<h1><?= $this->context->action->uniqueId ?></h1>-->
         <div class="list-group">
+            <a href="index.php?r=admin/ware" class="list-group-item">
+                <strong>Товары</strong><br /><small class="text-muted">Управление товарами</small>
+            </a>
             <a href="index.php?r=admin/brand" class="list-group-item">
                 <strong>Торговые марки</strong><br /><small class="text-muted">Управление торговыми марками: Barker, Janita, Mephisto</small>
             </a>
