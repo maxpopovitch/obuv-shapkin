@@ -136,6 +136,26 @@ class SiteController extends Controller {
     }
 
     /**
+     * Displays brands page.
+     *
+     * @return string
+     */
+    public function actionShoesWomen() {
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Женская обувь';
+        return $this->render('shoes-women');
+    }
+
+    /**
+     * Displays brands page.
+     *
+     * @return string
+     */
+    public function actionShoesMen() {
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Мужская обувь';
+        return $this->render('shoes-men');
+    }
+
+    /**
      * Displays brand page.
      *
      * @return string

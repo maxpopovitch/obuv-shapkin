@@ -53,9 +53,6 @@ use yii\bootstrap\ActiveForm;
             <a href="index.php?r=admin/brand" class="list-group-item">
                 <strong>Торговые марки</strong><br /><small class="text-muted">Управление торговыми марками: Barker, Janita, Mephisto</small>
             </a>
-            <a href="index.php?r=admin/category" class="list-group-item">
-                <strong>Категории</strong><br /><small class="text-muted">Управление категориями: новинка, распродажа, хит продаж</small>
-            </a>
             <a href="index.php?r=admin/color" class="list-group-item">
                 <strong>Цвета</strong><br /><small class="text-muted">Управление цветами: черный (#000000), красный (#FF0000)</small>
             </a>

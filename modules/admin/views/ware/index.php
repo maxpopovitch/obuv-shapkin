@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //                'attribute' => 'sex',
 //                'format' => 'html',
 //                'value' => function ($model) {
-//                    return $model->getSex()[$model->saison];
+//                    return $model->getSex()[$model->sex];
 //                },
 //                'filter' => Ware::getSex(),
 //            ],
@@ -107,9 +107,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'category',
                 'format' => 'html',
                 'value' => function ($model) {
-                    return $model->_category->name;
+                    return $model->getCategory()[$model->category];
                 },
-                'filter' => false,
+                'filter' => Ware::getCategory(),
             ],
             'init_price',
             'new_price',

@@ -45,7 +45,7 @@ use app\models\Category;
 
     <?= $form->field($model, 'color')->dropDownList(ArrayHelper::map(Color::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
-    <?= $form->field($model, 'category')->dropDownList(ArrayHelper::map(Category::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
+    <?= $form->field($model, 'category')->dropDownList(Ware::getCategory()) ?>
 
     <?= $form->field($model, 'init_price')->textInput() ?>
 

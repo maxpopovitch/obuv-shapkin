@@ -3,9 +3,9 @@
 
 use app\models\Ware;
 
-$wares = Ware::find()->where(['status' => 1])->orderBy(['position' => SORT_ASC])->all();
+$wares = Ware::find()->where(['status' => 1, 'sex' => 1])->orderBy(['position' => SORT_ASC])->all();
 
-$this->title = 'obuv.co | Новые поступления | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = 'obuv.co | Мужская обувь | Интернет-магазин обуви. Доставка по Украине.';
 ?>
 
 <?php
@@ -44,5 +44,5 @@ if (!empty($wares)) {
     }
 } else {
     ?>
-    <h3>К сожалению, вся обувь продана.</h3>
+    <h3>К сожалению, вся мужская обувь продана.</h3>
 <?php } ?>

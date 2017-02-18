@@ -365,7 +365,7 @@ textarea {
     height: 208px;
     border: 1px solid #D2D6AA;
     position: relative;
-    text-decoration: none; }
+    text-decoration: none !important; }
     .oc-ware a.oc-brand {
       height: 155px; }
     .oc-ware a .oc-tag {

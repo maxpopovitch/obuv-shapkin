@@ -48,6 +48,11 @@ class Ware extends \yii\db\ActiveRecord
     
     const STATUS_ACTIVE = 1;
     const STATUS_INACTIVE = 2;
+    
+    const CATEGORY_DEFAULT = 0;
+    const CATEGORY_NEW = 1;
+    const CATEGORY_SALE = 2;
+    const CATEGORY_BESTSELLER = 3;
 
     /**
      * @inheritdoc
@@ -138,7 +143,7 @@ class Ware extends \yii\db\ActiveRecord
     public static function getSaison()
     {
         return [
-            self::SAISON_DEMI => 'весна-лето',
+            self::SAISON_DEMI => 'весна-осень',
             self::SAISON_SUMMER => 'лето',
             self::SAISON_WINTER => 'зима'
         ];
@@ -153,6 +158,20 @@ class Ware extends \yii\db\ActiveRecord
         return [
             self::STATUS_ACTIVE => 'активный',
             self::STATUS_INACTIVE => 'неактивный'
+        ];
+    }
+
+    /**
+     * 
+     * @return array
+     */
+    public static function getCategory()
+    {
+        return [
+            self::CATEGORY_DEFAULT => 'не указана',
+            self::CATEGORY_NEW => 'новинка',
+            self::CATEGORY_SALE => 'распродажа',
+            self::CATEGORY_BESTSELLER => 'хит продаж',
         ];
     }
 
@@ -181,15 +200,6 @@ class Ware extends \yii\db\ActiveRecord
      public function get_color()
     {
         return $this->hasOne(Color::className(), ['id' => 'color']);
-    }
-
-    /**
-     * 
-     * @return \yii\db\ActiveQuery
-     */
-     public function get_category()
-    {
-        return $this->hasOne(Category::className(), ['id' => 'category']);
     }
 
     /**

@@ -3,9 +3,9 @@
 
 use app\models\Ware;
 
-$wares = Ware::find()->where(['status' => 1])->orderBy(['position' => SORT_ASC])->all();
+$wares = Ware::find()->where(['status' => 1, 'sex' => 2])->orderBy(['position' => SORT_ASC])->all();
 
-$this->title = 'obuv.co | Новые поступления | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = 'obuv.co | Женская обувь | Интернет-магазин обуви. Доставка по Украине.';
 ?>
 
 <?php
@@ -13,7 +13,7 @@ if (!empty($wares)) {
     foreach ($wares as $ware) {
         ?>
         <div class="oc-ware">
-            <a href="shoes.htm" title="<?php echo $ware->_type->name . ' ' . $ware->_brand->name . ' ' . $ware->code?>">
+            <a href="shoes.htm" title="<?php echo $ware->_type->name . ' ' . $ware->_brand->name . ' ' . $ware->code ?>">
                 <?php if ($ware->category === 1) { ?>
                     <div class="oc-tag oc-new">
                         <span class="text-center">новинка</span>
@@ -44,5 +44,5 @@ if (!empty($wares)) {
     }
 } else {
     ?>
-    <h3>К сожалению, вся обувь продана.</h3>
+    <h3>К сожалению, вся женская обувь продана.</h3>
 <?php } ?>

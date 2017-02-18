@@ -43,8 +43,8 @@ AppAsset::register($this);
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="oc-main-nav">
                         <ul class="nav navbar-nav">
-                            <li><a href="womenshoes.htm">Женская<br/> обувь</a></li>
-                            <li><a href="menshoes.htm">Мужская<br/> обувь</a></li>
+                            <li class="<?= (Url::current() === '/index.php?r=site%2Fshoes-women') ? 'active' : '' ?>"><a href="<?= Url::to(['site/shoes-women']) ?>">Женская<br/> обувь</a></li>
+                            <li class="<?= (Url::current() === '/index.php?r=site%2Fshoes-men') ? 'active' : '' ?>"><a href="<?= Url::to(['site/shoes-men']) ?>">Мужская<br/> обувь</a></li>
                             <li class="<?= (Url::current() === '/index.php?r=site%2Fbrands') ? 'active' : '' ?>"><a href="<?= Url::to(['site/brands']) ?>">Торговые<br/> марки</a></li>
                             <li class="<?= (Url::current() === '/index.php?r=site%2Ftips') ? 'active' : '' ?>"><a href="<?= Url::to(['site/tips']) ?>">Советы<br/> покупателю</a></li>
                             <li class="<?= (Url::current() === '/index.php?r=site%2Fpayment-and-delivery') ? 'active' : '' ?>"><a href="<?= Url::to(['site/payment-and-delivery']) ?>">Оплата<br/> и доставка</a></li>
