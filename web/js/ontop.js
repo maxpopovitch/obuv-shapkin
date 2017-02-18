@@ -3,19 +3,33 @@ $(document).ready(function () {
     $('#oc-ontop').hide();
 
     $(function () {
+        var resizeId;
 
-        //hide #oc-ontop if window width greater or equal 1200px
-        var wW = $(window).width() + getScrollBarWidth();
-        if (wW >= 1200) {
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 100) {
-                    $('#oc-ontop').fadeIn('fast');
-                } else {
-                    $('#oc-ontop').fadeOut('fast');
-                }
-            });
+        toggleOnTop();
+
+        $(window).resize(function () {
+            clearTimeout(resizeId);
+            resizeId = setTimeout(toggleOnTop, 250);
+        });
+
+        function toggleOnTop() {
+            var wW = $(window).width() + getScrollBarWidth();
+
+            //hide #oc-ontop if window width greater or equal 1200px
+            if (wW >= 1200) {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 100) {
+                        $('#oc-ontop').fadeIn('fast');
+                    } else {
+                        $('#oc-ontop').fadeOut('fast');
+                    }
+                });
+            } else {
+                $(window).unbind('scroll');
+                $('#oc-ontop').hide();
+            }
         }
-        
+
         //calculating scroll width
         function getScrollBarWidth() {
             var inner = document.createElement('p');
