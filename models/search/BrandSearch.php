@@ -47,6 +47,7 @@ class BrandSearch extends Brand
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => false,
         ]);
 
         $this->load($params);

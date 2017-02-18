@@ -52,8 +52,11 @@ AppAsset::register($this);
                             <li>
                                 <div class="oc-lang">
                                     <span>Язык:&nbsp;</span><br/>
-                                    <select disabled onchange="location = this.options[this.selectedIndex].value;">
-                                        <option value="http://www.obuv.co/">Русский</option>
+                                    <select <!--onchange="location = this.options[this.selectedIndex].value;-->">
+                                        <option value="ru">Русский</option>
+                                        <option value="ua" disabled>Українська</option>
+                                        <option value="en" disabled>English</option>
+                                        <option value="de" disabled>Deutsch</option>
                                         <!--<option value="http://www.obuv.co/ua">Українська</option>-->
                                         <!--<option value="http://www.obuv.co/en">English</option>-->
                                         <!--<option value="http://www.obuv.co/de">Deutsch</option>-->
@@ -116,17 +119,19 @@ AppAsset::register($this);
             <div class="container-fluid oc-margin">
                 <div class="row row-offcanvas row-offcanvas-right">
                     <div class="col-xs-12 <?php if (Yii::$app->user->isGuest || strpos(Url::current(), 'admin') === false) echo 'col-sm-8' ?>">
-                        <div class="row">
-                            <div class="pull-right visible-xs">
-                                <div class="oc-hint">
-                                    <div>Подбор обуви по параметрам</div>
-                                    <div></div>
+
+                        <?php if (Yii::$app->user->isGuest || strpos(Url::current(), 'admin') === false) { ?>
+                            <div class="row">
+                                <div class="pull-right visible-xs">
+                                    <div class="oc-hint">
+                                        <div>Подбор обуви по параметрам</div>
+                                    </div>
+                                    <button type="button" class="btn btn-success oc-details" data-toggle="offcanvas">
+                                        <i class="glyphicon glyphicon-cog"></i>
+                                    </button>
                                 </div>
-                                <button type="button" class="btn btn-success oc-details" data-toggle="offcanvas">
-                                    <i class="glyphicon glyphicon-cog"></i>
-                                </button>
                             </div>
-                        </div>
+                        <?php } ?>
 
                         <div class="row">
                             <div class="col-xs-12">

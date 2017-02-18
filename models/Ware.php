@@ -3,6 +3,14 @@
 namespace app\models;
 
 use Yii;
+use app\models\Brand;
+use app\models\ShoesType;
+use app\models\Color;
+use app\models\Category;
+use app\models\Wideness;
+use app\models\UpperMaterial;
+use app\models\LiningMaterial;
+use app\models\SoleMaterial;
 
 /**
  * This is the model class for table "ware".
@@ -143,8 +151,80 @@ class Ware extends \yii\db\ActiveRecord
     public static function getStatus()
     {
         return [
-            self::STATUS_ACTIVE => 'активный (товар опубликован)',
-            self::STATUS_INACTIVE => 'неактивный (товар скрыт)'
+            self::STATUS_ACTIVE => 'активный',
+            self::STATUS_INACTIVE => 'неактивный'
         ];
+    }
+
+    /**
+     * 
+     * @return \yii\db\ActiveQuery
+     */
+     public function get_brand()
+    {
+        return $this->hasOne(Brand::className(), ['id' => 'brand']);
+    }
+
+    /**
+     * 
+     * @return \yii\db\ActiveQuery
+     */
+     public function get_type()
+    {
+        return $this->hasOne(ShoesType::className(), ['id' => 'type']);
+    }
+
+    /**
+     * 
+     * @return \yii\db\ActiveQuery
+     */
+     public function get_color()
+    {
+        return $this->hasOne(Color::className(), ['id' => 'color']);
+    }
+
+    /**
+     * 
+     * @return \yii\db\ActiveQuery
+     */
+     public function get_category()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'category']);
+    }
+
+    /**
+     * 
+     * @return \yii\db\ActiveQuery
+     */
+     public function get_wideness()
+    {
+        return $this->hasOne(Wideness::className(), ['id' => 'wideness']);
+    }
+
+    /**
+     * 
+     * @return \yii\db\ActiveQuery
+     */
+     public function get_upper()
+    {
+        return $this->hasOne(UpperMaterial::className(), ['id' => 'upper']);
+    }
+
+    /**
+     * 
+     * @return \yii\db\ActiveQuery
+     */
+     public function get_lining()
+    {
+        return $this->hasOne(LiningMaterial::className(), ['id' => 'lining']);
+    }
+
+    /**
+     * 
+     * @return \yii\db\ActiveQuery
+     */
+     public function get_sole()
+    {
+        return $this->hasOne(SoleMaterial::className(), ['id' => 'sole']);
     }
 }

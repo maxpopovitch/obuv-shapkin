@@ -310,23 +310,24 @@ textarea {
       white-space: nowrap;
       color: #FFF;
       display: none; }
-      .oc-content .pull-right .oc-hint div:nth-of-type(1) {
+      .oc-content .pull-right .oc-hint > div {
         display: inline;
         position: relative;
-        left: 1px;
         padding: 1px 5px 2px;
         border-radius: 8px;
         background: #1D1D1D;
         float: left; }
-      .oc-content .pull-right .oc-hint div:nth-of-type(2) {
-        display: inline-block;
-        position: relative;
-        top: 2px;
-        width: 0;
-        height: 0;
-        border-top: 5px solid transparent;
-        border-left: 5px solid #1D1D1D;
-        border-bottom: 5px solid transparent; }
+        .oc-content .pull-right .oc-hint > div:after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 7px;
+          right: -5px;
+          width: 0;
+          height: 0;
+          border-top: 5px solid transparent;
+          border-left: 5px solid #1D1D1D;
+          border-bottom: 5px solid transparent; }
     .oc-content .pull-right:hover .oc-hint {
       display: inline; }
   .oc-content ol {
