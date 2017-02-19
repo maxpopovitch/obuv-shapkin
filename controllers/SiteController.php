@@ -3,12 +3,14 @@
 namespace app\controllers;
 
 use Yii;
-use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 use app\models\forms\LoginForm;
 use app\models\forms\ContactForm;
 use app\models\Brand;
+use app\models\Ware;
 
 class SiteController extends Controller {
 
@@ -165,6 +167,19 @@ class SiteController extends Controller {
         $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="index.php?r=site%2Fbrands">Торговые марки</a>' . ' \ ' . $brand->name;
         return $this->render('brand', [
                     'brand' => $brand
+        ]);
+    }
+
+    /**
+     * Displays brand page.
+     *
+     * @return string
+     */
+    public function actionWare($id) {
+        $ware = Ware::findOne($id);
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="' . Url::to(['site/brand', 'id' => $ware->_brand->id]) .'">' . $ware->_brand->name . '</a>' . ' \ ' . $ware->code;
+        return $this->render('ware', [
+                    'ware' => $ware
         ]);
     }
 

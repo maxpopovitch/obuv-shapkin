@@ -222,7 +222,7 @@ AppAsset::register($this);
                                         </div>
 
                                         <div class="oc-cat-div">
-                                            <div class="oc-title">Размер (<a href = "<?= Url::to(['site/sizes']) ?>">таблица</a>)</div>
+                                            <div class="oc-title">Размер (<a href="<?= Url::to(['site/sizes']) ?>">таблица</a>)</div>
 
                                             <div class="oc-size">
                                                 <input type="checkbox" name="oc-size-4" id="oc-size-4" value="4"/>
