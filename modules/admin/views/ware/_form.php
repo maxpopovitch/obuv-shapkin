@@ -13,6 +13,7 @@ use app\models\SoleMaterial;
 use app\models\HeelHeight;
 use app\models\Color;
 use app\models\Category;
+use app\models\Size;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Ware */
@@ -56,6 +57,8 @@ use app\models\Category;
     <?= $form->field($model, 'status')->dropDownList(Ware::getStatus()) ?>
 
     <?= $form->field($model, 'position')->textInput() ?>
+
+    <?= $form->field($model, 'sizes')->checkboxList(ArrayHelper::map(Size::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -79,8 +79,15 @@ class WareController extends Controller
 
         $model = new Ware();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->sizes = json_encode($model->sizes);
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            } else {
+                return $this->render('create', [
+                'model' => $model,
+            ]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -101,9 +108,17 @@ class WareController extends Controller
         }
 
         $model = $this->findModel($id);
+        $model->sizes = json_decode($model->sizes, true);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->sizes = json_encode($model->sizes);
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            } else {
+                return $this->render('update', [
+                'model' => $model,
+            ]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,

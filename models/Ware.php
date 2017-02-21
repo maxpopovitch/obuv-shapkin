@@ -33,6 +33,7 @@ use app\models\SoleMaterial;
  * @property integer $waterproofness
  * @property integer $status
  * @property integer $position
+ * @property string $sizes
  */
 class Ware extends \yii\db\ActiveRecord
 {
@@ -73,6 +74,7 @@ class Ware extends \yii\db\ActiveRecord
             [['position', 'code'], 'unique'],
             [['init_price', 'new_price'], 'number'],
             [['code'], 'string', 'max' => 255],
+            [['sizes'], 'safe'],
         ];
     }
 
@@ -100,6 +102,7 @@ class Ware extends \yii\db\ActiveRecord
             'waterproofness' => 'Защита от промокания',
             'status' => 'Статус',
             'position' => 'Позиция',
+            'sizes' => 'Размеры',
         ];
     }
 
