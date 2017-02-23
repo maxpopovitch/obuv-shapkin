@@ -6,6 +6,7 @@ use app\models\Ware;
 use app\models\HeelHeight;
 use app\models\Color;
 use app\models\Wideness;
+use app\models\Size;
 
 $this->title = 'obuv.co | ';
 if (Yii::$app->language === 'ru' || Yii::$app->language === 'ua') {
@@ -124,24 +125,45 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                         грн.
                     </h3>
                 </div>
+                <?php
+                $wareSizes = json_decode($ware->sizes);
+                $sizesArray = [];
+                if (!empty($wareSizes)) {
+                    foreach ($wareSizes as $size) {
+                        array_push($sizesArray, Size::findOne(['id' => $size])->name);
+                    }
+                    $sizes = implode('; ', $sizesArray);
+                } else {
+                    $sizes = 'все продано';
+                }
+                ?>
                 <div class="row">
-                    <form name="oc-buy-form" action="cart.htm" method="post">
-                        <span><strong>Размер:</strong></span>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xs-7">
-                                    <select name="oc-size">
-                                        <option value="4.5">4&frac12; (37)</option>
-                                        <option value="13.5">13&frac12; (48&frac12;)</option>
-                                    </select>
-                                </div>
-                                <div class="col-xs-5 text-right">
-                                    <button type="submit" class="btn"><strong>Купить</strong></button>
+                    <?php if (!empty($wareSizes)) { ?>
+                        <form name="oc-buy-form" action="cart.htm" method="post">
+                            <span><strong>Размер:</strong></span>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-7">
+                                        <select>
+                                            <?php
+                                            foreach ($wareSizes as $size) {
+                                                echo '<option value="' . Size::findOne(['id' => $size])->name . '">' . Size::findOne(['id' => $size])->name . '</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-5 text-right">
+                                        <button type="submit" class="btn"><strong>Купить</strong></button>
+                                    </div>
                                 </div>
                             </div>
+                            <span><strong>Бесплатная доставка по Украине!</strong></span>
+                        </form>
+                    <?php } else { ?>
+                        <div class="col-xs-12">
+                            <div class="alert alert-danger" role="alert"> <strong>Все продано</strong></div>
                         </div>
-                        <span><strong>Бесплатная доставка по Украине!</strong></span>
-                    </form>
+                    <?php } ?>
                 </div>
                 <div class="row">
                     <p>Артикул: <strong><?php echo $ware->code ?></strong></p>
@@ -153,7 +175,7 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                     <p>Высота каблука или танкетки: <strong><?php echo HeelHeight::findOne(['id' => $ware->heel_height])->name ?></strong></p>
                     <p>Цвет: <strong><?php echo Color::findOne(['id' => $ware->color])->name ?></strong></p>
                     <p>Полнота: <strong><?php echo Wideness::findOne(['id' => $ware->wideness])->name ?></strong></p>
-                    <p>Размеры в наличии: <strong>7 (40&frac12;); 7&frac12; (41); 8 (42); 9 (43); 9&frac12; (44)</strong></p>
+                    <p>Размеры в наличии: <strong><?php echo $sizes ?></strong></p>
                     <a href="<?= Url::to(['site/sizes']) ?>">Таблица размеров</a>
                 </div>
             </div>
