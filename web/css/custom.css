@@ -891,4 +891,39 @@ footer {
       margin-left: 0;
       display: inline-block; } }
 
+.oc-brand-view-description-wrapper.collapse:not(.in) {
+  height: 50px !important;
+  display: block !important;
+  overflow-y: hidden;
+  position: relative; }
+  .oc-brand-view-description-wrapper.collapse:not(.in) .oc-description-gradient {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: transparent;
+    background: -moz-linear-gradient(top, transparent 40%, #FFF 100%);
+    background: -o-linear-gradient(top, transparent 40%, #FFF 100%);
+    background: -ms-linear-gradient(top, transparent 40%, #FFF 100%);
+    background: -webkit-linear-gradient(top, transparent 40%, #FFF 100%);
+    background: linear-gradient(to bottom, transparent 40%, #FFF 100%); }
+.oc-brand-view-description-wrapper.collapse.in + a:after {
+  border-top: 0;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid \9; }
+.oc-brand-view-description-wrapper + a {
+  display: inline-block;
+  text-indent: 20px; }
+  .oc-brand-view-description-wrapper + a:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent; }
+
 /*# sourceMappingURL=custom.css.map */
