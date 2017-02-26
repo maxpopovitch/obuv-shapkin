@@ -29,7 +29,7 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
     <div class="row">
         <div class="col-sm-6 col-lg-7">
             <div class="oc-ware-product">
-                <a href="imgs/photos/rieker/large/rieker-40085-14-1758.jpg" target="_blank" title="<?php
+                <a href="<?php echo Url::to(($ware->fileExists() ? $ware->getFileUrl('origin') : '')) ?>" target="_blank" title="<?php
                 if (Yii::$app->language === 'ru' || Yii::$app->language === 'ua') {
                     echo ($ware->sex === 1) ? 'Мужские' . ' ' : 'Женские' . ' ';
                     if ($ware->saison === 1) {
@@ -60,7 +60,7 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                         </div>
                     <?php } ?>
                     <div class="oc-ware-photo">
-                        <img src="imgs/photos/rieker/medium/rieker-40085-14-1758.jpg" alt="<?php
+                        <img src="<?php echo ($ware->fileExists() ? $ware->getFileUrl('main') : '') ?>" alt="<?php
                         if (Yii::$app->language === 'ru' || Yii::$app->language === 'ua') {
                             echo ($ware->sex === 1) ? 'Мужские' . ' ' : 'Женские' . ' ';
                             if ($ware->saison === 1) {
@@ -77,7 +77,7 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                         ?>"/>
                     </div>
                 </a>
-                <ul>
+<!--                <ul>
                     <li>
                         <img class="img-responsive" src="imgs/photos/rieker/small/rieker-40085-14-1758.jpg" alt="Женские летние туфли Rieker 40085-14"/>
                     </li>
@@ -93,7 +93,7 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                     <li>
                         <img class="img-responsive" src="imgs/photos/rieker/small/rieker-40085-14-1758.jpg" alt="Женские летние туфли Rieker 40085-14"/>
                     </li>
-                </ul>
+                </ul>-->
             </div>
         </div>
         <div class="col-sm-6 col-lg-5 oc-description">

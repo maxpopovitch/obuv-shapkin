@@ -60,6 +60,11 @@ use app\models\Size;
 
     <?= $form->field($model, 'sizes')->checkboxList(ArrayHelper::map(Size::find()->orderBy(['position' => SORT_ASC])->all(), 'id', 'name')) ?>
 
+    <?= $form->field($model, 'file')->fileInput(); ?>
+
+    <?= Html::img($model->fileExists() ? $model->getFileUrl('thumbnail') : '', $options = ['class' => 'img-thumbnail']) ?>
+
+    <p></p>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

@@ -11,6 +11,12 @@ use app\models\Wideness;
 use app\models\UpperMaterial;
 use app\models\LiningMaterial;
 use app\models\SoleMaterial;
+use yii2tech\ar\file\ImageFileBehavior;
+use yii2tech\ar\file\TransformFileBehavior;
+use yii\imagine\Image;
+use Imagine\Gd;
+use Imagine\Image\Box;
+use Imagine\Image\BoxInterface;
 
 /**
  * This is the model class for table "ware".
@@ -34,6 +40,8 @@ use app\models\SoleMaterial;
  * @property integer $status
  * @property integer $position
  * @property string $sizes
+ * @property string $file_extension
+ * @property integer $file_version
  */
 class Ware extends \yii\db\ActiveRecord
 {
@@ -75,6 +83,49 @@ class Ware extends \yii\db\ActiveRecord
             [['init_price', 'new_price'], 'number'],
             [['code'], 'string', 'max' => 255],
             [['sizes'], 'safe'],
+            [['file_version'], 'integer'],
+            [['file_extension'], 'string', 'max' => 10],
+            ['file', 'file', 'mimeTypes' => ['image/jpeg', 'image/pjpeg', 'image/png', 'image/gif']],
+        ];
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'file' => [
+                'class' => TransformFileBehavior::className(),
+        
+                // local
+                'fileStorageBucket' => 'item',
+        
+                'fileExtensionAttribute' => 'file_extension',
+                'fileVersionAttribute' => 'file_version',
+                'transformCallback' => function ($sourceFileName, $destinationFileName, $options) {
+                    try {
+                        Image::getImagine()->open($sourceFileName)->thumbnail(new Box($options['width'], $options['height']))->save($destinationFileName , ['quality' => 90]);
+                        return true;
+                    } catch (\Exception $e) {
+                        return false;
+                    }
+                },
+                'fileTransformations' => [
+                    'origin' => [
+                        'width' => 1200,
+                        'height' => 1200,
+                    ],
+                    'main' => [
+                        'width' => 800,
+                        'height' => 800,
+                    ],
+                    'thumbnail' => [
+                        'width' => 250,
+                        'height' => 250,
+                    ],
+                ],
+            ],
         ];
     }
 

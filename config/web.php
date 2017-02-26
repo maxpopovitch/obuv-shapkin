@@ -45,6 +45,15 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'fileStorage' => [
+            'class' => 'yii2tech\filestorage\local\Storage',
+            'basePath' => '@webroot/files',
+            'baseUrl' => '@web/files',
+            'buckets' => [
+                'temp',
+                'item',
+            ]
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

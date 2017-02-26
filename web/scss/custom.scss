@@ -652,6 +652,7 @@ textarea {
         display: block;
         border: 1px solid $color-10;
         height: $height-02;
+        margin-bottom: 10px;
 
         &:hover {
             border: 1px solid darken($color-10, 20);

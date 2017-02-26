@@ -8,6 +8,11 @@ use app\models\search\WareSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+use yii\imagine\Image;
+use Imagine\Gd;
+use Imagine\Image\Box;
+use Imagine\Image\BoxInterface;
 
 /**
  * WareController implements the CRUD actions for Ware model.
@@ -81,6 +86,7 @@ class WareController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->sizes = json_encode($model->sizes);
+            $model->file = UploadedFile::getInstance($model, 'file');
             if ($model->save()) {
                 return $this->redirect(['index']);
             } else {
@@ -112,6 +118,7 @@ class WareController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->sizes = json_encode($model->sizes);
+            $model->file = UploadedFile::getInstance($model, 'file');
             if ($model->save()) {
                 return $this->redirect(['index']);
             } else {

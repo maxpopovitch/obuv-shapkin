@@ -45,7 +45,7 @@ if (!empty($wares)) {
                     </div>
                 <?php } ?>
                 <div class="oc-ware-photo">
-                    <img src="" alt="<?php
+                    <img src="<?php echo ($ware->fileExists() ? $ware->getFileUrl('main') : '') ?>" alt="<?php
                     if (Yii::$app->language === 'ru' || Yii::$app->language === 'ua') {
                         echo ($ware->sex === 1) ? 'Мужские' . ' ' : 'Женские' . ' ';
                         if ($ware->saison === 1) {
