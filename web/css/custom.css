@@ -914,7 +914,8 @@ footer {
   border-bottom: 4px solid \9; }
 .oc-brand-view-description-wrapper + a {
   display: inline-block;
-  text-indent: 20px; }
+  text-indent: 20px;
+  margin-bottom: 20px; }
   .oc-brand-view-description-wrapper + a:after {
     content: "";
     display: inline-block;

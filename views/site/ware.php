@@ -134,7 +134,7 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                     }
                     $sizes = implode('; ', $sizesArray);
                 } else {
-                    $sizes = 'все продано';
+                    $sizes = 'нет в наличии';
                 }
                 ?>
                 <div class="row">
@@ -161,7 +161,7 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                         </form>
                     <?php } else { ?>
                         <div class="col-xs-12">
-                            <div class="alert alert-danger" role="alert"> <strong>Все продано</strong></div>
+                            <div class="alert alert-info" role="alert"> <strong>Нет в наличии</strong></div>
                         </div>
                     <?php } ?>
                 </div>

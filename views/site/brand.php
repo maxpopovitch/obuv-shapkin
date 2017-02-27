@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 
 use app\models\Brand;
+use app\widgets\WaresWidget;
 
 $this->title = 'obuv.co | Торговые марки | ' . $brand->name . ' | Интернет-магазин обуви. Доставка по Украине.';
 ?>
@@ -21,3 +22,6 @@ $this->title = 'obuv.co | Торговые марки | ' . $brand->name . ' | �
         Описание
     <?php } ?>
 </a>
+<div class="clearfix">
+<?= WaresWidget::widget(['filter' => ['brand' => $brand->id]]) ?>
+</div>
