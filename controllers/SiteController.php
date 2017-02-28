@@ -177,7 +177,7 @@ class SiteController extends Controller {
      */
     public function actionWare($id) {
         $ware = Ware::findOne($id);
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="' . Url::to(['site/brand', 'id' => $ware->_brand->id]) .'">' . $ware->_brand->name . '</a>' . ' \ ' . $ware->code;
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="' . Url::to(['site/brand', 'id' => $ware->_brand->id]) . '">' . $ware->_brand->name . '</a>' . ' \ ' . $ware->code;
         return $this->render('ware', [
                     'ware' => $ware
         ]);
@@ -270,6 +270,22 @@ class SiteController extends Controller {
     public function actionCart() {
         $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Корзина';
         return $this->render('cart');
+    }
+
+    /**
+     * Adds ware to shopping cart and displays cart page.
+     *
+     * @return string
+     */
+    public function actionAddToCart($id, $size) {
+        $cart = new ShoppingCart();
+
+        $model = Ware::findOne($id);
+        if ($model) {
+            $cart->put($model, 1);
+            return $this->redirect(['cart']);
+        }
+        throw new NotFoundHttpException();
     }
 
     /**

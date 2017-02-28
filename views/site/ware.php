@@ -1,6 +1,9 @@
 <?php
 /* @var $this yii\web\View */
 
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use app\models\Ware;
 use app\models\HeelHeight;
@@ -77,23 +80,23 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                         ?>"/>
                     </div>
                 </a>
-<!--                <ul>
-                    <li>
-                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-40085-14-1758.jpg" alt="Женские летние туфли Rieker 40085-14"/>
-                    </li>
-                    <li>
-                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-z7363-00-1044.jpg" alt="Женские летние туфли Rieker 40085-14"/>
-                    </li>
-                    <li>
-                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-40085-14-1758.jpg" alt="Женские летние туфли Rieker 40085-14"/>
-                    </li>
-                    <li>
-                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-z7363-00-1044.jpg" alt="Женские летние туфли Rieker 40085-14"/>
-                    </li>
-                    <li>
-                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-40085-14-1758.jpg" alt="Женские летние туфли Rieker 40085-14"/>
-                    </li>
-                </ul>-->
+                <!--                <ul>
+                                    <li>
+                                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-40085-14-1758.jpg" alt="Женские летние туфли Rieker 40085-14"/>
+                                    </li>
+                                    <li>
+                                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-z7363-00-1044.jpg" alt="Женские летние туфли Rieker 40085-14"/>
+                                    </li>
+                                    <li>
+                                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-40085-14-1758.jpg" alt="Женские летние туфли Rieker 40085-14"/>
+                                    </li>
+                                    <li>
+                                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-z7363-00-1044.jpg" alt="Женские летние туфли Rieker 40085-14"/>
+                                    </li>
+                                    <li>
+                                        <img class="img-responsive" src="imgs/photos/rieker/small/rieker-40085-14-1758.jpg" alt="Женские летние туфли Rieker 40085-14"/>
+                                    </li>
+                                </ul>-->
             </div>
         </div>
         <div class="col-sm-6 col-lg-5 oc-description">
@@ -139,26 +142,28 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                 ?>
                 <div class="row">
                     <?php if (!empty($wareSizes)) { ?>
-                        <form name="oc-buy-form" action="cart.htm" method="post">
-                            <span><strong>Размер:</strong></span>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-xs-7">
-                                        <select>
-                                            <?php
-                                            foreach ($wareSizes as $size) {
-                                                echo '<option value="' . Size::findOne(['id' => $size])->name . '">' . Size::findOne(['id' => $size])->name . '</option>';
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-5 text-right">
-                                        <button type="submit" class="btn"><strong>Купить</strong></button>
-                                    </div>
+                        <?php $form = ActiveForm::begin([
+                            'id' => 'oc-buy-form'
+                            ]); ?>
+                        <span><strong>Размер:</strong></span>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-7">
+                                    <select>
+                                        <?php
+                                        foreach ($wareSizes as $size) {
+                                            echo '<option value="' . Size::findOne(['id' => $size])->name . '">' . Size::findOne(['id' => $size])->name . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-xs-5 text-right">
+                                    <?= Html::submitButton('Купить', ['class' => 'btn']) ?>
                                 </div>
                             </div>
-                            <span><strong>Бесплатная доставка по Украине!</strong></span>
-                        </form>
+                        </div>
+                        <span><strong>Бесплатная доставка по Украине!</strong></span>
+                        <?php ActiveForm::end(); ?>
                     <?php } else { ?>
                         <div class="col-xs-12">
                             <div class="alert alert-info" role="alert"> <strong>Нет в наличии</strong></div>

@@ -43,7 +43,7 @@ use Imagine\Image\BoxInterface;
  * @property string $file_extension
  * @property integer $file_version
  */
-class Ware extends \yii\db\ActiveRecord
+class Ware extends \yii\db\ActiveRecord implements \yz\shoppingcart\CartPositionInterface
 {
     const SEX_MALE = 1;
     const SEX_FEMALE = 2;
@@ -291,4 +291,25 @@ class Ware extends \yii\db\ActiveRecord
     {
         return $this->hasOne(SoleMaterial::className(), ['id' => 'sole']);
     }
-}
+
+    public function getCost($withDiscount = true) {
+
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function getQuantity() {
+
+    }
+
+    public function setQuantity($quantity) {
+
+    }
+
+        }

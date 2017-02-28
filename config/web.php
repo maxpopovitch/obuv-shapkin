@@ -54,6 +54,10 @@ $config = [
                 'item',
             ]
         ],
+        'cart' => [
+            'class' => 'yz\shoppingcart\ShoppingCart',
+            'cartId' => 'obuv_co_cart',
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

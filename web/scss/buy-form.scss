@@ -22,7 +22,7 @@ $button-color: #1CA913;
     }
 }
 
-form[name="oc-buy-form"] {
+#oc-buy-form {
     padding: 10px;
     background-color: #555;
     margin: 10px 0;
@@ -50,6 +50,7 @@ form[name="oc-buy-form"] {
         position: relative;
         border-radius: 4px;
         color: #FFF;
+        font-weight: 700;
         background-color: $button-color;
         text-shadow: 0 1px darken($button-color, 20);
         border: 1px solid;

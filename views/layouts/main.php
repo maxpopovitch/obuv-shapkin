@@ -93,7 +93,13 @@ AppAsset::register($this);
                         <i class="glyphicon glyphicon-shopping-cart"></i>
                     </div>
                     <div class="oc-info">
-                        <a href="<?= Url::to(['site/cart']) ?>">100 товаров на сумму 99999 грн.</a>
+                        <?php if (Yii::$app->cart->getCount() > 0) { ?>
+                            <a href="<?= Url::to(['site/cart']) ?>">
+                                <?php echo Yii::$app->cart->getCount() . ' (' . Yii::$app->cart->getCost() . ')' ; ?>
+                            </a>
+                        <?php } else { ?>
+                            Добавьте товары в корзину
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="clearfix"></div>
