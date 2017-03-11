@@ -1,5 +1,4 @@
 $receipt-min-height: 310px;
-$padding: 10px 0;
 
 @mixin prefix($scope, $vendors: webkit moz ms o) {
     @each $prop, $value in $scope {
@@ -16,7 +15,7 @@ $padding: 10px 0;
 .oc-receipt {
     @include prefix ((filter: brightness(99%) drop-shadow(0 0 2px #BBB)));
     min-height: $receipt-min-height;
-    width: 260px;
+    width: 250px;
     background-image: url(../imgs/receipt.png);
     display: inline-block;
     background-size: cover;
@@ -29,7 +28,7 @@ $padding: 10px 0;
     }
 
     .oc-logo-receipt {
-        margin: 10px 0 15px;
+        margin: 10px 0 20px;
 
         img {
             max-height: 30px;
@@ -42,7 +41,7 @@ $padding: 10px 0;
 
     .oc-goods-wrapper {
         min-height: $receipt-min-height - 150;
-        padding: $padding;
+        padding: 10px 0;
         border-top: 1px dashed #000;
         border-bottom: 1px dashed #000;
 
@@ -74,7 +73,7 @@ $padding: 10px 0;
     }
 
     .oc-total {
-        padding: $padding;
+        padding: 20px 0 10px;
         font-size: 16px;
         font-weight: 700;
         text-transform: uppercase;

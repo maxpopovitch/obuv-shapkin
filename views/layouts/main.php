@@ -9,6 +9,7 @@ use yii\widgets\Breadcrumbs;
 use app\widgets\SubscribeWidget;
 use app\assets\AppAsset;
 use yii\helpers\Url;
+use app\models\Ware;
 
 AppAsset::register($this);
 ?>
@@ -93,9 +94,9 @@ AppAsset::register($this);
                         <i class="glyphicon glyphicon-shopping-cart"></i>
                     </div>
                     <div class="oc-info">
-                        <?php if (Yii::$app->cart->getCount() > 0) { ?>
+                        <?php if (Ware::getCartWaresCount() > 0) { ?>
                             <a href="<?= Url::to(['site/cart']) ?>">
-                                <?php echo Yii::$app->cart->getCount() . ' (' . Yii::$app->cart->getCost() . ')' ; ?>
+                                <?php echo Ware::getCartWaresCount() . ' (' . Ware::getCartWaresCost() . ' грн.)' ; ?>
                             </a>
                         <?php } else { ?>
                             Добавьте товары в корзину

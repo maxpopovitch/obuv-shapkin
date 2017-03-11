@@ -5,7 +5,7 @@
   -o-filter: brightness(99%) drop-shadow(0 0 2px #BBB);
   filter: brightness(99%) drop-shadow(0 0 2px #BBB);
   min-height: 310px;
-  width: 260px;
+  width: 250px;
   background-image: url(../imgs/receipt.png);
   display: inline-block;
   background-size: cover;
@@ -16,7 +16,7 @@
     .oc-receipt {
       width: 293px; } }
   .oc-receipt .oc-logo-receipt {
-    margin: 10px 0 15px; }
+    margin: 10px 0 20px; }
     .oc-receipt .oc-logo-receipt img {
       max-height: 30px; }
     .oc-receipt .oc-logo-receipt div {
@@ -43,7 +43,7 @@
           width: 32%;
           vertical-align: bottom; }
   .oc-receipt .oc-total {
-    padding: 10px 0;
+    padding: 20px 0 10px;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase; }

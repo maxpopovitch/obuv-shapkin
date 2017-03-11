@@ -55,6 +55,9 @@ a:not(.btn):not(.list-group-item), .nav > li > a:not(.btn) {
   margin: 0;
   padding: 0; }
 
+.modal-dialog {
+  z-index: 1050; }
+
 textarea {
   resize: vertical;
   max-height: 300px; }
@@ -336,13 +339,10 @@ textarea {
       margin: 0 0 10px 0; }
 
 .oc-ware-div {
-  margin: 5px 10px 25px;
-  /*this class is added manually in cart.htm and handles in confirmation.js*/ }
+  margin: 5px 10px 25px; }
   .oc-ware-div h3 {
     color: #494949;
     margin: 0 0 20px 0; }
-  .oc-ware-div .oc-empty {
-    display: none; }
   .oc-ware-div .oc-order-status {
     padding: 5px; }
   .oc-ware-div .oc-order-status-icon {
@@ -411,7 +411,7 @@ textarea {
       vertical-align: middle; }
       .oc-ware a .oc-ware-photo img {
         max-width: 165px;
-        max-height: 145px; }
+        max-height: 130px; }
     .oc-ware a .oc-separator {
       height: 1px;
       background: #D2D6AA; }
@@ -779,6 +779,7 @@ div[data-style="accordion"] .panel-heading {
         float: left;
         display: inline-block; } }
     .oc-order-preview > .row > div .oc-thumbnail img {
+      max-width: 125px;
       max-height: 100px; }
     .oc-order-preview > .row > div .oc-explanation {
       padding: 10px 0 0; }

@@ -9,8 +9,10 @@ use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use app\models\forms\LoginForm;
 use app\models\forms\ContactForm;
+use app\models\forms\OrderForm;
 use app\models\Brand;
 use app\models\Ware;
+use yz\shoppingcart\ShoppingCart;
 
 class SiteController extends Controller {
 
@@ -268,8 +270,24 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionCart() {
+        $cart = Yii::$app->cart;
+        $products = $cart->getPositions();
+        $wares = [];
+        foreach ($products as $product) {
+            $ware = Ware::findOne($product->id);
+            $ware->sizes = $product->sizes;
+            array_push($wares, $ware);
+        }
         $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Корзина';
-        return $this->render('cart');
+
+
+        $model = new OrderForm();
+        if ($model->load(Yii::$app->request->post()) && $model->send(Yii::$app->params['adminEmail'], $wares)) {
+            Yii::$app->session->setFlash('orderFormSubmitted');
+            
+            return $this->refresh();
+        }
+        return $this->render('cart', ['wares' => $wares, 'model' => $model]);
     }
 
     /**
@@ -278,12 +296,25 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionAddToCart($id, $size) {
-        $cart = new ShoppingCart();
-
         $model = Ware::findOne($id);
+        $model->transformCallback = false;
+        $model->sizes = $size;
         if ($model) {
-            $cart->put($model, 1);
-            return $this->redirect(['cart']);
+            Yii::$app->cart->put($model, 1);
+            return $this->redirect('index.php?r=site%2Fcart');
+        }
+        throw new NotFoundHttpException();
+    }
+
+    /**
+     * Adds ware to shopping cart and displays cart page.
+     *
+     * @return string
+     */
+    public function actionRemoveFromCart($id) {
+        if ($id) {
+            Yii::$app->cart->removeByid($id);
+            return $this->redirect('index.php?r=site%2Fcart');
         }
         throw new NotFoundHttpException();
     }

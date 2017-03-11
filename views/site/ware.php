@@ -142,14 +142,26 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
                 ?>
                 <div class="row">
                     <?php if (!empty($wareSizes)) { ?>
-                        <?php $form = ActiveForm::begin([
-                            'id' => 'oc-buy-form'
-                            ]); ?>
+                        <?php
+                        $form = ActiveForm::begin([
+                                    'id' => 'oc-buy-form',
+                                    'action' => 'index.php?r=site%2Fadd-to-cart',
+                                    'method' => 'GET'
+                        ]);
+                        ?>
                         <span><strong>Размер:</strong></span>
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-xs-7">
-                                    <select>
+                                    <?=
+                                            $form->field($ware, 'id', [
+                                                'template' => '{input}',
+                                                'options' => ['tag' => false],
+                                                'inputOptions' => ['name' => 'id', 'class' => false]
+                                            ])
+                                            ->hiddenInput(['value' => $ware->id])
+                                    ?>
+                                    <select name="size">
                                         <?php
                                         foreach ($wareSizes as $size) {
                                             echo '<option value="' . Size::findOne(['id' => $size])->name . '">' . Size::findOne(['id' => $size])->name . '</option>';

@@ -291,6 +291,37 @@ class Ware extends \yii\db\ActiveRecord implements \yz\shoppingcart\CartPosition
     {
         return $this->hasOne(SoleMaterial::className(), ['id' => 'sole']);
     }
+    
+    /**
+     * 
+     * @return count of wares in cart
+     */
+    public static function getCartWaresCount()
+    {
+        $cart = Yii::$app->cart;    
+        $products = $cart->getPositions();
+        return count($products);
+    }
+    
+    /**
+     * 
+     * @return count of wares in cart
+     */
+    public static function getCartWaresCost()
+    {
+        $cart = Yii::$app->cart;    
+        $products = $cart->getPositions();
+        $cost = 0;
+        
+        foreach ($products as $product) {
+            if ($product->new_price > 0) {
+                $cost = $cost + $product->new_price;
+            } else {
+                $cost = $cost + $product->init_price;
+            }
+        }
+        return $cost;
+    }
 
     public function getCost($withDiscount = true) {
 
@@ -301,7 +332,7 @@ class Ware extends \yii\db\ActiveRecord implements \yz\shoppingcart\CartPosition
     }
 
     public function getPrice() {
-        return $this->price;
+        return ($this->new_price > 0) ? $this->new_price : $this->init_price;
     }
 
     public function getQuantity() {
