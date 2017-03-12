@@ -68,8 +68,28 @@ class SiteController extends Controller {
      * @return string
      */
     public function actionIndex() {
+        $form = Yii::$app->request->post('Ware');
+        if (!empty($form)) {
+            echo '<pre>';
+            \yii\helpers\VarDumper::dump($form);
+            die();
+        } else {
+           echo '<pre>';
+            \yii\helpers\VarDumper::dump($form);
+           echo '</pre>';
+        }
+        $model = new Ware();
+        $prices = [];
+        $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
+        foreach ($wares as $ware) {
+            array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+        }
+        $prices = array_unique($prices);
         $this->view->params['header'] = 'Интернет-магазин обуви Obuv.CO. Новые поступления (на 26 мая 2014).';
-        return $this->render('index');
+        return $this->render('index', [
+                    'model' => $model,
+                    'prices' => $prices,
+        ]);
     }
 
     /**
@@ -284,7 +304,7 @@ class SiteController extends Controller {
         $model = new OrderForm();
         if ($model->load(Yii::$app->request->post()) && $model->send(Yii::$app->params['adminEmail'], $wares)) {
             Yii::$app->session->setFlash('orderFormSubmitted');
-            
+
             return $this->refresh();
         }
         return $this->render('cart', ['wares' => $wares, 'model' => $model]);
@@ -320,13 +340,13 @@ class SiteController extends Controller {
     }
 
     /**
-     * Displays confirmation page.
+     * Search wares by parameters.
      *
-     * @return string
+     * @return result
      */
-    public function actionConfirmation() {
-        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Спасибо!';
-        return $this->render('confirmation');
+    public function actionFilter() {
+        $this->view->params['header'] = 'It works!';
+        return $this->render('index');
     }
 
 }

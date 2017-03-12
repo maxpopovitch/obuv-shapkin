@@ -847,6 +847,24 @@ textarea {
             padding: 0;
         }
 
+        &.oc-color-wrapper, &.oc-size-wrapper {
+            .form-group {
+                > div > label {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .form-group {
+            > div > label {
+                display: block;
+            }
+
+            .oc-details-label {
+                padding-left: 6px;
+            }
+        }
+
         b {
 
             span {
@@ -854,7 +872,7 @@ textarea {
             }
         }
 
-        span, label {
+        span {
             color: $color-14;
             font-size: 14px;
             font-weight: 400;
@@ -874,6 +892,12 @@ textarea {
                 &:before {
                     content: "\e157";
                 }
+
+                + label {
+                    color: $color-14;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
             }
 
             &:checked + label {
@@ -888,7 +912,7 @@ textarea {
             }
         }
 
-        .oc-color {
+        .oc-color, &.oc-color-wrapper {
             display: inline-block;
             margin: 0 0 4px 0;
 
@@ -904,6 +928,7 @@ textarea {
                     border-radius: 5px;
                     display:inline-block;
                     padding: 0;
+                    margin: 2px 0;
 
                     &:before {
                         content: "\e013";
@@ -927,7 +952,7 @@ textarea {
             }
         }
 
-        .oc-size {
+        .oc-size, &.oc-size-wrapper {
             display: inline-block;
             margin: 0 0 4px 0;
 
@@ -944,6 +969,7 @@ textarea {
                     border-radius: 2px;
                     display:inline-block;
                     padding: 4px 0 8px 0;
+                    margin: 2px 0;
 
                     &:before {
                         content: "";

@@ -606,9 +606,15 @@ textarea {
   #sidebar .oc-cat-div input, #sidebar .oc-cat-div label, #sidebar .oc-cat-div span {
     margin: 0;
     padding: 0; }
+  #sidebar .oc-cat-div.oc-color-wrapper .form-group > div > label, #sidebar .oc-cat-div.oc-size-wrapper .form-group > div > label {
+    display: inline-block; }
+  #sidebar .oc-cat-div .form-group > div > label {
+    display: block; }
+  #sidebar .oc-cat-div .form-group .oc-details-label {
+    padding-left: 6px; }
   #sidebar .oc-cat-div b span {
     font-weight: 700; }
-  #sidebar .oc-cat-div span, #sidebar .oc-cat-div label {
+  #sidebar .oc-cat-div span {
     color: #1D1D1D;
     font-size: 14px;
     font-weight: 400; }
@@ -623,17 +629,21 @@ textarea {
       cursor: pointer; }
       #sidebar .oc-cat-div input[type="checkbox"] + label:before {
         content: "\e157"; }
+      #sidebar .oc-cat-div input[type="checkbox"] + label + label {
+        color: #1D1D1D;
+        font-size: 14px;
+        font-weight: 400; }
     #sidebar .oc-cat-div input[type="checkbox"]:checked + label:before {
       content: "\e067"; }
     #sidebar .oc-cat-div input[type="checkbox"][disabled] ~ label {
       opacity: 0.5;
       cursor: default; }
-  #sidebar .oc-cat-div .oc-color {
+  #sidebar .oc-cat-div .oc-color, #sidebar .oc-cat-div.oc-color-wrapper {
     display: inline-block;
     margin: 0 0 4px 0; }
-    #sidebar .oc-cat-div .oc-color input[type="checkbox"] {
+    #sidebar .oc-cat-div .oc-color input[type="checkbox"], #sidebar .oc-cat-div.oc-color-wrapper input[type="checkbox"] {
       display: none; }
-      #sidebar .oc-cat-div .oc-color input[type="checkbox"] + label {
+      #sidebar .oc-cat-div .oc-color input[type="checkbox"] + label, #sidebar .oc-cat-div.oc-color-wrapper input[type="checkbox"] + label {
         font-family: "Glyphicons Halflings";
         font-size: 14px;
         text-align: center;
@@ -641,21 +651,22 @@ textarea {
         height: 22px;
         border-radius: 5px;
         display: inline-block;
-        padding: 0; }
-        #sidebar .oc-cat-div .oc-color input[type="checkbox"] + label:before {
+        padding: 0;
+        margin: 2px 0; }
+        #sidebar .oc-cat-div .oc-color input[type="checkbox"] + label:before, #sidebar .oc-cat-div.oc-color-wrapper input[type="checkbox"] + label:before {
           content: "\e013";
           color: transparent;
           text-shadow: none; }
-      #sidebar .oc-cat-div .oc-color input[type="checkbox"]:checked + label:before {
+      #sidebar .oc-cat-div .oc-color input[type="checkbox"]:checked + label:before, #sidebar .oc-cat-div.oc-color-wrapper input[type="checkbox"]:checked + label:before {
         content: "\e013";
         color: #333;
         text-shadow: 0px 0px 0px white, -1px -1px 2px rgba(255, 255, 255, 0.75), 1px -1px 2px rgba(255, 255, 255, 0.75), -1px 1px 2px rgba(255, 255, 255, 0.75), 1px 1px 2px rgba(255, 255, 255, 0.75); }
-  #sidebar .oc-cat-div .oc-size {
+  #sidebar .oc-cat-div .oc-size, #sidebar .oc-cat-div.oc-size-wrapper {
     display: inline-block;
     margin: 0 0 4px 0; }
-    #sidebar .oc-cat-div .oc-size input[type="checkbox"] {
+    #sidebar .oc-cat-div .oc-size input[type="checkbox"], #sidebar .oc-cat-div.oc-size-wrapper input[type="checkbox"] {
       display: none; }
-      #sidebar .oc-cat-div .oc-size input[type="checkbox"] + label {
+      #sidebar .oc-cat-div .oc-size input[type="checkbox"] + label, #sidebar .oc-cat-div.oc-size-wrapper input[type="checkbox"] + label {
         color: #FFF;
         font-size: 11px;
         word-spacing: -7px;
@@ -664,12 +675,13 @@ textarea {
         background: #8FA136;
         border-radius: 2px;
         display: inline-block;
-        padding: 4px 0 8px 0; }
-        #sidebar .oc-cat-div .oc-size input[type="checkbox"] + label:before {
+        padding: 4px 0 8px 0;
+        margin: 2px 0; }
+        #sidebar .oc-cat-div .oc-size input[type="checkbox"] + label:before, #sidebar .oc-cat-div.oc-size-wrapper input[type="checkbox"] + label:before {
           content: ""; }
-      #sidebar .oc-cat-div .oc-size input[type="checkbox"]:checked + label {
+      #sidebar .oc-cat-div .oc-size input[type="checkbox"]:checked + label, #sidebar .oc-cat-div.oc-size-wrapper input[type="checkbox"]:checked + label {
         background: #3d551c; }
-        #sidebar .oc-cat-div .oc-size input[type="checkbox"]:checked + label:before {
+        #sidebar .oc-cat-div .oc-size input[type="checkbox"]:checked + label:before, #sidebar .oc-cat-div.oc-size-wrapper input[type="checkbox"]:checked + label:before {
           content: ""; }
   #sidebar .oc-cat-div .oc-details-label {
     position: relative;
