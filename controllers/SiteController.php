@@ -69,15 +69,9 @@ class SiteController extends Controller {
      */
     public function actionIndex() {
         $form = Yii::$app->request->post('Ware');
-        if (!empty($form)) {
-            echo '<pre>';
-            \yii\helpers\VarDumper::dump($form);
-            die();
-        } else {
-           echo '<pre>';
+        echo '<pre>';
             \yii\helpers\VarDumper::dump($form);
            echo '</pre>';
-        }
         $model = new Ware();
         $prices = [];
         $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();

@@ -22,7 +22,7 @@ use app\models\Brand;
 
 
 
-<?php $form = ActiveForm::begin(); ?>
+<?php $form = ActiveForm::begin(['enableClientValidation'=> false]); ?>
 <div class="col-xs-12 col-sm-4 sidebar-offcanvas" id="sidebar">
     <div class="row">
         <h2 class="oc-details">Подбор обуви по параметрам:</h2>
@@ -32,7 +32,7 @@ use app\models\Brand;
             <div class="oc-cat-div">
                 <div class="oc-title">Цена</div>
                 <?=
-                Html::input('range', 'maxprice', max($prices), [
+                Html::input('range', 'Ware[maxprice]', max($prices), [
                     'id' => 'oc-max-price',
                     'min' => min($prices),
                     'max' => max($prices),
