@@ -197,43 +197,38 @@ textarea {
 .oc-contact {
   background: #1D1D1D;
   padding: 2px 10px; }
-  .oc-contact .clearfix {
-    display: block; }
-    @media (min-width: 992px) {
-      .oc-contact .clearfix {
-        display: none; } }
   .oc-contact .oc-div-i {
     float: left;
     font-size: 26px;
     color: #FFF;
-    position: relative;
     text-align: center;
-    width: 10%; }
+    width: 35px; }
     @media (min-width: 992px) {
       .oc-contact .oc-div-i {
-        width: 0;
+        position: absolute;
+        top: 2px;
         text-align: left; } }
   .oc-contact .oc-info {
     color: #FFF;
     display: inline-block;
-    padding: 0 10px;
-    width: 90%; }
+    padding: 5px 10px;
+    width: calc(100% - 35px); }
     @media (min-width: 992px) {
       .oc-contact .oc-info {
         width: 100%; } }
-  @media (min-width: 992px) {
-    .oc-contact .oc-phone {
-      float: left;
-      margin: 0 3% 0 0; } }
-  @media (min-width: 992px) {
-    .oc-contact .oc-phone .oc-div-i {
-      top: 2px; } }
-  @media (min-width: 992px) {
-    .oc-contact .oc-phone .oc-info {
-      padding: 0 0 0 35px; } }
-  .oc-contact .oc-phone .oc-info a {
-    color: #FFF; }
+  .oc-contact .oc-phone {
+    position: relative; }
+    @media (min-width: 992px) {
+      .oc-contact .oc-phone {
+        float: left;
+        margin: 0 3% 0 0; } }
+    @media (min-width: 992px) {
+      .oc-contact .oc-phone .oc-info {
+        padding: 0 0 0 35px; } }
+    .oc-contact .oc-phone .oc-info a {
+      color: #FFF; }
   .oc-contact .oc-location {
+    position: relative;
     padding: 0 0 15px 0; }
     @media (min-width: 992px) {
       .oc-contact .oc-location {
@@ -245,29 +240,18 @@ textarea {
         float: left;
         margin: 0 4% 0 0; } }
     @media (min-width: 992px) {
-      .oc-contact .oc-location .oc-div-i {
-        top: 2px;
-        right: 6px; } }
-    .oc-contact .oc-location .oc-info {
-      position: relative;
-      top: 9px; }
-      @media (min-width: 992px) {
-        .oc-contact .oc-location .oc-info {
-          padding: 0 0 0 24px; } }
-      .oc-contact .oc-location .oc-info a {
-        color: #FFF; }
-  @media (min-width: 992px) {
-    .oc-contact .oc-cart {
-      float: left; } }
-  @media (min-width: 992px) {
-    .oc-contact .oc-cart .oc-div-i {
-      top: 2px; } }
-  .oc-contact .oc-cart .oc-info {
-    position: relative;
-    top: 9px; }
+      .oc-contact .oc-location .oc-info {
+        padding: 9px 0 0 35px; } }
+    .oc-contact .oc-location .oc-info a {
+      color: #FFF; }
+  .oc-contact .oc-cart {
+    position: relative; }
+    @media (min-width: 992px) {
+      .oc-contact .oc-cart {
+        float: left; } }
     @media (min-width: 992px) {
       .oc-contact .oc-cart .oc-info {
-        padding: 0 0 0 35px; } }
+        padding: 9px 0 0 35px; } }
     .oc-contact .oc-cart .oc-info a {
       color: #FFF; }
 
@@ -854,14 +838,13 @@ footer {
   padding: 20px;
   line-height: 40px; }
   .oc-footer-one #subscribe-form label {
-    font-weight: 400;
-    line-height: 0; }
+    font-weight: 400; }
   .oc-footer-one #subscribe-form input {
     padding: 6px 55px 6px 12px; }
   .oc-footer-one #subscribe-form button[type="submit"] {
     position: absolute;
     right: 16px;
-    top: 41px;
+    top: 46px;
     border: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }

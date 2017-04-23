@@ -140,9 +140,6 @@ class SiteController extends Controller {
    */
   public function actionContacts() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -164,9 +161,6 @@ class SiteController extends Controller {
    */
   public function actionBrands() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -188,9 +182,6 @@ class SiteController extends Controller {
    */
   public function actionShoesWomen() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -212,9 +203,6 @@ class SiteController extends Controller {
    */
   public function actionShoesMen() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -236,9 +224,6 @@ class SiteController extends Controller {
    */
   public function actionBrand($id) {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -262,9 +247,6 @@ class SiteController extends Controller {
    */
   public function actionWare($id) {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -288,9 +270,6 @@ class SiteController extends Controller {
    */
   public function actionTips() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -312,9 +291,6 @@ class SiteController extends Controller {
    */
   public function actionPaymentAndDelivery() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -336,9 +312,6 @@ class SiteController extends Controller {
    */
   public function actionFeedback() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -368,9 +341,6 @@ class SiteController extends Controller {
    */
   public function actionSizes() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -392,9 +362,6 @@ class SiteController extends Controller {
    */
   public function actionHowToOrder() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -416,9 +383,6 @@ class SiteController extends Controller {
    */
   public function actionMoneyback() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -440,9 +404,6 @@ class SiteController extends Controller {
    */
   public function actionGuarantee() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -464,9 +425,6 @@ class SiteController extends Controller {
    */
   public function actionCart() {
     $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
