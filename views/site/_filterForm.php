@@ -225,8 +225,16 @@ use app\models\Brand;
         </div>
     </div>
     <div class="row">
-        <div class="oc-details-grid"><div class="oc-cat-div text-center"><button type="submit" class="btn btn-success btn-lg">Показать</button></div></div>
-        <div class="oc-details-grid"><div class="oc-cat-div text-center"><button type="reset" class="btn btn-danger btn-lg">Сбросить</button></div></div>
+        <div class="oc-details-grid">
+	  <div class="oc-cat-div text-center">
+	    <button type="submit" class="btn btn-success btn-lg">Показать</button>
+	  </div>
+	</div>
+        <div class="oc-details-grid">
+	  <div class="oc-cat-div text-center">
+	    <button type="reset" class="btn btn-danger btn-lg">Сбросить</button>
+	  </div>
+	</div>
     </div>
 </div>
 

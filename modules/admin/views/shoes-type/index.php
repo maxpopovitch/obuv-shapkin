@@ -10,9 +10,15 @@ use yii\grid\GridView;
 $this->title = 'Типы обуви';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="shoes-type-index">
+<section class="oc-content">
+  <div class="container-fluid oc-margin">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <div class="col-xs-12">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+	<div class="row">
+	  <div class="col-xs-12">
+	    <div class="oc-ware-div">
+	      <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -34,4 +40,11 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]);
     ?>
-</div>
+	    </div>
+	  </div>
+	</div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -11,33 +11,40 @@ use app\models\Ware;
 $this->title = 'Товары';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ware-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<section class="oc-content">
+  <div class="container-fluid oc-margin">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <div class="col-xs-12">
 
-    <p>
-        <?= Html::a('<span class="glyphicon glyphicon-plus"></span> Добавить товар', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?=
-    GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'tableOptions' => [
-            'class' => 'table table-striped table-condensed table-hover'
-        ],
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+	<div class="row">
+	  <div class="col-xs-12">
+	    <div class="oc-ware-div">
+	      <h1><?= Html::encode($this->title) ?></h1>
+	      <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+	      <p>
+		<?= Html::a('<span class="glyphicon glyphicon-plus"></span> Добавить товар', ['create'], ['class' => 'btn btn-success']) ?>
+	      </p>
+	      <?=
+	      GridView::widget([
+		  'dataProvider' => $dataProvider,
+		  'filterModel' => $searchModel,
+		  'tableOptions' => [
+		      'class' => 'table table-striped table-condensed table-hover'
+		  ],
+		  'columns' => [
+		      ['class' => 'yii\grid\SerialColumn'],
 //            'id',
-            'code',
-            'brand' => [
-                'attribute' => 'brand',
-                'format' => 'html',
-                'value' => function ($model) {
-                    return $model->_brand->name;
-                },
-                'filter' => false,
-            ],
+		      'code',
+		      'brand' => [
+			  'attribute' => 'brand',
+			  'format' => 'html',
+			  'value' => function ($model) {
+			    return $model->_brand->name;
+			  },
+			  'filter' => false,
+		      ],
 //            'sex' => [
 //                'attribute' => 'sex',
 //                'format' => 'html',
@@ -46,14 +53,14 @@ $this->params['breadcrumbs'][] = $this->title;
 //                },
 //                'filter' => Ware::getSex(),
 //            ],
-            'saison' => [
-                'attribute' => 'saison',
-                'format' => 'html',
-                'value' => function ($model) {
-                    return $model->getSaison()[$model->saison];
-                },
-                'filter' => Ware::getSaison(),
-            ],
+		      'saison' => [
+			  'attribute' => 'saison',
+			  'format' => 'html',
+			  'value' => function ($model) {
+			    return $model->getSaison()[$model->saison];
+			  },
+			  'filter' => Ware::getSaison(),
+		      ],
 //            'type' => [
 //                'attribute' => 'type',
 //                'format' => 'html',
@@ -103,16 +110,16 @@ $this->params['breadcrumbs'][] = $this->title;
 //                },
 //                'filter' => false,
 //            ],
-            'category' => [
-                'attribute' => 'category',
-                'format' => 'html',
-                'value' => function ($model) {
-                    return $model->getCategory()[$model->category];
-                },
-                'filter' => Ware::getCategory(),
-            ],
-            'init_price',
-            'new_price',
+		      'category' => [
+			  'attribute' => 'category',
+			  'format' => 'html',
+			  'value' => function ($model) {
+			    return $model->getCategory()[$model->category];
+			  },
+			  'filter' => Ware::getCategory(),
+		      ],
+		      'init_price',
+		      'new_price',
 //            'waterproofness' => [
 //                'attribute' => 'waterproofness',
 //                'format' => 'html',
@@ -121,18 +128,25 @@ $this->params['breadcrumbs'][] = $this->title;
 //                },
 //                'filter' => Ware::getWaterproofness(),
 //            ],
-            'status' => [
-                'attribute' => 'status',
-                'format' => 'html',
-                'value' => function ($model) {
-                    return $model->getStatus()[$model->status];
-                },
-                'filter' => Ware::getStatus(),
-            ],
-            'position',
-            ['class' => 'yii\grid\ActionColumn',
-                'headerOptions' => ['width' => '65px']],
-        ],
-    ]);
-    ?>
-</div>
+		      'status' => [
+			  'attribute' => 'status',
+			  'format' => 'html',
+			  'value' => function ($model) {
+			    return $model->getStatus()[$model->status];
+			  },
+			  'filter' => Ware::getStatus(),
+		      ],
+		      'position',
+		      ['class' => 'yii\grid\ActionColumn',
+			  'headerOptions' => ['width' => '65px']],
+		  ],
+	      ]);
+	      ?>
+	    </div>
+	  </div>
+	</div>
+
+      </div>
+    </div>
+  </div>
+</section>

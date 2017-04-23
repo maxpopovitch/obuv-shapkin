@@ -51,7 +51,7 @@ class OrderForm extends Model {
      * @param string $email the target email address
      * @return bool whether the model passes validation
      */
-    public function send($email, $wares) {
+    public function send($email, $cartWares) {
         if ($this->validate()) {
             $body = '<table cellpadding=10>';
             $body = $body . '<thead>';
@@ -62,14 +62,14 @@ class OrderForm extends Model {
             $body = $body . '</tr>';
             $body = $body . '</thead>';
             $body = $body . '<tbody>';
-            foreach ($wares as $ware) {
+            foreach ($cartWares as $cartWare) {
                 $body = $body . '<tr>';
-                $body = $body . '<td>' . '<b>' . $ware->_brand->name . '</b>' . '<br>' . $ware->code . '</td>';
-                $body = $body . '<td><b>' . $ware->sizes . '</b></td>';
-                if ($ware->new_price > 0) {
-                    $body = $body . '<td><b>' . $ware->new_price . '</b></td>';
+                $body = $body . '<td>' . '<b>' . $cartWare->_brand->name . '</b>' . '<br>' . $cartWare->code . '</td>';
+                $body = $body . '<td><b>' . $cartWare->sizes . '</b></td>';
+                if ($cartWare->new_price > 0) {
+                    $body = $body . '<td><b>' . $cartWare->new_price . '</b></td>';
                 } else {
-                    $body = $body . '<td><b>' . $ware->init_price . '</b></td>';
+                    $body = $body . '<td><b>' . $cartWare->init_price . '</b></td>';
                 }
                 $body = $body . '</tr>';
             }
