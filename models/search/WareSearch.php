@@ -84,4 +84,74 @@ class WareSearch extends Ware
 
         return $dataProvider;
     }
+
+    public function searchWares($params)
+    {
+        $query = Ware::find();
+
+	if (isset($params['maxprice'])) {
+	  $query->andFilterWhere(['<=', 'init_price', $params['maxprice']]);
+	}
+
+	if (isset($params['sex'])) {
+	  $query->andFilterWhere(['in', 'sex', $params['sex']]);
+	}
+
+	if (isset($params['color'])) {
+	  $query->andFilterWhere(['in', 'color', $params['color']]);
+	}
+	
+	if (isset($params['wideness'])) {
+	  $query->andFilterWhere(['in', 'wideness', $params['wideness']]);
+	}
+
+	if (isset($params['type'])) {
+	  $query->andFilterWhere(['in', 'type', $params['type']]);
+	}
+
+	if (isset($params['saison'])) {
+	  $query->andFilterWhere(['in', 'saison', $params['saison']]);
+	}
+
+	if (isset($params['category'])) {
+	  $query->andFilterWhere(['in', 'category', $params['category']]);
+	}
+
+	if (isset($params['upper'])) {
+	  $query->andFilterWhere(['in', 'upper', $params['upper']]);
+	}
+
+	if (isset($params['lining'])) {
+	  $query->andFilterWhere(['in', 'lining', $params['lining']]);
+	}
+
+	if (isset($params['sole'])) {
+	  $query->andFilterWhere(['in', 'sole', $params['sole']]);
+	}
+
+	if (isset($params['heel_height'])) {
+	  $query->andFilterWhere(['in', 'heel_height', $params['heel_height']]);
+	}
+
+	if (isset($params['waterproofness'])) {
+	  $query->andFilterWhere(['in', 'waterproofness', $params['waterproofness']]);
+	}
+
+	if (isset($params['brand'])) {
+	  $query->andFilterWhere(['in', 'brand', $params['brand']]);
+	}
+
+	if (isset($params['sizes']) && is_array($params['sizes'])) {
+	  $filter = ['or'];
+	  foreach($params['sizes'] as $size) {
+	    $searchSize = '"' . $size . '"';
+	    array_push($filter, ['like', 'sizes', (string)$searchSize]);
+	  }
+	  $query->andFilterWhere($filter);
+	}
+
+	$result = $query->all();
+	
+        return $result;
+    }
 }

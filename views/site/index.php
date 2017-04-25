@@ -25,7 +25,15 @@ $this->title = 'obuv.co | Новые поступления | Интернет-�
 	<div class="row">
 	  <div class="col-xs-12">
 	    <div class="oc-ware-div">
-	      <?= WaresWidget::widget(['filter' => ['status' => Ware::STATUS_ACTIVE]]) ?>
+	      <?php if ($filteredWares === '') { ?>
+	      <div class="alert alert-info" role="alert">
+		<strong>Ой!</strong><br />
+		Ничего не найдено. Попробуйте сократить параметры поиска.
+	      </div>
+	      <?php } else {
+		echo $filteredWares;
+	      }
+	      ?>
 	    </div>
 	  </div>
 	</div>
@@ -34,6 +42,7 @@ $this->title = 'obuv.co | Новые поступления | Интернет-�
       $this->render('_filterForm', [
 	  'model' => $model,
 	  'prices' => $prices,
+	  'submittedForm' => $submittedForm,
       ])
       ?>
     </div>

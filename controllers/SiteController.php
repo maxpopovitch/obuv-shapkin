@@ -13,6 +13,7 @@ use app\models\forms\OrderForm;
 use app\models\Brand;
 use app\models\Ware;
 use yz\shoppingcart\ShoppingCart;
+use app\models\search\WareSearch;
 
 class SiteController extends Controller {
 
@@ -68,10 +69,7 @@ class SiteController extends Controller {
    * @return string
    */
   public function actionIndex() {
-    $form = Yii::$app->request->post('Ware');
-    echo '<pre>';
-    \yii\helpers\VarDumper::dump($form);
-    echo '</pre>';
+    $submittedForm = Yii::$app->request->post('Ware');
     $model = new Ware();
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
@@ -79,10 +77,21 @@ class SiteController extends Controller {
       array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
     }
     $prices = array_unique($prices);
+
+    $searchModel = new WareSearch();
+    $data = $searchModel->searchWares(Yii::$app->request->post('Ware'));
+
+    $filteredWares = '';
+    foreach ($data as $element) {
+      $filteredWares.= $this->renderPartial('filtered_ware', ['ware' => $element]);
+    }
+
     $this->view->params['header'] = 'Интернет-магазин обуви Obuv.CO. Новые поступления (на 26 мая 2014).';
     return $this->render('index', [
 		'model' => $model,
 		'prices' => $prices,
+		'filteredWares' => $filteredWares,
+		'submittedForm' => $submittedForm,
     ]);
   }
 
