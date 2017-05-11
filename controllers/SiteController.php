@@ -74,7 +74,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
 
@@ -153,7 +153,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Контакты';
@@ -174,7 +174,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Торговые марки';
@@ -195,7 +195,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Женская обувь';
@@ -216,7 +216,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Мужская обувь';
@@ -237,7 +237,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $brand = Brand::findOne($id);
@@ -260,7 +260,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $ware = Ware::findOne($id);
@@ -283,7 +283,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Советы покупателю';
@@ -304,7 +304,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Оплата и доставка';
@@ -325,7 +325,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Обратная связь';
@@ -354,7 +354,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Таблица размеров';
@@ -375,7 +375,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Как сделать заказ';
@@ -396,7 +396,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Условия обмена и возврата';
@@ -417,7 +417,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
     $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Гарантийные обязательства';
@@ -438,7 +438,7 @@ class SiteController extends Controller {
     $prices = [];
     $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
     foreach ($wares as $ware) {
-      array_push($prices, ($ware->new_price > 0) ? $ware->new_price : $ware->init_price);
+      array_push($prices, $ware->new_price);
     }
     $prices = array_unique($prices);
 

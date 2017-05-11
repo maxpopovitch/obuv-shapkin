@@ -90,7 +90,7 @@ class WareSearch extends Ware
         $query = Ware::find();
 
 	if (isset($params['maxprice'])) {
-	  $query->andFilterWhere(['<=', 'init_price', $params['maxprice']]);
+	  $query->andFilterWhere(['<=', 'new_price', $params['maxprice']]);
 	}
 
 	if (isset($params['sex'])) {

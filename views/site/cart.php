@@ -68,7 +68,7 @@ $this->title = 'obuv.co | Корзина | Интернет-магазин об�
       			  <div class="text-right">
 				  <?php echo $cartWare->sizes ?><br/>
       			    ---------<br/>
-				  <?php echo ($cartWare->new_price > 0) ? $cartWare->new_price : $cartWare->init_price ?> грн.
+				  <?php echo $cartWare->new_price ?> грн.
       			  </div>
       			</div>
 			    <?php } ?>
@@ -118,7 +118,7 @@ $this->title = 'obuv.co | Корзина | Интернет-магазин об�
       		  <div>
 			  <?php echo $cartWare->sizes ?>
       		  </div>
-      		  <div><?php echo ($cartWare->new_price > 0) ? $cartWare->new_price : $cartWare->init_price ?> грн.</div>
+      		  <div><?php echo $cartWare->new_price ?> грн.</div>
       		  <div>
       		    <button type="button" data-toggle="modal" data-target="#oc-confirmation" data-id="<?php echo $cartWare->id ?>"><span title="Удалить">&times;</span></button>
       		  </div>

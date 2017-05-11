@@ -145,7 +145,7 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
 			    <?php if ($ware->category === 2) { ?>
   			    <span class="oc-old"><?php echo $ware->init_price ?></span>
 			    <?php } ?>
-                            <span><?php echo ($ware->category === 2) ? $ware->new_price : $ware->init_price; ?></span>
+                            <span><?php echo $ware->new_price ?></span>
 			  </strong>
 			  грн.
 			</h3>

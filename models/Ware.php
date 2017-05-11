@@ -34,8 +34,8 @@ use Imagine\Image\BoxInterface;
  * @property integer $heel_height
  * @property integer $color
  * @property integer $category
- * @property double $init_price
- * @property double $new_price
+ * @property double $init_price //use this field to show initial price in case of sale
+ * @property double $new_price //use this field as actual price
  * @property integer $waterproofness
  * @property integer $status
  * @property integer $position
@@ -149,7 +149,7 @@ class Ware extends \yii\db\ActiveRecord implements \yz\shoppingcart\CartPosition
             'color' => 'Цвет',
             'category' => 'Категория',
             'init_price' => 'Начальная цена',
-            'new_price' => 'Новая цена',
+            'new_price' => 'Действующая цена',
             'waterproofness' => 'Защита от промокания',
             'status' => 'Статус',
             'position' => 'Позиция',
@@ -314,11 +314,7 @@ class Ware extends \yii\db\ActiveRecord implements \yz\shoppingcart\CartPosition
         $cost = 0;
         
         foreach ($products as $product) {
-            if ($product->new_price > 0) {
-                $cost = $cost + $product->new_price;
-            } else {
-                $cost = $cost + $product->init_price;
-            }
+	    $cost = $cost + $product->new_price;
         }
         return $cost;
     }
@@ -332,7 +328,7 @@ class Ware extends \yii\db\ActiveRecord implements \yz\shoppingcart\CartPosition
     }
 
     public function getPrice() {
-        return ($this->new_price > 0) ? $this->new_price : $this->init_price;
+        return $this->new_price;
     }
 
     public function getQuantity() {
