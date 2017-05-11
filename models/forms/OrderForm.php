@@ -66,11 +66,7 @@ class OrderForm extends Model {
                 $body = $body . '<tr>';
                 $body = $body . '<td>' . '<b>' . $cartWare->_brand->name . '</b>' . '<br>' . $cartWare->code . '</td>';
                 $body = $body . '<td><b>' . $cartWare->sizes . '</b></td>';
-                if ($cartWare->new_price > 0) {
-                    $body = $body . '<td><b>' . $cartWare->new_price . '</b></td>';
-                } else {
-                    $body = $body . '<td><b>' . $cartWare->init_price . '</b></td>';
-                }
+		$body = $body . '<td><b>' . $cartWare->new_price . '</b></td>';
                 $body = $body . '</tr>';
             }
             $body = $body . '<tr><td colspan=3 align=center><b>Итого: ' . Ware::getCartWaresCost() . '</b></td></tr>';
