@@ -86,7 +86,7 @@ class OrderForm extends Model {
             Yii::$app->mailer->compose()
                     ->setTo($email)
                     ->setSubject('obuv.co/order' . Ware::getCartWaresCount() . ' (' . Ware::getCartWaresCost() . ')')
-                    ->setFrom([$this->email => $this->name])
+                    ->setFrom(Yii::$app->params['adminEmail'])
                     ->setHtmlBody($body)
                     ->send();
 

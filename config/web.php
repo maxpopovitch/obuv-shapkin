@@ -28,12 +28,12 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-         'mail' => [
+        'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.yandex.com', //SMTP-server
+                'host' => 'smtp.yandex.ru', //SMTP-server
                 'username' => 'info@obuv.co', //info
                 'password' => 'boomerang_2003',
                 'port' => '465',

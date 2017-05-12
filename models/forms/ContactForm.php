@@ -52,10 +52,13 @@ class ContactForm extends Model
     public function contact($email)
     {
         if ($this->validate()) {
+	    $body = 'Отправитель: ' . $this->name . "\r\n";
+	    $body = $body . 'Email: ' . $this->email . "\r\n";
+	    $body = $body . 'Сообщение: ' . $this->body;
             Yii::$app->mailer->compose()
                 ->setTo($email)
-                ->setFrom([$this->email => $this->name])
-                ->setTextBody($this->body)
+                ->setFrom(Yii::$app->params['adminEmail'])
+                ->setTextBody($body)
                 ->send();
 
             return true;
