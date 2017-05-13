@@ -26,7 +26,6 @@ class OrderForm extends Model {
             ['name', 'required', 'message' => 'Как вас зовут?'],
             ['address', 'required', 'message' => 'Укажите адрес склада перевозчика (или ваш почтовый адрес)'],
             ['phone', 'required', 'message' => 'Как с вами связаться?'],
-            ['email', 'required', 'message' => 'Например, john@mail.com'],
             // email has to be a valid email address
             ['email', 'email', 'message' => 'Например, john@mail.com'],
             ['message', 'string'],
@@ -54,38 +53,40 @@ class OrderForm extends Model {
     public function send($email, $cartWares) {
         if ($this->validate()) {
             $body = '<table cellpadding=10>';
-            $body = $body . '<thead>';
-            $body = $body . '<tr>';
-            $body = $body . '<th>Наименование</th>';
-            $body = $body . '<th>Размер</th>';
-            $body = $body . '<th>Цена</th>';
-            $body = $body . '</tr>';
-            $body = $body . '</thead>';
-            $body = $body . '<tbody>';
+            $body .= '<thead>';
+            $body .= '<tr>';
+            $body .= '<th>Наименование</th>';
+            $body .= '<th>Размер</th>';
+            $body .= '<th>Цена</th>';
+            $body .= '</tr>';
+            $body .= '</thead>';
+            $body .= '<tbody>';
             foreach ($cartWares as $cartWare) {
-                $body = $body . '<tr>';
-                $body = $body . '<td>' . '<b>' . $cartWare->_brand->name . '</b>' . '<br>' . $cartWare->code . '</td>';
-                $body = $body . '<td><b>' . $cartWare->sizes . '</b></td>';
-		$body = $body . '<td><b>' . $cartWare->new_price . '</b></td>';
-                $body = $body . '</tr>';
+                $body .= '<tr>';
+                $body .= '<td>' . '<b>' . $cartWare->_brand->name . '</b>' . '<br>' . $cartWare->code . '</td>';
+                $body .= '<td><b>' . $cartWare->sizes . '</b></td>';
+		$body .= '<td><b>' . $cartWare->new_price . '</b></td>';
+                $body .= '</tr>';
             }
-            $body = $body . '<tr><td colspan=3 align=center><b>Итого: ' . Ware::getCartWaresCost() . '</b></td></tr>';
-            $body = $body . '</tbody>';
-            $body = $body . '</table>';
-            $body = $body . '<table cellpadding=10><tbody>';
-            $body = $body . '<tr><td><b>Фамилия, имя, отчество:</b><br>' . $this->name . '</td></tr>';
-            $body = $body . '<tr><td><b>Адрес доставки:</b><br>' . $this->address . '</td></tr>';
-            $body = $body . '<tr><td><b>Телефон:</b><br>' . $this->phone . '</td></tr>';
-            $body = $body . '<tr><td><b>Email:</b><br>' . $this->email . '</td></tr>';
+            $body .= '<tr><td colspan=3 align=center><b>Итого: ' . Ware::getCartWaresCost() . '</b></td></tr>';
+            $body .= '</tbody>';
+            $body .= '</table>';
+            $body .= '<table cellpadding=10><tbody>';
+            $body .= '<tr><td><b>Фамилия, имя, отчество:</b><br>' . $this->name . '</td></tr>';
+            $body .= '<tr><td><b>Адрес доставки:</b><br>' . $this->address . '</td></tr>';
+            $body .= '<tr><td><b>Телефон:</b><br>' . $this->phone . '</td></tr>';
+	    if ($this->email) {
+		$body .= '<tr><td><b>Email:</b><br>' . $this->email . '</td></tr>';
+	    }
             if (trim($this->message)) {
-                $body = $body . '<tr><td><b>Дополнительная информация:</b><br>' . $this->message . '</td></tr>';
+                $body .= '<tr><td><b>Дополнительная информация:</b><br>' . $this->message . '</td></tr>';
             }
-            $body = $body . '<tr><td>&mdash;<br>Дата: ' . date("d.m.Y, H:i T") .'<br>IP: ' . Yii::$app->request->getUserIP() . '</td></tr>';
-            $body = $body . '</tbody></table>';
+            $body .= '<tr><td>&mdash;<br>Дата: ' . date("d.m.Y, H:i T") .'<br>IP: ' . Yii::$app->request->getUserIP() . '</td></tr>';
+            $body .= '</tbody></table>';
 
             Yii::$app->mailer->compose()
                     ->setTo($email)
-                    ->setSubject('obuv.co/order' . Ware::getCartWaresCount() . ' (' . Ware::getCartWaresCost() . ')')
+                    ->setSubject('obuv.co/order ' . Ware::getCartWaresCount() . ' (' . Ware::getCartWaresCost() . ')')
                     ->setFrom(Yii::$app->params['adminEmail'])
                     ->setHtmlBody($body)
                     ->send();

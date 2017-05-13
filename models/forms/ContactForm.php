@@ -53,10 +53,11 @@ class ContactForm extends Model
     {
         if ($this->validate()) {
 	    $body = 'Отправитель: ' . $this->name . "\r\n";
-	    $body = $body . 'Email: ' . $this->email . "\r\n";
-	    $body = $body . 'Сообщение: ' . $this->body;
+	    $body .= 'Email: ' . $this->email . "\r\n";
+	    $body .= 'Сообщение: ' . $this->body;
             Yii::$app->mailer->compose()
                 ->setTo($email)
+		->setSubject('obuv.co/feedback')
                 ->setFrom(Yii::$app->params['adminEmail'])
                 ->setTextBody($body)
                 ->send();

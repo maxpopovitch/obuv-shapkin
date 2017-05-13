@@ -148,7 +148,7 @@ $this->title = 'obuv.co | Корзина | Интернет-магазин об�
 
 		  <?=
 			  $form->field($cartModel, 'email', ['inputOptions' => ['placeholder' => 'Укажите ваш email']])
-			  ->label('Email<span class="oc-required">*</span>')
+			  ->label('Email')
 		  ?>
 
 		  <?=
