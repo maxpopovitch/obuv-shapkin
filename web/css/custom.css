@@ -841,6 +841,8 @@ footer {
     font-weight: 400; }
   .oc-footer-one #subscribe-form input {
     padding: 6px 55px 6px 12px; }
+  .oc-footer-one #subscribe-form p.help-block {
+    line-height: normal; }
   .oc-footer-one #subscribe-form button[type="submit"] {
     position: absolute;
     right: 16px;

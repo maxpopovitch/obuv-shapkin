@@ -1216,6 +1216,10 @@ footer {
     input {
       padding: 6px 55px 6px 12px;
     }
+    
+    p.help-block {
+      line-height: normal;
+    }
 
     button[type="submit"] {
       position: absolute;

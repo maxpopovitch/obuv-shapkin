@@ -14,6 +14,7 @@ use app\models\Brand;
 use app\models\Ware;
 use yz\shoppingcart\ShoppingCart;
 use app\models\search\WareSearch;
+use app\models\Subscriber;
 
 class SiteController extends Controller {
 
@@ -504,6 +505,37 @@ class SiteController extends Controller {
   public function actionFilter() {
     $this->view->params['header'] = 'It works!';
     return $this->render('index');
+  }
+
+  /**
+   * Add subscriber to subscribe table.
+   *
+   * @return result
+   */
+  public function actionSubscribe() {
+    $form = Yii::$app->request->post('SubscribeForm');
+    $return = [
+      'status' => 'error',
+      'message' => 'Ошибка сохранения в базу данных'
+    ];
+    if (!empty($form['email'])) {
+      $subscribers = Subscriber::find()->where(['email' => $form['email']])->all();
+      if (is_array($subscribers) && count($subscribers) > 0) {
+	$return['status'] = 'warning';
+	$return['message'] = 'Такой email уже есть в базе';
+	echo json_encode($return);
+      } else {
+	$model = new Subscriber();
+	$model->email = $form['email'];
+	if ($model->save()) {
+	  $return['status'] = 'success';
+	  $return['message'] = 'Вы подписаны на новости';
+	  echo json_encode($return);
+	} else {
+	  echo json_encode($return);
+	}
+      }
+    }
   }
 
 }
