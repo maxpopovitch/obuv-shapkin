@@ -35,6 +35,7 @@ class AppAsset extends AssetBundle
         'js/validator.min.js',
         'js/cart.js',
         'js/thumbs.js',
+        'js/messaging.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

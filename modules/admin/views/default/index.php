@@ -87,6 +87,9 @@ use yii\bootstrap\ActiveForm;
 		<a href="index.php?r=admin/subscriber" class="list-group-item">
   		  <strong>Подписчики</strong><br /><small class="text-muted">Управление подписчиками</small>
   		</a>
+		<a href="index.php?r=admin/messaging" class="list-group-item">
+  		  <strong>Рассылки</strong><br /><small class="text-muted">Управление рассылками</small>
+  		</a>
   	      </div>
   	  <!--        <p>
   		  This is the view content for action "<?= $this->context->action->id ?>".

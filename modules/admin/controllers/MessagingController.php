@@ -3,16 +3,16 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\Subscriber;
-use app\models\search\SubscriberSearch;
+use app\models\Messaging;
+use app\models\search\MessagingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * SubscriberController implements the CRUD actions for Subscriber model.
+ * MessagingController implements the CRUD actions for Messaging model.
  */
-class SubscriberController extends Controller
+class MessagingController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,15 +30,15 @@ class SubscriberController extends Controller
     }
 
     /**
-     * Lists all Subscriber models.
+     * Lists all Messaging models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new SubscriberSearch();
+        $searchModel = new MessagingSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 	
-	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Подписчики';
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Рассылки';
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -47,7 +47,7 @@ class SubscriberController extends Controller
     }
 
     /**
-     * Displays a single Subscriber model.
+     * Displays a single Messaging model.
      * @param integer $id
      * @return mixed
      */
@@ -59,16 +59,21 @@ class SubscriberController extends Controller
     }
 
     /**
-     * Creates a new Subscriber model.
+     * Creates a new Messaging model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Subscriber();
+        $model = new Messaging();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+	    $model->created = time();
+	    $model->sent = 1;
+	    $model->emails = json_encode($model->emails);
+	    $model->status = Messaging::STATUS_NEW;
+	    $model->save();
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -77,7 +82,7 @@ class SubscriberController extends Controller
     }
 
     /**
-     * Updates an existing Subscriber model.
+     * Updates an existing Messaging model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +101,7 @@ class SubscriberController extends Controller
     }
 
     /**
-     * Deletes an existing Subscriber model.
+     * Deletes an existing Messaging model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -109,15 +114,15 @@ class SubscriberController extends Controller
     }
 
     /**
-     * Finds the Subscriber model based on its primary key value.
+     * Finds the Messaging model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Subscriber the loaded model
+     * @return Messaging the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Subscriber::findOne($id)) !== null) {
+        if (($model = Messaging::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
