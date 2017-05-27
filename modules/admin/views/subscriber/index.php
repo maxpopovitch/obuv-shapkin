@@ -30,15 +30,6 @@ $this->params['breadcrumbs'][] = $this->title;
 		  'tableOptions' => [
 		      'class' => 'table table-striped table-condensed table-hover'
 		  ],
-		  'columns' => [
-		      [
-			  'class' => 'yii\grid\CheckboxColumn',
-			  'multiple' => true
-		      ],
-		      'id',
-		      'email:email',
-		      ['class' => 'yii\grid\ActionColumn'],
-		  ],
 	      ]);
 	      ?>
 	    </div>
