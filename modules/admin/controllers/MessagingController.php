@@ -128,4 +128,33 @@ class MessagingController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    
+    /**
+     * Sends an existing Messaging model.
+     * If sending is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionSend($id)
+    {
+        $messaging = Messaging::find()->where(['id' => $id, 'status' => Messaging::STATUS_NEW])->one();
+	if ($messaging) {
+	  $emails = json_decode($messaging->emails, true);
+	  if (is_array($emails)) {
+	    foreach ($emails as $email) {
+	      Yii::$app->mailer->compose()
+		  ->setTo($email)
+		  ->setSubject($messaging->subject)
+		  ->setFrom(Yii::$app->params['adminEmail'])
+		  ->setTextBody($messaging->content)
+		  ->send();
+	    }
+	    $messaging->status = Messaging::STATUS_SENT;
+	    $messaging->save();
+	  }
+	}
+
+        return $this->redirect(['index']);
+    }
 }
