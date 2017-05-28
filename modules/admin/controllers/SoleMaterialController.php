@@ -58,6 +58,8 @@ class SoleMaterialController extends Controller {
             return $this->goHome();
         }
 
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Материалы подошвы';
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -72,6 +74,8 @@ class SoleMaterialController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Материалы подошвы';
 
         $model = new SoleMaterial();
 
@@ -94,6 +98,8 @@ class SoleMaterialController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Материалы подошвы';
 
         $model = $this->findModel($id);
 

@@ -37,7 +37,7 @@ class SubscriberController extends Controller
     {
         $searchModel = new SubscriberSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-	
+
 	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Подписчики';
 
         return $this->render('index', [
@@ -53,6 +53,8 @@ class SubscriberController extends Controller
      */
     public function actionView($id)
     {
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Подписчики';
+
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -65,6 +67,8 @@ class SubscriberController extends Controller
      */
     public function actionCreate()
     {
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Подписчики';
+
         $model = new Subscriber();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -84,6 +88,8 @@ class SubscriberController extends Controller
      */
     public function actionUpdate($id)
     {
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Подписчики';
+
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

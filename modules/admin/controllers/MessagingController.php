@@ -37,7 +37,7 @@ class MessagingController extends Controller
     {
         $searchModel = new MessagingSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-	
+
 	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Рассылки';
 
         return $this->render('index', [
@@ -65,7 +65,9 @@ class MessagingController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Messaging();
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Рассылки';
+
+	$model = new Messaging();
 
         if ($model->load(Yii::$app->request->post())) {
 	    $model->created = time();
@@ -89,7 +91,9 @@ class MessagingController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Рассылки';
+
+	$model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -150,6 +154,7 @@ class MessagingController extends Controller
 		  ->setTextBody($messaging->content)
 		  ->send();
 	    }
+	    $messaging->sent = time();
 	    $messaging->status = Messaging::STATUS_SENT;
 	    $messaging->save();
 	  }

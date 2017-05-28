@@ -39,7 +39,7 @@ class CategoryController extends Controller {
 
         $searchModel = new CategorySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        
+
         $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Категории';
 
         return $this->render('index', [
@@ -58,6 +58,8 @@ class CategoryController extends Controller {
             return $this->goHome();
         }
 
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Категории';
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -73,7 +75,9 @@ class CategoryController extends Controller {
             return $this->goHome();
         }
 
-        $model = new Category();
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Категории';
+
+	$model = new Category();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
@@ -94,6 +98,8 @@ class CategoryController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Категории';
 
         $model = $this->findModel($id);
 

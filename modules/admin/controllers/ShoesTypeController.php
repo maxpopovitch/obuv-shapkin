@@ -58,6 +58,8 @@ class ShoesTypeController extends Controller {
             return $this->goHome();
         }
 
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Типы обуви';
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -72,6 +74,8 @@ class ShoesTypeController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Типы обуви';
 
         $model = new ShoesType();
 
@@ -94,6 +98,8 @@ class ShoesTypeController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Типы обуви';
 
         $model = $this->findModel($id);
 

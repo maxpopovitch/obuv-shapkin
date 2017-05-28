@@ -66,6 +66,8 @@ class WareController extends Controller
             return $this->goHome();
         }
 
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Товары';
+
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -83,6 +85,8 @@ class WareController extends Controller
         }
 
         $model = new Ware();
+
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Товары';
 
         if ($model->load(Yii::$app->request->post())) {
             $model->sizes = json_encode($model->sizes);
@@ -115,6 +119,8 @@ class WareController extends Controller
 
         $model = $this->findModel($id);
         $model->sizes = json_decode($model->sizes, true);
+
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Товары';
 
         if ($model->load(Yii::$app->request->post())) {
             $model->sizes = json_encode($model->sizes);

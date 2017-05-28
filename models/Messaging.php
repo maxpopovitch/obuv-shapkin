@@ -47,20 +47,20 @@ class Messaging extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'emails' => 'Email list',
-            'created' => 'Creation date',
-            'sent' => 'Sending date',
-            'status' => 'Message status',
-            'subject' => 'Message subject',
-            'content' => 'Message body',
+            'emails' => 'Получатели (выбрать всех)',
+            'created' => 'Дата создания',
+            'sent' => 'Дата отправки',
+            'status' => 'Статус',
+            'subject' => 'Тема сообщения',
+            'content' => 'Текст сообщения',
         ];
     }
     
     public static function getStatuses()
     {
       return [
-	  self::STATUS_NEW => 'Новая',
-	  self::STATUS_SENT => 'Отправленная'
+	  self::STATUS_NEW => 'Новое',
+	  self::STATUS_SENT => 'Отправленное'
       ];
     }
 }

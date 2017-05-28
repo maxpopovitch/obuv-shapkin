@@ -58,6 +58,8 @@ class SizeController extends Controller {
             return $this->goHome();
         }
 
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Размеры';
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -72,6 +74,8 @@ class SizeController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Размеры';
 
         $model = new Size();
 
@@ -94,6 +98,8 @@ class SizeController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Размеры';
 
         $model = $this->findModel($id);
 

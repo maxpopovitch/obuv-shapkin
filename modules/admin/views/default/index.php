@@ -46,10 +46,6 @@ use yii\bootstrap\ActiveForm;
 
 		  <?php ActiveForm::end(); ?>
 
-  		<div class="col-lg-offset-2" style="color:#999;">
-  		  You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-  		  To modify the username/password, please check out the code <code>app\models\User::$users</code>.
-  		</div>
   	      </div>
 	      <?php } else { ?>
   		  <!--<h1><?= $this->context->action->uniqueId ?></h1>-->

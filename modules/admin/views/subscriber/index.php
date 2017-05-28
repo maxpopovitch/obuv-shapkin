@@ -30,6 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
 		  'tableOptions' => [
 		      'class' => 'table table-striped table-condensed table-hover'
 		  ],
+		  'columns' => [
+		      ['class' => 'yii\grid\SerialColumn'],
+		      'id',
+		      'email',
+		      ['class' => 'yii\grid\ActionColumn'],
+		  ],
 	      ]);
 	      ?>
 	    </div>

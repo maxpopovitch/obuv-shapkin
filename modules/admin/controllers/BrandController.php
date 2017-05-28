@@ -58,6 +58,8 @@ class BrandController extends Controller {
             return $this->goHome();
         }
 
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Торговые марки';
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -73,7 +75,9 @@ class BrandController extends Controller {
             return $this->goHome();
         }
 
-        $model = new Brand();
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Торговые марки';
+
+	$model = new Brand();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
@@ -94,6 +98,8 @@ class BrandController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+	$this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Торговые марки';
 
         $model = $this->findModel($id);
 

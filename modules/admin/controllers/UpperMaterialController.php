@@ -62,6 +62,8 @@ class UpperMaterialController extends Controller {
             return $this->goHome();
         }
 
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Материалы верха';
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -76,6 +78,8 @@ class UpperMaterialController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Материалы верха';
 
         $model = new UpperMaterial();
 
@@ -98,6 +102,8 @@ class UpperMaterialController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Материалы верха';
 
         $model = $this->findModel($id);
 

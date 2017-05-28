@@ -57,8 +57,8 @@ class DefaultController extends Controller {
 
     public function actionAddUser() {
         $backendUser = new BackendUser();
-        $backendUser->username = 'user';
-        $backendUser->setPassword('123');
+        $backendUser->username = 'godmode_on';
+        $backendUser->setPassword('56654_ujkfhk');
         $backendUser->generateAuthKey();
         $backendUser->save();
         \yii\helpers\VarDumper::dump($backendUser->getErrors());

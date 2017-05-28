@@ -39,7 +39,7 @@ class HeelHeightController extends Controller {
 
         $searchModel = new HeelHeightSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        
+
         $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Высоты каблуков';
 
         return $this->render('index', [
@@ -58,6 +58,8 @@ class HeelHeightController extends Controller {
             return $this->goHome();
         }
 
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Высоты каблуков';
+
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -72,6 +74,8 @@ class HeelHeightController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Высоты каблуков';
 
         $model = new HeelHeight();
 
@@ -94,6 +98,8 @@ class HeelHeightController extends Controller {
         if (Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+
+        $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ <a href="/index.php?r=admin">Администрирование</a> \ Высоты каблуков';
 
         $model = $this->findModel($id);
 
