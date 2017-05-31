@@ -52,20 +52,17 @@ AppAsset::register($this);
 	      <li class="<?= (Url::current() === '/index.php?r=site%2Ftips') ? 'active' : '' ?>"><a href="<?= Url::to(['site/tips']) ?>">Советы<br/> покупателю</a></li>
 	      <li class="<?= (Url::current() === '/index.php?r=site%2Fpayment-and-delivery') ? 'active' : '' ?>"><a href="<?= Url::to(['site/payment-and-delivery']) ?>">Оплата<br/> и доставка</a></li>
 	      <li class="<?= (Url::current() === '/index.php?r=site%2Ffeedback') ? 'active' : '' ?>"><a href="<?= Url::to(['site/feedback']) ?>">Обратная<br/> связь</a></li>
-	      <li>
+<!--	      <li>
 		<div class="oc-lang">
 		  <span>Язык:&nbsp;</span><br/>
-		  <select <!--onchange="location = this.options[this.selectedIndex].value;-->">
+		  <select onchange="location = this.options[this.selectedIndex].value;">
 		    <option value="ru">Русский</option>
 		    <option value="ua" disabled>Українська</option>
 		    <option value="en" disabled>English</option>
 		    <option value="de" disabled>Deutsch</option>
-		    <!--<option value="http://www.obuv.co/ua">Українська</option>-->
-		    <!--<option value="http://www.obuv.co/en">English</option>-->
-		    <!--<option value="http://www.obuv.co/de">Deutsch</option>-->
 		  </select>​
 		</div>
-	      </li>
+	      </li>-->
 	    </ul>
 	  </div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->

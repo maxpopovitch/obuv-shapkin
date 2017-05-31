@@ -87,7 +87,7 @@ class SiteController extends Controller {
       $filteredWares.= $this->renderPartial('filtered_ware', ['ware' => $element]);
     }
 
-    $this->view->params['header'] = 'Интернет-магазин обуви Obuv.CO. Новые поступления (на 26 мая 2014).';
+    $this->view->params['header'] = 'Интернет-магазин обуви Obuv.CO. Новые поступления.';
     return $this->render('index', [
 		'model' => $model,
 		'prices' => $prices,
