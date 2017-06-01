@@ -33,11 +33,11 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.yandex.ru', //SMTP-server
+                'host' => 'mail.obuv.co', //SMTP-server
                 'username' => 'info@obuv.co', //info
                 'password' => 'boomerang_2003',
-                'port' => '465',
-                'encryption' => 'ssl',
+                'port' => '26',
+                'encryption' => '',
             ],
         ],
         'log' => [
