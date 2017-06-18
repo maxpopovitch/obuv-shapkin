@@ -30,3 +30,6 @@ tests/_output/*
 tests/_support/_generated
 
 web/files/*
+
+# DB Settings. IMPORTANT! Take a look at the same file at AWS instance!
+config/db.php
