@@ -37,6 +37,11 @@ if (isset($submittedForm)) {
     <div class="oc-details-grid">
       <div class="oc-cat-div">
 	<div class="oc-title">Цена</div>
+	<?php
+	if ((is_array($prices) && count($prices) == 0) || (!is_array($prices))) {
+	  $prices = [0];
+	}
+	?>
 	<?=
 	Html::input('range', 'Ware[maxprice]', (isset($submittedForm)) ? $submittedForm['maxprice'] : max($prices), [
 	    'id' => 'oc-max-price',
