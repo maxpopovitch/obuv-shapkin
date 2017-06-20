@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' 
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 
-<section class="oc-content">
+<section class="oc-content" id="admin-ware-form">
   <div class="container-fluid oc-margin">
     <div class="row row-offcanvas row-offcanvas-right">
       <div class="col-xs-12">

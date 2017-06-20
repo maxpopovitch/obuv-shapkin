@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Wares', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<section class="oc-content">
+<section class="oc-content" id="admin-ware-form">
   <div class="container-fluid oc-margin">
     <div class="row row-offcanvas row-offcanvas-right">
       <div class="col-xs-12">

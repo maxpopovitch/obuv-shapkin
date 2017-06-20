@@ -926,4 +926,7 @@ footer {
     border-right: 4px solid transparent;
     border-left: 4px solid transparent; }
 
+#admin-ware-form #ware-sizes label {
+  margin-right: 10px; }
+
 /*# sourceMappingURL=custom.css.map */
