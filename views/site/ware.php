@@ -214,6 +214,11 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
 			<p>Высота каблука или танкетки: <strong><?php echo HeelHeight::findOne(['id' => $ware->heel_height])->name ?></strong></p>
 			<p>Цвет: <strong><?php echo Color::findOne(['id' => $ware->color])->name ?></strong></p>
 			<p>Полнота: <strong><?php echo Wideness::findOne(['id' => $ware->wideness])->name ?></strong></p>
+			<?php
+			if ($ware->waterproofness == 2) {
+			  echo '<p>Защита от промокания: <strong>водонепроницаемые</strong></p>';
+			}
+			?>
 			<p>Размеры в наличии: <strong><?php echo $sizes ?></strong></p>
 			<a href="<?= Url::to(['site/sizes']) ?>">Таблица размеров</a>
 		      </div>
