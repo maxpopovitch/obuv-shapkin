@@ -651,15 +651,17 @@ textarea {
     #sidebar .oc-cat-div .oc-size input[type="checkbox"], #sidebar .oc-cat-div.oc-size-wrapper input[type="checkbox"] {
       display: none; }
       #sidebar .oc-cat-div .oc-size input[type="checkbox"] + label, #sidebar .oc-cat-div.oc-size-wrapper input[type="checkbox"] + label {
+        font-family: Tahoma, "Trebuchet MS", Verdana, "MS Sans Serif", Geneva, Arial, Helvetica, sans-serif;
+        font-weight: 400;
         color: #FFF;
         font-size: 11px;
-        word-spacing: -7px;
+        word-spacing: -3px;
         text-align: center;
         min-width: 58px;
         background: #8FA136;
         border-radius: 2px;
         display: inline-block;
-        padding: 4px 0 8px 0;
+        padding: 6px 0;
         margin: 2px 0; }
         #sidebar .oc-cat-div .oc-size input[type="checkbox"] + label:before, #sidebar .oc-cat-div.oc-size-wrapper input[type="checkbox"] + label:before {
           content: ""; }

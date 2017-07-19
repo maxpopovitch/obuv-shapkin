@@ -932,15 +932,17 @@ textarea {
 	display: none;
 
 	+ label {
+	  font-family: $base-font;
+	  font-weight: 400;
 	  color: #FFF;
 	  font-size: 11px;
-	  word-spacing: -7px;
+	  word-spacing: -3px;
 	  text-align: center;
 	  min-width: 58px;
 	  background: $color-15;
 	  border-radius: 2px;
 	  display:inline-block;
-	  padding: 4px 0 8px 0;
+	  padding: 6px 0;
 	  margin: 2px 0;
 
 	  &:before {
