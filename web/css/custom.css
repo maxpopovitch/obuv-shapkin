@@ -350,8 +350,15 @@ textarea {
     border: 1px solid #D2D6AA;
     position: relative;
     text-decoration: none !important; }
+    @media (min-width: 300px) and (max-width: 415px) {
+      .oc-ware a {
+        width: 130px;
+        height: 150px; } }
     .oc-ware a.oc-brand {
       height: 155px; }
+      @media (min-width: 300px) and (max-width: 415px) {
+        .oc-ware a.oc-brand {
+          height: 112px; } }
     .oc-ware a .oc-tag {
       position: absolute;
       width: 67px;
@@ -387,15 +394,26 @@ textarea {
           left: 1px;
           top: 18px;
           font-size: 11px; }
+    @media (min-width: 300px) and (max-width: 415px) {
+      .oc-ware a .oc-tag {
+        left: 67px; } }
     .oc-ware a .oc-ware-photo {
       display: table-cell;
       width: 178px;
       height: 150px;
       text-align: center;
       vertical-align: middle; }
+      @media (min-width: 300px) and (max-width: 415px) {
+        .oc-ware a .oc-ware-photo {
+          width: 128px;
+          height: 108px; } }
       .oc-ware a .oc-ware-photo img {
         max-width: 165px;
         max-height: 130px; }
+        @media (min-width: 300px) and (max-width: 415px) {
+          .oc-ware a .oc-ware-photo img {
+            max-width: 119px;
+            max-height: 94px; } }
     .oc-ware a .oc-separator {
       height: 1px;
       background: #D2D6AA; }
@@ -405,21 +423,38 @@ textarea {
       height: 55px;
       text-align: center;
       vertical-align: middle; }
+      @media (min-width: 300px) and (max-width: 415px) {
+        .oc-ware a .oc-brand-logo {
+          width: 65px;
+          height: 40px; } }
       .oc-ware a .oc-brand-logo img {
-        max-width: 85px;
-        max-height: 50px; }
+        max-width: 62px;
+        max-height: 38px; }
+        @media (min-width: 300px) and (max-width: 415px) {
+          .oc-ware a .oc-brand-logo img {
+            max-width: 45px;
+            max-height: 27px; } }
     .oc-ware a .oc-price {
       display: table-cell;
       width: 85px;
       text-align: right;
       vertical-align: middle;
       font-weight: 700; }
+      @media (min-width: 300px) and (max-width: 415px) {
+        .oc-ware a .oc-price {
+          width: 61px; } }
       .oc-ware a .oc-price span:nth-of-type(1) {
         color: #255B5B;
         font-size: 20px; }
+        @media (min-width: 300px) and (max-width: 415px) {
+          .oc-ware a .oc-price span:nth-of-type(1) {
+            font-size: 14px; } }
       .oc-ware a .oc-price span:nth-of-type(2) {
         color: #777;
         font-size: 12px; }
+        @media (min-width: 300px) and (max-width: 415px) {
+          .oc-ware a .oc-price span:nth-of-type(2) {
+            font-size: 10px; } }
 
 .oc-ware-product > a {
   position: relative;

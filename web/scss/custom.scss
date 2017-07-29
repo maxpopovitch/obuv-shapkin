@@ -21,6 +21,8 @@ $padding-01: 10px;
 $base-font: Tahoma, "Trebuchet MS", Verdana, "MS Sans Serif", Geneva, Arial, Helvetica, sans-serif;
 $footer-font-size: 12px;
 $rotate-tag: 45deg;
+$breakpoint-1: 300px;
+$breakpoint-2: 415px;
 
 @mixin prefix($scope, $vendors: webkit moz ms o) {
   @each $prop, $value in $scope {
@@ -560,11 +562,26 @@ textarea {
     position: relative;
     text-decoration: none !important;
 
+    @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+      width: 130px;
+      height: 150px;
+    }
+
     &.oc-brand {
       height: 155px;
+
+      @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+	height: 112px;
+      }
     }
 
     @include oc-tag;
+
+    .oc-tag {
+      @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+	left: 67px;
+      }
+    }
 
     .oc-ware-photo {
       display: table-cell;
@@ -573,9 +590,19 @@ textarea {
       text-align: center;
       vertical-align: middle;
 
+      @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+	width: 128px;
+	height: 108px;
+      }
+
       img {
 	max-width: 165px;
 	max-height: 130px;
+
+	@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+	  max-width: 119px;
+	  max-height: 94px;
+	}
       }
     }
 
@@ -591,9 +618,19 @@ textarea {
       text-align: center;
       vertical-align: middle;
 
+      @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+	width: 65px;
+	height: 40px;
+      }
+
       img {
-	max-width: 85px;
-	max-height: 50px;
+	max-width: 62px;
+	max-height: 38px;
+
+	@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+	  max-width: 45px;
+	  max-height: 27px;
+	}
       }
     }
 
@@ -604,14 +641,26 @@ textarea {
       vertical-align: middle;
       font-weight: 700;
 
+      @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+	width: 61px;
+      }
+
       span:nth-of-type(1) {
 	color: $color-11;
 	font-size: 20px;
+
+	@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+	  font-size: 14px;
+	}
       }
 
       span:nth-of-type(2) {
 	color: $color-12;
 	font-size: 12px;
+
+	@media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+	  font-size: 10px;
+	}
       }
     }
   }
@@ -1218,7 +1267,7 @@ footer {
     input {
       padding: 6px 55px 6px 12px;
     }
-    
+
     p.help-block {
       line-height: normal;
     }
