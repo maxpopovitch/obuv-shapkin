@@ -36,7 +36,10 @@ $this->params['breadcrumbs'][] = $this->title;
 		  'columns' => [
 		      ['class' => 'yii\grid\SerialColumn'],
 //            'id',
-		      'code',
+		      'position' => [
+			  'attribute'=>'position',
+			  'headerOptions' => ['width' => '65px'],
+		      ],
 		      'brand' => [
 			  'attribute' => 'brand',
 			  'format' => 'html',
@@ -45,6 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			  },
 			  'filter' => false,
 		      ],
+		      'code',
 //            'sex' => [
 //                'attribute' => 'sex',
 //                'format' => 'html',
@@ -136,7 +140,6 @@ $this->params['breadcrumbs'][] = $this->title;
 			  },
 			  'filter' => Ware::getStatus(),
 		      ],
-		      'position',
 		      ['class' => 'yii\grid\ActionColumn',
 			  'headerOptions' => ['width' => '65px']],
 		  ],

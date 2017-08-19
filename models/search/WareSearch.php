@@ -80,7 +80,7 @@ class WareSearch extends Ware
             'position' => $this->position,
         ]);
 
-        $query->andFilterWhere(['like', 'code', $this->code]);
+        $query->andFilterWhere(['like', 'code', $this->code])->orderBy(['position' => SORT_ASC])->all();
 
         return $dataProvider;
     }
@@ -150,7 +150,7 @@ class WareSearch extends Ware
 	  $query->andFilterWhere($filter);
 	}
 
-	$result = $query->all();
+	$result = $query->orderBy(['position' => SORT_ASC])->all();
 	
         return $result;
     }
