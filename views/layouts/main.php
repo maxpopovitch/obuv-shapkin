@@ -27,6 +27,13 @@ AppAsset::register($this);
   </head>
   <body>
     <?php $this->beginBody() ?>
+    <div id="sale-alert" class="alert alert-danger alert-dismissible text-center" style="display: none;">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	<span aria-hidden="true">&times;</span>
+      </button>
+      <h1><strong>obuv.co</strong> domain and this project of online-shop are for sale. Send your offers at <a href="mailto:info@obuv.co">info@obuv.co</a></h1>
+      <h1>Домен <strong>obuv.co</strong> и проект интернет-магазина продаются. Присылайте ваши предложения на <a href="mailto:info@obuv.co">info@obuv.co</a></h1>
+    </div>
 
     <header id="top">
       <nav class="navbar navbar-default oc-navbar" role="navigation">
