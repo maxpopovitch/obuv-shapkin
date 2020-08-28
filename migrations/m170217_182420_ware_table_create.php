@@ -5,7 +5,7 @@ use yii\db\Migration;
 class m170217_182420_ware_table_create extends Migration
 {
      public function up() {
-        $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        $tableOptions = '';
         $this->createTable('ware', [
             'id' => $this->primaryKey(),
             'code' => $this->string()->notNull()->comment('Code'),

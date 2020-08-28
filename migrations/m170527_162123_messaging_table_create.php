@@ -5,7 +5,7 @@ use yii\db\Migration;
 class m170527_162123_messaging_table_create extends Migration
 {
     public function up() {
-        $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        $tableOptions = '';
         $this->createTable('messaging', [
             'id' => $this->primaryKey(),
             'emails' => $this->text()->notNull()->comment('Email list'),
