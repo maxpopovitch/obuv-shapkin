@@ -3,7 +3,7 @@
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'pgsql:host=localhost;dbname=obuv',
-    'username' => 'sergiy',
-    'password' => 'sergiy',
+    'username' => 'vagrant',
+    'password' => 'vagrant',
     'charset' => 'utf8',
 ];
