@@ -21,7 +21,8 @@
         "yii2tech/file-storage": "*",
         "yii2tech/ar-file": "^1.0",
         "yiisoft/yii2-imagine": "2.1.0",
-        "omnilight/yii2-shopping-cart": "*"
+        "omnilight/yii2-shopping-cart": "*",
+        "fxp/composer-asset-plugin": "^1.2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
