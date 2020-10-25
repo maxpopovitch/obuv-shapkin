@@ -1,0 +1,27 @@
+{
+  "name": "obuv-shapkin",
+  "version": "1.0.0",
+  "description": "Yii 2 Basic Project Template ============================",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "sass": "node-sass -w web/scss/ -o web/css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxdonetsk/obuv-shapkin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxdonetsk/obuv-shapkin/issues"
+  },
+  "homepage": "https://github.com/maxdonetsk/obuv-shapkin#readme"
+}

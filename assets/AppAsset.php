@@ -36,7 +36,6 @@ class AppAsset extends AssetBundle
         'js/cart.js',
         'js/thumbs.js',
         'js/messaging.js',
-        'js/sale-alert.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

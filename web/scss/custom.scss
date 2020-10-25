@@ -103,47 +103,6 @@ html, body, .modal-open {
   }
 }
 
-#sale-alert {
-  margin-bottom: 0;
-  border-radius: 0;
-  border: 0;
-  background-color: #a94442;
-  padding: 0;
-
-  .close {
-    top: 10px;
-    right: 10px;
-    color: white;
-    opacity: 1;
-    text-shadow: none;
-    line-height: 15px;
-    font-size: 15px;
-
-    &:focus {
-      outline: 0;
-    }
-  }
-
-  h1 {
-    color: white;
-    font-size: 15px;
-    margin: 0;
-    line-height: 1.5;
-    
-    &:first-of-type {
-      padding: 5px 10px 0;  
-    }
-
-    &:last-of-type {
-      padding: 0 10px 5px;  
-    }
-
-    a {
-      color: white;
-    }
-  }
-}
-
 body {
   display: table;
 }
@@ -233,7 +192,7 @@ textarea {
   &:hover, &:focus {
     outline: 0;
     background: $color-02;
-  } 
+  }
 }
 
 .oc-a {
@@ -975,7 +934,6 @@ textarea {
     }
 
     .oc-color, &.oc-color-wrapper {
-      display: inline-block;
       margin: 0 0 4px 0;
 
       input[type="checkbox"] {
@@ -1015,7 +973,6 @@ textarea {
     }
 
     .oc-size, &.oc-size-wrapper {
-      display: inline-block;
       margin: 0 0 4px 0;
 
       input[type="checkbox"] {
@@ -1356,7 +1313,7 @@ footer {
     background-color: #C9302C;
     color: #FFF;
     border-radius: 4px 4px 0 0;
-  }    
+  }
 }
 
 .oc-brand-view-logo {
