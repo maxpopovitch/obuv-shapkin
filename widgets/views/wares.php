@@ -62,7 +62,7 @@ if (!empty($wares)) {
                 <div class="oc-brand-logo"><img src="<?php echo $ware->_brand->logo ?>" alt="<?php echo $ware->_brand->name ?>"/></div>
                 <div class="oc-price">
                     <span><?php echo ($ware->category === 2) ? $ware->new_price : $ware->init_price; ?></span>
-                    <span>грн.</span>
+                    <span>руб.</span>
                 </div>
             </a>
         </div>

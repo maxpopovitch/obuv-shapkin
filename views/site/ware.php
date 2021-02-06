@@ -147,7 +147,7 @@ $this->title = $this->title . ' | Интернет-магазин обуви. Д
 			    <?php } ?>
                             <span><?php echo $ware->new_price ?></span>
 			  </strong>
-			  грн.
+			  руб.
 			</h3>
 		      </div>
 		      <?php

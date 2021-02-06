@@ -57,7 +57,7 @@ class ContactForm extends Model
 	    $body .= 'Сообщение: ' . $this->body;
             Yii::$app->mailer->compose()
                 ->setTo($email)
-		->setSubject('obuv.co/feedback')
+		->setSubject('Omega Shoes / feedback')
                 ->setFrom(Yii::$app->params['adminEmail'])
                 ->setTextBody($body)
                 ->send();

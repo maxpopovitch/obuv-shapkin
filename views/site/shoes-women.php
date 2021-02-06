@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use app\models\Ware;
 use app\widgets\WaresWidget;
 
-$this->title = 'obuv.co | Женская обувь | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = 'Omega Shoes | Женская обувь | Интернет-магазин обуви. Доставка по Украине.';
 ?>
 
 <section class="oc-content">

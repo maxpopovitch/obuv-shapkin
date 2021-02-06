@@ -57,7 +57,7 @@ use app\models\Ware;
     <div class="oc-brand-logo"><img src="<?php echo $ware->_brand->logo ?>" alt="<?php echo $ware->_brand->name ?>"/></div>
     <div class="oc-price">
       <span><?php echo $ware->new_price ?></span>
-      <span>грн.</span>
+      <span>руб.</span>
     </div>
   </a>
 </div>

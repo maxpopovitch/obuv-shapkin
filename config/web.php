@@ -4,7 +4,7 @@ $params = require(__DIR__ . '/params.php');
 
 $config = [
     'id' => 'basic',
-    'name' => 'obuv.co',
+    'name' => 'Omega Shoes',
     'language' => '',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],

@@ -38,7 +38,7 @@ AppAsset::register($this);
 	      <span class="icon-bar"></span>
 	    </button>
 	    <a class="navbar-brand oc-a" href="/">
-	      <img class="oc-logo" alt="Обувко :)" title="Обувко :)" src="imgs/obuv_co.png"/>
+	      <img class="oc-logo" alt="Omega Shoes" title="Omega Shoes" src="imgs/logo.png"/>
 	    </a>
 	  </div>
 
@@ -73,9 +73,9 @@ AppAsset::register($this);
 	      <i class="glyphicon glyphicon-earphone"></i>
 	    </div>
 	    <div class="oc-info">
-	      <a href="tel:+380623456884">+380 62 3456884</a>
-	      <br/>
-	      <a href="tel:+380991051865">+380 99 1051865</a>
+	      <a href="tel:+74955875007">+7 495 587 50 07</a>
+          <br>
+	      <a href="tel:+79104459817">+7 910 445 98 17</a>
 	    </div>
 	  </div>
 	  <div class="oc-location">
@@ -83,7 +83,7 @@ AppAsset::register($this);
 	      <i class="glyphicon glyphicon-map-marker"></i>
 	    </div>
 	    <div class="oc-info">
-	      <a href="<?= Url::to(['site/contacts']) ?>">г. Донецк, ул. Университетская, 63, салон обуви <q>Бумеранг</q> (наш партнер)</a>
+	      <a href="<?= Url::to(['site/contacts']) ?>">Московская обл., Мытищинский р-н, д. Шолохово, Дмитровское шоссе, 2Б, стр. 1</a>
 	    </div>
 	  </div>
 	  <div class="oc-cart">
@@ -93,7 +93,7 @@ AppAsset::register($this);
 	    <div class="oc-info">
 	      <?php if (Ware::getCartWaresCount() > 0) { ?>
   	      <a href="<?= Url::to(['site/cart']) ?>">
-		  <?php echo Ware::getCartWaresCount() . ' (' . Ware::getCartWaresCost() . ' грн.)'; ?>
+		  <?php echo Ware::getCartWaresCount() . ' (' . Ware::getCartWaresCost() . ' руб.)'; ?>
   	      </a>
 	      <?php } else { ?>
   	      Добавьте товары в корзину
@@ -151,7 +151,7 @@ AppAsset::register($this);
       <div class="oc-footer-two">
 	<div class="container-fluid">
 	  <div class="col-xs-12">
-	    <span class="oc-copyright">Copyright &copy; obuv.co, 2013 &mdash; <?= date('Y') ?></span>
+	    <span class="oc-copyright">Copyright &copy; Omega Shoes, 2021 &mdash; <?= date('Y') ?></span>
 	  </div>
 	  <div class="col-xs-12">
 	    <section class="oc-robo">

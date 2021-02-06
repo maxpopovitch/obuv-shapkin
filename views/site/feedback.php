@@ -8,7 +8,7 @@ use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'obuv.co | Обратная связь | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = 'Omega Shoes | Обратная связь | Интернет-магазин обуви. Доставка по Украине.';
 ?>
 
 <section class="oc-content">

@@ -6,7 +6,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use app\models\Ware;
 
-$this->title = 'obuv.co | Корзина | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = 'Omega Shoes | Корзина | Интернет-магазин обуви. Доставка по Украине.';
 ?>
 
 <section class="oc-content">
@@ -56,7 +56,7 @@ $this->title = 'obuv.co | Корзина | Интернет-магазин об�
     		  <div class="col-sm-8 col-md-8 text-center">
                         <div class="oc-receipt">
     		      <div class="oc-logo-receipt">
-    			<img src="imgs/obuv_co.gif" alt="obuv.co">
+    			<img src="imgs/logo.gif" alt="Omega Shoes">
     		      </div>
     		      <div class="oc-goods-wrapper">
 			    <?php foreach ($cartWares as $index => $cartWare) { ?>
@@ -68,13 +68,13 @@ $this->title = 'obuv.co | Корзина | Интернет-магазин об�
       			  <div class="text-right">
 				  <?php echo $cartWare->sizes ?><br/>
       			    ---------<br/>
-				  <?php echo $cartWare->new_price ?> грн.
+				  <?php echo $cartWare->new_price ?> руб.
       			  </div>
       			</div>
 			    <?php } ?>
     		      </div>
     		      <div class="oc-total">
-    			Итого: <?php echo Ware::getCartWaresCost() ?> грн.<br/>***** Спасибо! *****
+    			Итого: <?php echo Ware::getCartWaresCost() ?> руб.<br/>***** Спасибо! *****
     		      </div>
                         </div>
     		  </div>
@@ -118,14 +118,14 @@ $this->title = 'obuv.co | Корзина | Интернет-магазин об�
       		  <div>
 			  <?php echo $cartWare->sizes ?>
       		  </div>
-      		  <div><?php echo $cartWare->new_price ?> грн.</div>
+      		  <div><?php echo $cartWare->new_price ?> руб.</div>
       		  <div>
       		    <button type="button" data-toggle="modal" data-target="#oc-confirmation" data-id="<?php echo $cartWare->id ?>"><span title="Удалить">&times;</span></button>
       		  </div>
                       </div>
 		    <?php } ?>
     		<div class="row oc-titlebar">
-    		  <div class="oc-total">Итого: <?php echo Ware::getCartWaresCost() ?> грн.</div>
+    		  <div class="oc-total">Итого: <?php echo Ware::getCartWaresCost() ?> руб.</div>
     		</div>
     	      </div>
 
@@ -142,7 +142,7 @@ $this->title = 'obuv.co | Корзина | Интернет-магазин об�
 		  ?>
 
 		  <?=
-			  $form->field($cartModel, 'phone', ['inputOptions' => ['placeholder' => 'Например, +380991234567']])
+			  $form->field($cartModel, 'phone', ['inputOptions' => ['placeholder' => 'Например, +79001234567']])
 			  ->label('Телефон<span class="oc-required">*</span>')
 		  ?>
 
@@ -176,7 +176,7 @@ $this->title = 'obuv.co | Корзина | Интернет-магазин об�
   		      <div class="container-fluid">
                           <div class="row">
   			  <div class="col-xs-4 col-sm-6">
-  			    <img class="img-responsive" src="imgs/obuv_co.png" alt="obuv.co" />
+  			    <img class="img-responsive" src="imgs/logo.png" alt="Omega Shoes" />
   			  </div>
   			  <div class="col-xs-8 col-sm-6">
   			    <span class="oc-article"></span>

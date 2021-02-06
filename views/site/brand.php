@@ -5,7 +5,7 @@ use app\models\Brand;
 use yii\helpers\Url;
 use app\widgets\WaresWidget;
 
-$this->title = 'obuv.co | Торговые марки | ' . $brand->name . ' | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = 'Omega Shoes | Торговые марки | ' . $brand->name . ' | Интернет-магазин обуви. Доставка по Украине.';
 ?>
 
 

@@ -51,7 +51,7 @@ if (isset($submittedForm)) {
 //                    'onchange' => 'this.form.submit()'
 	])
 	?>
-	<span>от&nbsp;</span><b><span><?= min($prices) ?></span></b>&nbsp;до&nbsp;<b><span id="oc-max-price-val"><?= (isset($submittedForm['maxprice'])) ? $submittedForm['maxprice'] : max($prices) ?></span><span>&nbsp;грн.</span></b>
+	<span>от&nbsp;</span><b><span><?= min($prices) ?></span></b>&nbsp;до&nbsp;<b><span id="oc-max-price-val"><?= (isset($submittedForm['maxprice'])) ? $submittedForm['maxprice'] : max($prices) ?></span><span>&nbsp;руб.</span></b>
       </div>
 
       <div class="oc-cat-div">
