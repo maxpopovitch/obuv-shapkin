@@ -11,7 +11,7 @@ use app\models\Color;
 use app\models\Wideness;
 use app\models\Size;
 
-$this->title = 'obuv.co | ';
+$this->title = 'omega-shoes.ru | ';
 if (Yii::$app->language === 'ru' || Yii::$app->language === 'ua') {
   $this->title = ($ware->sex === 1) ? $this->title . 'Мужские' . ' ' : $this->title . 'Женские' . ' ';
   if ($ware->saison === 1) {
@@ -25,7 +25,7 @@ if (Yii::$app->language === 'ru' || Yii::$app->language === 'ua') {
   $this->title = $this->title . $ware->_brand->name . ' ';
   $this->title = $this->title . $ware->code;
 }
-$this->title = $this->title . ' | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = $this->title . ' | Интернет-магазин обуви.';
 ?>
 
 
