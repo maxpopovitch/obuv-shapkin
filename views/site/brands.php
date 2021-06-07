@@ -6,7 +6,7 @@ use yii\helpers\Url;
 
 $brands = Brand::find()->orderBy(['position' => SORT_ASC])->all();
 
-$this->title = 'Omega Shoes | Торговые марки | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = 'Omega Shoes | Торговые марки | Интернет-магазин обуви.';
 ?>
 
 <section class="oc-content">

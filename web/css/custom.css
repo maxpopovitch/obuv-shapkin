@@ -66,17 +66,17 @@ textarea {
   height: 76px;
   margin: 0;
   padding: 0;
-  background: #7C4734;
+  background: #006BB9;
   border: 0;
   border-radius: 0; }
   .oc-navbar li {
-    background: #7C4734; }
+    background: #006BB9; }
     .oc-navbar li:hover, .oc-navbar li:focus {
       outline: 0;
       background: #A6C550; }
     .oc-navbar li:last-of-type:hover, .oc-navbar li:last-of-type:focus {
       outline: 0;
-      background: #7C4734; }
+      background: #006BB9; }
     .oc-navbar li.active a {
       background-color: #A6C550 !important; }
   .oc-navbar .navbar-brand {
@@ -258,7 +258,7 @@ textarea {
 .oc-breadcrumbs {
   margin: 0;
   padding: 10px;
-  background: #7C4734; }
+  background: #006BB9; }
   .oc-breadcrumbs h1 {
     padding: 0;
     margin: 0;

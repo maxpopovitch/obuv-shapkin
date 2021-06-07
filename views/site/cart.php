@@ -6,7 +6,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use app\models\Ware;
 
-$this->title = 'Omega Shoes | Корзина | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = 'Omega Shoes | Корзина | Интернет-магазин обуви.';
 ?>
 
 <section class="oc-content">

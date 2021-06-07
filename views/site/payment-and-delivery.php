@@ -3,7 +3,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Omega Shoes | Оплата и доставка | Интернет-магазин обуви. Доставка по Украине.';
+$this->title = 'Omega Shoes | Оплата и доставка | Интернет-магазин обуви.';
 ?>
 
 <section class="oc-content">

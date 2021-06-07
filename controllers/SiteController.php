@@ -387,27 +387,6 @@ class SiteController extends Controller {
   }
 
   /**
-   * Displays moneyback page.
-   *
-   * @return string
-   */
-  public function actionMoneyback() {
-    $form = Yii::$app->request->post('Ware');
-    $model = new Ware();
-    $prices = [];
-    $wares = Ware::find()->where(['status' => Ware::STATUS_ACTIVE])->all();
-    foreach ($wares as $ware) {
-      array_push($prices, $ware->new_price);
-    }
-    $prices = array_unique($prices);
-    $this->view->params['header'] = '<a href="/">' . Yii::$app->name . '</a>' . ' \ Условия обмена и возврата';
-    return $this->render('moneyback', [
-		'model' => $model,
-		'prices' => $prices,
-    ]);
-  }
-
-  /**
    * Displays guarantee page.
    *
    * @return string

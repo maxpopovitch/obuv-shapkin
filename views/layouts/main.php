@@ -138,8 +138,6 @@ AppAsset::register($this);
 	  <div class="col-sm-5">
 	    <a class="<?= (Url::current() === '/index.php?r=site%2Fpayment-and-delivery') ? 'active' : '' ?>" href="<?= Url::to(['site/payment-and-delivery']) ?>">Оплата и доставка</a>
 	    <br/>
-	    <a class="<?= (Url::current() === '/index.php?r=site%2Fmoneyback') ? 'active' : '' ?>" href="<?= Url::to(['site/moneyback']) ?>">Условия обмена и возврата</a>
-	    <br/>
 	    <a class="<?= (Url::current() === '/index.php?r=site%2Fguarantee') ? 'active' : '' ?>" href="<?= Url::to(['site/guarantee']) ?>">Гарантийные обязательства</a>
 	  </div>
 	  <div class="col-sm-3">
