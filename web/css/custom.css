@@ -732,12 +732,16 @@ textarea {
       background: url("../imgs/flags/ch.png"); }
     #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-de:after {
       background: url("../imgs/flags/de.png"); }
+    #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-es:after {
+      background: url("../imgs/flags/es.png"); }
     #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-fi:after {
       background: url("../imgs/flags/fi.png"); }
     #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-fr:after {
       background: url("../imgs/flags/fr.png"); }
     #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-il:after {
       background: url("../imgs/flags/il.png"); }
+    #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-pl:after {
+      background: url("../imgs/flags/pl.png"); }
     #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-uk:after {
       background: url("../imgs/flags/uk.png"); }
 
