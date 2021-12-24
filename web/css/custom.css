@@ -740,8 +740,16 @@ textarea {
       background: url("../imgs/flags/fr.png"); }
     #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-il:after {
       background: url("../imgs/flags/il.png"); }
+    #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-in:after {
+      background: url("../imgs/flags/in.png"); }
+    #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-it:after {
+      background: url("../imgs/flags/it.png"); }
     #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-pl:after {
       background: url("../imgs/flags/pl.png"); }
+    #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-rs:after {
+      background: url("../imgs/flags/rs.png"); }
+    #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-tr:after {
+      background: url("../imgs/flags/tr.png"); }
     #sidebar .oc-cat-div .oc-details-label.oc-flag.oc-uk:after {
       background: url("../imgs/flags/uk.png"); }
 
