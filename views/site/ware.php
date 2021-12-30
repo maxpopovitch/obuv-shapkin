@@ -196,7 +196,6 @@ $this->title = $this->title . ' | Интернет-магазин обуви.';
   			    </div>
   			  </div>
                           </div>
-                          <span><strong>Бесплатная доставка по Украине!</strong></span>
 			  <?php ActiveForm::end(); ?>
 			<?php } else { ?>
                           <div class="col-xs-12">
